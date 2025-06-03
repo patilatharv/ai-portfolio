@@ -1,7 +1,12 @@
+'use client';
 
+import Textbox from '@/components/Textbox';
 
-export default function Home() {
+export default function ChatPage() {
+
   return (
-    <h1>Home Page</h1>
+    <main>
+      <Textbox />
+    </main>
   );
 }
