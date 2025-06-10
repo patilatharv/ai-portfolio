@@ -9,11 +9,12 @@ export async function POST(request) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4.1',
+      model: 'gpt-4o',
       messages: [{ role: 'user', content: question }],
     });
 
     const answer = completion.choices[0]?.message?.content ?? '(No response)';
+
     return NextResponse.json({ answer });
   } catch (err) {
     console.error('OpenAI error:', err);
