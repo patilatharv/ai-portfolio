@@ -2,6 +2,7 @@
   "name": "ai-portfolio-website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,8 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dotenv": "^16.5.0",
     "next": "15.3.3",
-    "openai": "^5.0.1",
+    "openai": "^5.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

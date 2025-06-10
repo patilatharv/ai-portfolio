@@ -7,6 +7,7 @@
             "major": "Computer Science"
         }
     ],
+    "skills": "Java, React.js, Next.js, Node.js, Express.js, JavaScript, Python, C++, C, SQL, MongoDB, Verilog, I2C, Git, HTML, CSS, ARKit, RealityKit, Swift, SwiftUI",
     "projects": [
       {
         "name": "AI Portfolio Website",
