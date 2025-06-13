@@ -4,9 +4,8 @@ import React from 'react'
 import { useState } from 'react';
 import styles from '@/styles/textbox.module.css'
 
-const Textbox = () => {
+const Textbox = ({ setAnswer }) => {
     const [question, setQuestion] = useState("");
-    const [answer, setAnswer] = useState("");
     const [loading, setLoading] = useState(false);
     
     const handleAsk = async () => {
@@ -35,9 +34,7 @@ const Textbox = () => {
 
   return (
     <>
-      {answer && (
-        <div className={styles.answer_field}> {answer} </div>
-      )}
+      <div className={styles.textbox_background}></div>
 
       <div className={styles.textbox_container}>
         <div className={styles.textbox_inner}>
@@ -49,19 +46,17 @@ const Textbox = () => {
                   handleAsk();           // Trigger send
                 }
               }}
-            value={question} 
-            onChange={(e) => setQuestion(e.target.value)} 
-            placeholder="Ask Anything" 
-            rows={1}
-            disabled={loading}
+              value={question} 
+              onChange={(e) => setQuestion(e.target.value)} 
+              placeholder="Ask Anything" 
+              rows={1}
+              disabled={loading}
           />
           <button
             onClick={handleAsk}
             disabled={loading || !question.trim()}
             className={styles.submit_button}
-          >
-            {loading ? "Thinking..." : "Ask"}
-          </button>
+          />
         </div>
       </div>
     </>

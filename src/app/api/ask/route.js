@@ -81,7 +81,8 @@ export async function POST(request) {
     const messages = [
       {
         role: 'system',
-        content: `You are a helpful assistant for a personal portfolio site. Use the following information to answer the question:\n${bestMatchContent}`
+        content: `You are a helpful assistant for a personal portfolio site created by Atharv. All the knowledge you have about 
+        about project and the data is based on Atharv. Use the following information to answer the question about Atharv:\n${bestMatchContent}`
       },
       {
         role: 'user',

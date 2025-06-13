@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from '../styles/sidebar.module.css';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 const navItems = [
   { href: '/',          label: 'Home' },
@@ -12,23 +13,29 @@ const navItems = [
   { href: '/contact',   label: 'Contact' },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, toggle }) {
   const pathname = usePathname();
 
   return (
-    <aside className={styles.sidebar}>
-      {navItems.map(({ href, label }) => {
-        const isActive = pathname === href;
-        return (
-          <Link
-            key={href}
-            href={href}
-            className={`${styles.link} ${isActive ? styles.active : ''}`}
-          >
-            {label}
-          </Link>
-        );
-      })}
+    <aside className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}>
+      <button className={styles.toggleBtn} onClick={toggle} aria-label="Toggle sidebar">
+        <MenuRoundedIcon />
+      </button>
+
+      <nav className={styles.navLinks}>
+        {navItems.map(({ href, label }) => {
+          const isActive = pathname === href;
+          return (
+            <Link
+              key={href}
+              href={href}
+              className={`${styles.link} ${isActive ? styles.active : ''}`}
+            >
+              {label}
+            </Link>
+          );
+        })}
+      </nav>
     </aside>
   );
 }

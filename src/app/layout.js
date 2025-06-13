@@ -1,8 +1,8 @@
 import '../styles/globals.css';
-import Sidebar from '../components/Sidebar';
-import { Inter } from 'next/font/google';
+import { Noto_Sans } from 'next/font/google';
+import ClientLayout from './clientLayout';
 
-const inter = Inter({ subsets: ['latin'] });
+const noto_sans = Noto_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Atharv | Portfolio',
@@ -12,11 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} app-shell`}>
-        <Sidebar />
-        <main className="main-panel">
+      <body className={`${noto_sans.className} app-shell`}>
+        <ClientLayout>
           {children}
-        </main>
+        </ClientLayout>
       </body>
     </html>
   );
