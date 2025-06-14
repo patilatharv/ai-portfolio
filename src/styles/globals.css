@@ -1,4 +1,3 @@
-/* ---- global colour tokens (close to ChatGPT) ---- */
 :root {
   --gpt-bg:                 #212121;
   --gpt-side:               #171717;
@@ -11,7 +10,6 @@
   --gpt-link-active:        #242424;
 }
 
-/* ---- base reset ---- */
 html, body {
   height: 100%;
   margin: 0;
@@ -24,7 +22,7 @@ html, body {
 .app-shell {
   display: flex;
   height: 100vh;      /* full viewport */
-  overflow: hidden;   /* keep the sidebar fixed */
+   overflow: hidden;   /* keep the sidebar fixed */
 }
 
 /* main content area */
@@ -35,13 +33,14 @@ html, body {
   flex: 1;
   overflow-y: auto;
   padding: 24px;
-  margin-right: 60px;
+  padding-right: 60px;
+  margin-top: 80px;
 }
 
 .main-panel.sidebar-closed {
-  margin-left: 60px;
+  padding-left: 60px;
 }
 
 .main-panel.sidebar-open {
-  margin-left: 60px;
+  padding-left: 60px;
 }

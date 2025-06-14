@@ -65,35 +65,3 @@
     color: #aaa;
     cursor: not-allowed;
   }
-  
-  .answer_field {
-    font-size: medium;
-  }
-
-  .chat_main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 24px;
-    position: relative;
-  }
-
-  .answer_heading {
-    margin-top: 1.5rem;
-    color: #fff;
-  }
-  
-  .answer_paragraph {
-    color: #fff;
-    margin-top: 0.75rem;
-    line-height: 1.6;
-  }
-
-  .chat_wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-  }

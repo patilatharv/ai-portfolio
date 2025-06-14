@@ -1,0 +1,29 @@
+.answer_field {
+    font-size: large;
+    /* text-align: left; */
+  }
+
+  .chat_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    position: relative;
+  }
+
+  .answer_wrapper {
+    margin: 0 auto;
+    max-width: 770px;
+    width: 100%;
+  }
+
+  .answer_heading {
+    margin-top: 1.5rem;
+    color: #fff;
+  }
+  
+  .answer_paragraph {
+    color: #fff;
+    margin-top: 0.75rem;
+    line-height: 1.6;
+  }

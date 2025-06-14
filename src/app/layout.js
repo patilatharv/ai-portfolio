@@ -1,8 +1,8 @@
 import '../styles/globals.css';
-import { Noto_Sans } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import ClientLayout from './clientLayout';
 
-const noto_sans = Noto_Sans({ subsets: ['latin'] });
+const noto_sans = Roboto({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Atharv | Portfolio',

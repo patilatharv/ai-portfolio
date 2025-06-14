@@ -34,7 +34,7 @@ const Textbox = ({ setAnswer }) => {
 
   return (
     <>
-      <div className={styles.textbox_background}></div>
+      <div className={styles.textbox_background} />
 
       <div className={styles.textbox_container}>
         <div className={styles.textbox_inner}>
