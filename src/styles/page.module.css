@@ -6,12 +6,13 @@
   .chat_main {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 24px;
+    padding-bottom: 24px; /* Maybe remove later */
     position: relative;
   }
 
-  .answer_wrapper {
+  .chat_wrapper {
     margin: 0 auto;
     max-width: 770px;
     width: 100%;
@@ -26,4 +27,21 @@
     color: #fff;
     margin-top: 0.75rem;
     line-height: 1.6;
+  }
+
+  .bubble_row {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 24px;
+    padding-bottom: 70px;
+  }
+
+  .bubble {
+    display: inline-block;  
+    max-width: 60%;
+    background: var(--gpt-link-hover);
+    color: var(--gpt-text);
+    padding: 12px 20px;
+    border-radius: 22px;
+    word-wrap: break-word;
   }

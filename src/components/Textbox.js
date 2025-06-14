@@ -4,12 +4,13 @@ import React from 'react'
 import { useState } from 'react';
 import styles from '@/styles/textbox.module.css'
 
-const Textbox = ({ setAnswer }) => {
+const Textbox = ({ setAnswer, setUserQuestion }) => {
     const [question, setQuestion] = useState("");
     const [loading, setLoading] = useState(false);
     
     const handleAsk = async () => {
         if (!question.trim()) return;
+        setUserQuestion(question);
         setLoading(true);
         setAnswer(""); // clear previous answer
         try {
