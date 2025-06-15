@@ -17,25 +17,33 @@ export default function Sidebar({ isOpen, toggle }) {
   const pathname = usePathname();
 
   return (
-    <aside className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}>
-      <button className={styles.toggleBtn} onClick={toggle} aria-label="Toggle sidebar">
+    <aside className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}
+      onClick={() => {
+          if (!isOpen) toggle();
+        }}
+      >
+
+      <button className={`${styles.toggleBtn} ${isOpen ? styles.open : styles.closed}`}
+       onClick={toggle} aria-label="Toggle sidebar">
         <MenuRoundedIcon />
       </button>
-
-      <nav className={styles.navLinks}>
-        {navItems.map(({ href, label }) => {
-          const isActive = pathname === href;
-          return (
-            <Link
-              key={href}
-              href={href}
-              className={`${styles.link} ${isActive ? styles.active : ''}`}
-            >
-              {label}
-            </Link>
-          );
-        })}
-      </nav>
+    
+      {isOpen && (
+        <nav className={styles.navLinks}>
+          {navItems.map(({ href, label }) => {
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`${styles.link} ${isActive ? styles.active : ''}`}
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </nav>
+      )}
     </aside>
   );
 }
