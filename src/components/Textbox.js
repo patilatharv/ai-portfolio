@@ -4,33 +4,51 @@ import React from 'react'
 import { useState } from 'react';
 import styles from '@/styles/textbox.module.css'
 
-const Textbox = ({ setAnswer, setUserQuestion }) => {
-    const [question, setQuestion] = useState("");
-    const [loading, setLoading] = useState(false);
+const Textbox = ({ messages, setMessages, loading, setLoading }) => {
+  const [question, setQuestion] = useState("");
+  
+  const handleAsk = async () => {
+    if (!question.trim()) return;
+
+    // Append the user’s turn
+    const newMessages = [
+      ...messages,
+      { role: 'user', content: question },
+    ];
+    setMessages(newMessages);
+
+    // Clear input & set loading
+    setQuestion('');
+    setLoading(true);
     
-    const handleAsk = async () => {
-        if (!question.trim()) return;
-        setUserQuestion(question);
-        setLoading(true);
-        setAnswer(""); // clear previous answer
-        try {
-        const res = await fetch('/api/ask', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question })
-        });
-        const data = await res.json();
-        if (res.ok) {
-            setAnswer(data.answer);
-        } else {
-            setAnswer(`Error: ${data.error || 'Something went wrong'}`);
-        }
-        } catch (err) {
-        console.error("Request failed:", err);
-        setAnswer("Error: Failed to fetch answer.");
-        } finally {
-        setLoading(false);
-        }
+    try {
+      // Send entire history to the API
+      const res = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: newMessages })
+      });
+      const data = await res.json();
+
+      // Append assistant’s reply
+      const assistantContent = res.ok
+        ? data.answer
+        : `Error: ${data.error || 'Something went wrong'}`;
+
+      setMessages([
+        ...newMessages,
+        { role: 'assistant', content: assistantContent },
+      ]);
+
+    } catch (err) {
+      console.error(err);
+      setMessages([
+        ...newMessages,
+        { role: 'assistant', content: 'Error: Failed to get response.' },
+      ]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
