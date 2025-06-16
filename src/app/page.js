@@ -2,7 +2,7 @@
 
 import Textbox from '@/components/Textbox';
 import styles from '@/styles/page.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import formatAnswer from '@/utils/formatAnswer'
 
 export default function ChatPage() {

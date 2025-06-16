@@ -13,18 +13,35 @@ function cosineSimilarity(vecA, vecB) {
 
 export async function POST(request) {
   try {
-    const { question } = await request.json();
-    if (!question?.trim()) {
-      return NextResponse.json({ error: 'No question provided' }, { status: 400 });
+    // Read in the full chat history
+    const { messages } = await request.json();
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return NextResponse.json(
+        { error: 'No messages provided' },
+        { status: 400 }
+      );
+    }
+
+    // Extract the last user question
+    const lastUserEntry = [...messages]
+      .reverse()
+      .find((m) => m.role === 'user');                       
+    const lastQuestion = lastUserEntry?.content?.trim() || '';  
+    if (!lastQuestion) {                                      
+      return NextResponse.json(
+        { error: 'No user question found' },
+        { status: 400 }
+      );
     }
 
     // Generate embedding for the user's question
     const embedResponse = await openai.embeddings.create({
       model: 'text-embedding-ada-002',
-      input: question
+      input: lastQuestion
     });
     const questionEmbedding = embedResponse.data[0].embedding;
 
+    // Perform RAG retrieval
     let bestMatchSection = null;
     let bestMatchContent = "";
     let highestSim = -Infinity;
@@ -78,21 +95,27 @@ export async function POST(request) {
       }
     }
 
-    const messages = [
-      {
-        role: 'system',
-        content: `You are a helpful assistant for a personal portfolio site created by Atharv. All the knowledge you have about 
-        about project and the data is based on Atharv. Use the following information to answer the question about Atharv:\n${bestMatchContent}`
-      },
-      {
-        role: 'user',
-        content: question
-      }
+    // Build a single system prompt with retrieved context 
+    const systemPrompt = `You are a helpful assistant for a personal portfolio site created by Atharv. All the knowledge you have about 
+      about project and the data is based on Atharv. Use only the following information to answer the question about Atharv from below:\n
+
+      Context:\n
+      ${bestMatchContent}
+        `.trim();                                             
+        const systemMessage = { role: 'system', content: systemPrompt };
+
+    // Assemble full payload: system + entire user/assistant history
+    const openAiMessages = [
+      systemMessage,                                        
+      ...messages.filter((m) =>
+        m.role === 'user' || m.role === 'assistant'
+      ),                                                    
     ];
     
+    // Call OpenAI with the conversation context
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o',
-      messages
+      messages: openAiMessages
     });
 
     const answer = completion.choices[0]?.message?.content ?? '(No response)';
