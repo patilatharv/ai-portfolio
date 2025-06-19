@@ -4,17 +4,29 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from '../styles/sidebar.module.css';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import useActiveSection from '@/hooks/useActiveSection';
 
 const navItems = [
-  { href: '/',          label: 'Home' },
-  { href: '/about',     label: 'About' },
-  { href: '/resume',    label: 'Resume' },
-  { href: '/experience',label: 'Experience' },
-  { href: '/contact',   label: 'Contact' },
+  { href: '/',                              label: 'Home' },
+  { href: '/about#about-me',                label: 'About Me' },
+  { href: '/about#professional-experiences',label: 'Experience' },
+  { href: '/about#education',               label: 'Education' },
+  { href: '/about#projects',                label: 'Projects' },
+  { href: '/about#skills',                  label: 'Skills' },
+  { href: '/resume',                        label: 'Resume' },
+  { href: '/contact',                       label: 'Contact' },
 ];
 
 export default function Sidebar({ isOpen, toggle }) {
   const pathname = usePathname();
+  const sectionIds = [
+    'about-me',
+    'professional-experiences',
+    'education',
+    'projects',
+    'skills',
+  ];
+  const activeSection = useActiveSection(sectionIds);
 
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}
@@ -31,12 +43,19 @@ export default function Sidebar({ isOpen, toggle }) {
       {isOpen && (
         <nav className={styles.navLinks}>
           {navItems.map(({ href, label }) => {
-            const isActive = pathname === href;
+            // if it's an anchor link, highlight when its hash matches activeSection
+            const hash = href.split('#')[1];
+            const isActive = hash
+              ? activeSection === hash
+              : pathname === href;
+
             return (
               <Link
                 key={href}
                 href={href}
-                className={`${styles.link} ${isActive ? styles.active : ''}`}
+                className={`${styles.link} ${
+                  isActive ? styles.active : ''
+                }`}
               >
                 {label}
               </Link>

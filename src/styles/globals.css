@@ -8,7 +8,21 @@
   --gpt-text-subtle:        #ffffff;
   --gpt-link-hover:         #303030;
   --gpt-link-active:        #242424;
+  --line-width: 4px;
+  --timeline-gutter: 3rem;          
+  --marker-size: 2rem; 
 }
+
+/* color pallete
+#ffbfbf
+#bf6060
+#ffe6e6
+#ff8080
+#bfffbf
+#60bf60
+#e6ffe6
+#80ff80
+*/
 
 html, body {
   height: 100%;
@@ -16,6 +30,11 @@ html, body {
   padding: 0;
   background: var(--gpt-bg);
   color: var(--gpt-text);
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 /* convenience utility for flex layout */

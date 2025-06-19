@@ -2,18 +2,12 @@
 
 import Textbox from '@/components/Textbox';
 import styles from '@/styles/page.module.css';
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import formatAnswer from '@/utils/formatAnswer'
+import { ChatContext } from '@/context/chatContext';
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState([
-    { 
-      role: 'assistant', 
-      content: "Hello! I’m Atharv's AI assistant. You can ask me about Atharv's portfolio." 
-    },
-  ]);
-
-  const [loading, setLoading] = useState(false);
+  const { messages, loading } = useContext(ChatContext);
 
   return (
     <>
@@ -37,12 +31,7 @@ export default function ChatPage() {
           )}
         </div> 
       </main>
-      <Textbox
-        messages={messages}
-        setMessages={setMessages}
-        loading={loading}
-        setLoading={setLoading}
-      />
+      <Textbox/>
     </>
   );
 }

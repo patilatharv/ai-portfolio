@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .card {
+    background: var(--gpt-side);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  
+  .degree {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--gpt-text);
+  }
+  
+  .college {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--gpt-text-subtle);
+  }

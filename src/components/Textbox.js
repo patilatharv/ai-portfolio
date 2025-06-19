@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from '@/styles/textbox.module.css'
+import { ChatContext } from '@/context/chatContext';
 
-const Textbox = ({ messages, setMessages, loading, setLoading }) => {
+const Textbox = () => {
+  const { messages, setMessages, loading, setLoading } = useContext(ChatContext);
   const [question, setQuestion] = useState("");
   
   const handleAsk = async () => {

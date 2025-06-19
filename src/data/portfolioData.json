@@ -1,119 +1,120 @@
 {
-    "bio": "I recently graduated from Penn State University with a degree in Computer Science and a minor in Mathematics. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
-    "education": [
-        {
-            "college": "The Pennsylvania State University",
-            "degree": "Bachelor of Science",
-            "major": "Computer Science"
-        }
-    ],
-    "skills": "Java, React.js, Next.js, Node.js, Express.js, JavaScript, Python, C++, C, SQL, MongoDB, Verilog, I2C, Git, HTML, CSS, ARKit, RealityKit, Swift, SwiftUI",
-    "projects": [
-      {
-        "name": "AI Portfolio Website",
-        "project type": "Personal Project",
-        "period": "Summer 2023",
-        "topic": "Full-Stack Development",
-        "description": "A personal website with an integrated AI chatbot that answers questions about my work and experience.",
-        "tech": ["Next.js", "React", "OpenAI API", "Node.js"],
-        "details": "I built this project to showcase my skills in full-stack development and AI integration. It features real-time Q&A and is deployed on the web."
-      },
-      {
-        "name": "NittanyBusiness E-Commerce Website",
-        "project type": "Academic Project",
-        "period": "Spring 2025",
-        "topic": "Full-Stack Development",
-        "description": "A full-stack B2B e-commerce platform built to streamline procurement for SMEs by connecting them with suppliers through an intuitive interface and optimized backend infrastructure.",
-        "tech": ["Next.js", "React", "Node.js", "MySQL"],
-        "details": "I designed an end-to-end B2B e-commerce procurement platform tailored for small and medium-sized enterprises (SMEs) facing inefficient procurement processes and limited supplier access. I developed both the frontend and backend using React.js, Node.js, and Express.js, implementing core features such as user authentication, product listings, and order management. To ensure responsive and scalable performance, I built and optimized a REST API that enabled real-time data retrieval, significantly reducing response times and improving access to product and transaction information. I also designed a normalized logical database schema to enhance query efficiency and eliminate redundant data storage. Additionally, I created an interactive user interface for business owners and suppliers, which improved user engagement and minimized onboarding friction for new users."
-      },
-      {
-        "name": "Peer-to-Peer File Sharing System",
-        "project type": "Academic Project",
-        "period": "Fall 2024",
-        "topic": "Distributed Systems",
-        "description": "A Python-based P2P file-sharing network with chunked transfers, multi-threaded downloads, and built-in integrity checks for fast and reliable file distribution.",
-        "tech": ["Python"],
-        "details": "I designed a peer-to-peer (P2P) file-sharing network in Python, featuring a central server and multiple peers to enable efficient and decentralized file distribution. The system uses a chunk-based approach to split large files, allowing simultaneous downloads from multiple peers, which significantly improves overall download speed. I implemented multi-threading to handle parallel connections smoothly and ensure scalability. To maintain data integrity, I integrated hashing-based checks that verify the accuracy of downloaded chunks and discard any corrupted data."
-      },
-      {
-        "name": "Dynamic Storage Allocator",
-        "project type": "Academic Project",
-        "period": "Spring 2024",
-        "topic": "Memory Management",
-        "description": "A custom C dynamic memory allocator featuring optimized malloc/realloc/free, segregated free lists, and a heap consistency checker for robust memory management.",
-        "tech": ["C"],
-        "details": "I developed a dynamic memory allocator for C programs by implementing custom versions of malloc, realloc, and free, with a focus on optimizing space utilization and throughput. This was achieved through techniques such as block header/footer optimization, coalescing of free blocks, and the use of size-based segregated linked lists for efficient allocation. To ensure reliable memory management, I also created a heap consistency checker that runs in debugging mode to detect and resolve heap inconsistencies."
-      },
-      {
-        "name": "Expense Tracker App",
-        "project type": "Personal Project",
-        "period": "Summer 2023",
-        "topic": "Full-Stack Development",
-        "description": "A MERN stack expense tracker web app with real-time transaction updates and seamless backend integration for efficient personal finance management.",
-        "tech": ["React", "Node.js", "Express.js", "MongoDB"],
-        "details": "I developed a user-friendly expense tracker web application using the MERN stack, enabling users to effortlessly manage and track their finances. The frontend was built with React.js, providing a responsive interface with real-time updates to transactions and balances in the DOM. On the backend, I implemented business logic using Node.js and Express.js to handle data storage and integrated the application with MongoDB for efficient and reliable data management."
-      },
-      {
-        "name": "Linear Device Library",
-        "project type": "Academic Project",
-        "period": "Spring 2023",
-        "topic": "Systems Programming",
-        "description": "A C-based Linux utility that combines 16 JBODs into a 1 MB linear device with read/write support, LRU caching, and TCP networking for efficient storage access.",
-        "tech": ["C", "Linux"],
-        "details": "I designed and developed a Linux mdadm-style utility in C to configure 16 JBOD devices, each 64 KB in size, into a single coherent 1 MB linear storage device. I implemented core read and write functionalities that allowed access to the storage architecture using a user-provided buffer. To enhance performance and flexibility, I introduced an LRU caching mechanism that reduced the cost of JBOD operations by 30%, and added networking support by developing a client component to communicate with the embedded JBOD server over TCP."
-      },
-      {
-        "name": "Mini CPU",
-        "project type": "Academic Project",
-        "period": "Fall 2023",
-        "topic": "Computer Organization and Design",
-        "description": "A Verilog-based 5-stage MIPS pipeline with ALU-to-ALU data forwarding and hazard resolution for optimized execution of R-type instructions.",
-        "tech": ["Verilog"],
-        "details": "I designed and developed a comprehensive 5-stage MIPS pipeline in Verilog to execute R-type arithmetic instructions efficiently. To optimize CPU performance and ensure accurate data processing, I implemented data-forwarding modules using a state machine, enabling ALU-to-ALU forwarding and effective handling of data hazards. This included integrating detailed case handling to support accurate and reliable data manipulation across pipeline stages."
-      },
-      {
-        "name": "Course Scheduler App",
-        "project type": "Academic Project",
-        "period": "Fall 2022",
-        "topic": "Core Java",
-        "description": "A database-driven course scheduler with role-based access, built using OOP principles, SQL, and a tabbed GUI for organized course and student management.",
-        "tech": ["Java", "SQL"],
-        "details": "I created a database-driven course scheduler application that supports both administrative and student authorizations, applying object-oriented programming principles throughout the design. I used SQL to query student, course, and schedule data from an Apache Derby database, ensuring accurate and efficient data retrieval. To enhance user experience, I designed a tabbed layout graphical user interface (GUI) that presents information in a clear and organized manner."
-      },
-      {
-        "name": "Furniture Store App",
-        "project type": "Personal Project",
-        "period": "Summer 2022",
-        "topic": "AR Development",
-        "description": "An iOS AR app for virtual room decor that lets users place, scale, and move life-size furniture models in real-world spaces with saved layouts and guided setup.",
-        "tech": ["ARKit", "RealityKit", "Swift"],
-        "details": "I created an immersive iOS virtual room decor app designed to help users plan furniture placement in their actual living spaces, eliminating the need to visit multiple furniture stores. The app features a picture menu at the bottom of the interface, allowing users to select and place life-sized furniture models in the real world with a tap. I enhanced these models with functionality for scaling, rotation, and movement to provide a realistic and flexible design experience. To support new users, I integrated an AR Coaching Overlay that guides them through app setup and room scanning. The app also includes persistence to save virtual room maps, displays real-time mapping status for debugging, and offers a clear button to delete saved maps along with an undo button to remove the last added model."
-      },
-      {
-        "name": "Measurement App",
-        "project type": "Personal Project",
-        "period": "Summer 2022",
-        "topic": "AR Development",
-        "description": "An iOS AR measurement app that lets users mark two points in the real world to calculate distances, with logging, undo, and guided setup features.",
-        "tech": ["ARKit", "RealityKit", "Swift"],
-        "details": "I created an iOS virtual measurement app that allows users to measure the distance between two real-world points using augmented reality, supported by an AR Coaching Overlay for guided setup. Users can place two model entities with a tap to mark the points, and the app calculates and displays the distance in meters. I implemented a logging feature to store all measurement records, along with a clear button to reset the log and an undo button to remove the last entry, enhancing the overall user experience."
-      }
-    ],
-    "experience": [
-      {
-        "company": "Amphenol",
-        "location": "Nashua, NH",
-        "role": "Software Engineer Intern",
-        "period": "June 2024 - August 2024",
-        "work": "I developed a C++ command-line interface to communicate with I2C devices, PWM controllers, and TC amplifier chips, leveraging their capabilities for high-speed cable thermal testing. I engineered robust wrapper functions that provided seamless access to all chip features according to their datasheet specifications, ensuring reliable control and future scalability. To validate the setup, I created a testing environment using PWM logic to simulate real-world conditions and facilitate empirical data analysis prior to integration with the thermostream system. Additionally, I programmed a customized PID control algorithm that improved temperature correction accuracy from ±7°C to ±0.5°C, meeting stringent customer requirements."
-      },
-      {
-        "company": "Academic Excellence Center (AEC) at Penn State",
-        "location": "Univesity Park",
-        "role": "Lead Computer Science Tutor",
-        "period": "October 2023 - Present",
-        "work": "I provided academic support at the Academic Excellence Center (AEC) by leading exam review sessions, as well as offering one-on-one and group tutoring in data structures and algorithms (DSA), object-oriented programming (OOP), and systems programming."
-      }
-    ]
-  }
+  "bio": "I recently graduated from Penn State University with a degree in Computer Science and a minor in Mathematics. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+  "education": [
+    {
+        "period": "2021-2024",
+        "college": "The Pennsylvania State University",
+        "degree": "Bachelor of Science",
+        "major": "Computer Science"
+    }
+  ],
+  "skills": "Java, React.js, Next.js, Node.js, Express.js, JavaScript, Python, C++, C, SQL, MongoDB, Verilog, I2C, Git, HTML, CSS, ARKit, RealityKit, Swift, SwiftUI",
+  "projects": [
+    {
+      "name": "AI Portfolio Website",
+      "project type": "Personal Project",
+      "period": "Summer 2023",
+      "topic": "Full-Stack Development",
+      "description": "A personal website with an integrated AI chatbot that answers questions about my work and experience.",
+      "tech": ["Next.js", "React", "OpenAI API", "Node.js"],
+      "details": "I built this project to showcase my skills in full-stack development and AI integration. It features real-time Q&A and is deployed on the web."
+    },
+    {
+      "name": "NittanyBusiness E-Commerce Website",
+      "project type": "Academic Project",
+      "period": "Spring 2025",
+      "topic": "Full-Stack Development",
+      "description": "A full-stack B2B e-commerce platform built to streamline procurement for SMEs by connecting them with suppliers through an intuitive interface and optimized backend infrastructure.",
+      "tech": ["Next.js", "React", "Node.js", "MySQL"],
+      "details": "I designed an end-to-end B2B e-commerce procurement platform tailored for small and medium-sized enterprises (SMEs) facing inefficient procurement processes and limited supplier access. I developed both the frontend and backend using React.js, Node.js, and Express.js, implementing core features such as user authentication, product listings, and order management. To ensure responsive and scalable performance, I built and optimized a REST API that enabled real-time data retrieval, significantly reducing response times and improving access to product and transaction information. I also designed a normalized logical database schema to enhance query efficiency and eliminate redundant data storage. Additionally, I created an interactive user interface for business owners and suppliers, which improved user engagement and minimized onboarding friction for new users."
+    },
+    {
+      "name": "Peer-to-Peer File Sharing System",
+      "project type": "Academic Project",
+      "period": "Fall 2024",
+      "topic": "Distributed Systems",
+      "description": "A Python-based P2P file-sharing network with chunked transfers, multi-threaded downloads, and built-in integrity checks for fast and reliable file distribution.",
+      "tech": ["Python"],
+      "details": "I designed a peer-to-peer (P2P) file-sharing network in Python, featuring a central server and multiple peers to enable efficient and decentralized file distribution. The system uses a chunk-based approach to split large files, allowing simultaneous downloads from multiple peers, which significantly improves overall download speed. I implemented multi-threading to handle parallel connections smoothly and ensure scalability. To maintain data integrity, I integrated hashing-based checks that verify the accuracy of downloaded chunks and discard any corrupted data."
+    },
+    {
+      "name": "Dynamic Storage Allocator",
+      "project type": "Academic Project",
+      "period": "Spring 2024",
+      "topic": "Memory Management",
+      "description": "A custom C dynamic memory allocator featuring optimized malloc/realloc/free, segregated free lists, and a heap consistency checker for robust memory management.",
+      "tech": ["C"],
+      "details": "I developed a dynamic memory allocator for C programs by implementing custom versions of malloc, realloc, and free, with a focus on optimizing space utilization and throughput. This was achieved through techniques such as block header/footer optimization, coalescing of free blocks, and the use of size-based segregated linked lists for efficient allocation. To ensure reliable memory management, I also created a heap consistency checker that runs in debugging mode to detect and resolve heap inconsistencies."
+    },
+    {
+      "name": "Expense Tracker App",
+      "project type": "Personal Project",
+      "period": "Summer 2023",
+      "topic": "Full-Stack Development",
+      "description": "A MERN stack expense tracker web app with real-time transaction updates and seamless backend integration for efficient personal finance management.",
+      "tech": ["React", "Node.js", "Express.js", "MongoDB"],
+      "details": "I developed a user-friendly expense tracker web application using the MERN stack, enabling users to effortlessly manage and track their finances. The frontend was built with React.js, providing a responsive interface with real-time updates to transactions and balances in the DOM. On the backend, I implemented business logic using Node.js and Express.js to handle data storage and integrated the application with MongoDB for efficient and reliable data management."
+    },
+    {
+      "name": "Linear Device Library",
+      "project type": "Academic Project",
+      "period": "Spring 2023",
+      "topic": "Systems Programming",
+      "description": "A C-based Linux utility that combines 16 JBODs into a 1 MB linear device with read/write support, LRU caching, and TCP networking for efficient storage access.",
+      "tech": ["C", "Linux"],
+      "details": "I designed and developed a Linux mdadm-style utility in C to configure 16 JBOD devices, each 64 KB in size, into a single coherent 1 MB linear storage device. I implemented core read and write functionalities that allowed access to the storage architecture using a user-provided buffer. To enhance performance and flexibility, I introduced an LRU caching mechanism that reduced the cost of JBOD operations by 30%, and added networking support by developing a client component to communicate with the embedded JBOD server over TCP."
+    },
+    {
+      "name": "Mini CPU",
+      "project type": "Academic Project",
+      "period": "Fall 2023",
+      "topic": "Computer Organization and Design",
+      "description": "A Verilog-based 5-stage MIPS pipeline with ALU-to-ALU data forwarding and hazard resolution for optimized execution of R-type instructions.",
+      "tech": ["Verilog"],
+      "details": "I designed and developed a comprehensive 5-stage MIPS pipeline in Verilog to execute R-type arithmetic instructions efficiently. To optimize CPU performance and ensure accurate data processing, I implemented data-forwarding modules using a state machine, enabling ALU-to-ALU forwarding and effective handling of data hazards. This included integrating detailed case handling to support accurate and reliable data manipulation across pipeline stages."
+    },
+    {
+      "name": "Course Scheduler App",
+      "project type": "Academic Project",
+      "period": "Fall 2022",
+      "topic": "Core Java",
+      "description": "A database-driven course scheduler with role-based access, built using OOP principles, SQL, and a tabbed GUI for organized course and student management.",
+      "tech": ["Java", "SQL"],
+      "details": "I created a database-driven course scheduler application that supports both administrative and student authorizations, applying object-oriented programming principles throughout the design. I used SQL to query student, course, and schedule data from an Apache Derby database, ensuring accurate and efficient data retrieval. To enhance user experience, I designed a tabbed layout graphical user interface (GUI) that presents information in a clear and organized manner."
+    },
+    {
+      "name": "Furniture Store App",
+      "project type": "Personal Project",
+      "period": "Summer 2022",
+      "topic": "AR Development",
+      "description": "An iOS AR app for virtual room decor that lets users place, scale, and move life-size furniture models in real-world spaces with saved layouts and guided setup.",
+      "tech": ["ARKit", "RealityKit", "Swift"],
+      "details": "I created an immersive iOS virtual room decor app designed to help users plan furniture placement in their actual living spaces, eliminating the need to visit multiple furniture stores. The app features a picture menu at the bottom of the interface, allowing users to select and place life-sized furniture models in the real world with a tap. I enhanced these models with functionality for scaling, rotation, and movement to provide a realistic and flexible design experience. To support new users, I integrated an AR Coaching Overlay that guides them through app setup and room scanning. The app also includes persistence to save virtual room maps, displays real-time mapping status for debugging, and offers a clear button to delete saved maps along with an undo button to remove the last added model."
+    },
+    {
+      "name": "Measurement App",
+      "project type": "Personal Project",
+      "period": "Summer 2022",
+      "topic": "AR Development",
+      "description": "An iOS AR measurement app that lets users mark two points in the real world to calculate distances, with logging, undo, and guided setup features.",
+      "tech": ["ARKit", "RealityKit", "Swift"],
+      "details": "I created an iOS virtual measurement app that allows users to measure the distance between two real-world points using augmented reality, supported by an AR Coaching Overlay for guided setup. Users can place two model entities with a tap to mark the points, and the app calculates and displays the distance in meters. I implemented a logging feature to store all measurement records, along with a clear button to reset the log and an undo button to remove the last entry, enhancing the overall user experience."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Amphenol",
+      "location": "Nashua, NH",
+      "role": "Software Engineer Intern",
+      "period": "June 2024 - August 2024",
+      "work": "I developed a C++ command-line interface to communicate with I2C devices, PWM controllers, and TC amplifier chips, leveraging their capabilities for high-speed cable thermal testing. I engineered robust wrapper functions that provided seamless access to all chip features according to their datasheet specifications, ensuring reliable control and future scalability. To validate the setup, I created a testing environment using PWM logic to simulate real-world conditions and facilitate empirical data analysis prior to integration with the thermostream system. Additionally, I programmed a customized PID control algorithm that improved temperature correction accuracy from ±7°C to ±0.5°C, meeting stringent customer requirements."
+    },
+    {
+      "company": "Academic Excellence Center (AEC) at Penn State",
+      "location": "Univesity Park",
+      "role": "Lead Computer Science Tutor",
+      "period": "October 2023 - Present",
+      "work": "I provided academic support at the Academic Excellence Center (AEC) by leading exam review sessions, as well as offering one-on-one and group tutoring in data structures and algorithms (DSA), object-oriented programming (OOP), and systems programming."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+/* container grid: auto-fit cards at min 120px width */
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+/* each skill as a card */
+.card {
+  background: var(--gpt-side);
+  color: var(--gpt-text);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
+}

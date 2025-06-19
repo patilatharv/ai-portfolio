@@ -1,0 +1,17 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--gpt-text);
+  }
+  
+  .text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gpt-text-subtle);
+  }
