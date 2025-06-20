@@ -1,0 +1,224 @@
+{
+    "about": "I recently graduated from Penn State University with a degree in Computer Science and a minor in Mathematics. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+    "education": [
+        {
+            "period": "2021-2024",
+            "college": "The Pennsylvania State University",
+            "degree": "Bachelor of Science",
+            "major": "Computer Science"
+        }
+    ],
+    "skills": [
+        {
+            "Backend": [
+                {
+                    "Icon": "/images/logos/Python-logo.svg",
+                    "Tech": "Python", 
+                    "Description": "General-purpose programming language"
+                },
+                {
+                    "Icon": "/images/logos/C-logo.svg",
+                    "Tech": "C", 
+                    "Description": "Systems-level language for OS and embedded development"
+                },
+                {
+                    "Icon": "/images/logos/cpp_logo.png",
+                    "Tech": "C++", 
+                    "Description": "High-performance server and system code"
+                },
+                {
+                    "Icon": "/images/logos/Java-logo.svg.png",
+                    "Tech": "Java", 
+                    "Description": "Backend language for enterprise and web systems"
+                },
+                {
+                    "Icon": "/images/logos/nodejs-logo.png",
+                    "Tech": "Node.js", 
+                    "Description": "JavaScript runtime for server-side code"
+                },
+                {
+                    "Icon": "/images/logos/Express-logo.png",
+                    "Tech": "Express.js", 
+                    "Description": "Web framework for Node.js"
+                }
+            ],
+            "Frontend": [
+                {
+                    "Icon": "/images/logos/react-logo.svg",
+                    "Tech": "React.js", 
+                    "Description": "JavaScript library for building UIs"
+                },
+                {
+                    "Icon": "/images/logos/nextjs-logo.png",
+                    "Tech": "Next.js", 
+                    "Description": "React framework with SSR & routing"
+                },
+                {
+                    "Icon": "/images/logos/javascript-logo.png",
+                    "Tech": "JavaScript", 
+                    "Description": "Core frontend language"
+                },
+                {
+                    "Icon": "/images/logos/swift-logo.png",
+                    "Tech": "Swift", 
+                    "Description": "iOS development language"
+                },
+                {
+                    "Icon": "/images/logos/SwiftUI_logo.png",
+                    "Tech": "SwiftUI", 
+                    "Description": "UI framework for building iOS apps with Swift"
+                },
+                {
+                    "Icon": "/images/logos/arkit-logo.png",
+                    "Tech": "ARKit", 
+                    "Description": "Apple AR framework (front-facing in AR apps)"
+                },
+                {
+                    "Icon": "/images/logos/realitykit-logo.png",
+                    "Tech": "RealityKit", 
+                    "Description": "3D rendering and animation engine for AR"
+                },
+                {
+                    "Icon": "/images/logos/HTML5_logo.png",
+                    "Tech": "HTML", 
+                    "Description": "Structure of web pages"
+                },
+                {
+                    "Icon": "/images/logos/CSS_Logo.png",
+                    "Tech": "CSS", 
+                    "Description": "Styling of web pages"
+                }
+            ],
+            "Databases": [
+                {
+                    "Icon": "/images/logos/sql-logo.png",
+                    "Tech": "SQL", 
+                    "Description": "Language for querying structured relational databases"
+                },
+                {
+                    "Icon": "/images/logos/MySQL_logo.png",
+                    "Tech": "MySQL", 
+                    "Description": "Relational database management system based on SQL"
+                },
+                {
+                    "Icon": "/images/logos/MongoDB-logo.png",
+                    "Tech": "MongoDB", 
+                    "Description": "NoSQL database for document-based storage"
+                }
+            ],
+            "Developer Tools": [
+                {
+                    "Icon": "/images/logos/git-logo.png",
+                    "Tech": "Git", 
+                    "Description": "Distributed version control system"
+                }
+            ],
+            "Embedded Systems / Low-Level Programming": [
+                {
+                    "Icon": "/images/logos/verilog-logo.svg",
+                    "Tech": "Verilog", 
+                    "Description": "Hardware Description Language (HDL) for FPGAs/ASICs"
+                },
+                {
+                    "Icon": "/images/logos/I2C-logo.png",
+                    "Tech": "I2C", 
+                    "Description": "Hardware communication protocol (used in embedded systems)"
+                }
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "Academic Projects": [ 
+                {
+                    "Icon": "/images/projectsImages/NittanyBusiness.png",
+                    "name": "NittanyBusiness E-Commerce Website",
+                    "topic": "Full-Stack Development",
+                    "description": "A full-stack B2B e-commerce platform built to streamline procurement for SMEs by connecting them with suppliers through an intuitive interface and optimized backend infrastructure.",
+                    "tech": ["Next.js", "React", "Node.js", "MySQL"]
+                },
+                {
+                    "Icon": "/images/projectsImages/peertopeer.png",
+                    "name": "Peer-to-Peer File Sharing System",
+                    "topic": "Distributed Systems",
+                    "description": "A Python-based P2P file-sharing network with chunked transfers, multi-threaded downloads, and built-in integrity checks for fast and reliable file distribution.",
+                    "tech": ["Python"]
+                },
+                {
+                    "Icon": "/images/projectsImages/malloc.png",
+                    "name": "Dynamic Storage Allocator",
+                    "topic": "Memory Management",
+                    "description": "A custom C dynamic memory allocator featuring optimized malloc/realloc/free, segregated free lists, and a heap consistency checker for robust memory management.",
+                    "tech": ["C"]
+                },
+                {
+                    "Icon": "/images/projectsImages/lineardevice.png",
+                    "name": "Linear Device Library",
+                    "topic": "Systems Programming",
+                    "description": "A C-based Linux utility that combines 16 JBODs into a 1 MB linear device with read/write support, LRU caching, and TCP networking for efficient storage access.",
+                    "tech": ["C", "Linux"]
+                },
+                {
+                    "Icon": "/images/projectsImages/minicpu.png",
+                    "name": "Mini CPU",
+                    "topic": "Computer Organization and Design",
+                    "description": "A Verilog-based 5-stage MIPS pipeline with ALU-to-ALU data forwarding and hazard resolution for optimized execution of R-type instructions.",
+                    "tech": ["Verilog"]
+                },
+                {
+                    "Icon": "/images/projectsImages/CourseScheduler.png",
+                    "name": "Course Scheduler App",
+                    "topic": "Core Java",
+                    "description": "A database-driven course scheduler with role-based access, built using OOP principles, SQL, and a tabbed GUI for organized course and student management.",
+                    "tech": ["Java", "SQL"]
+                }
+            ],
+            "Personal Projects": [
+                {
+                    "Icon": "/images/projectsImages/portfolio.png",
+                    "name": "AI Portfolio Website",
+                    "topic": "Full-Stack Development",
+                    "description": "A personal website with an integrated AI chatbot that answers questions about my work and experience.",
+                    "tech": ["Next.js", "React", "OpenAI API", "Node.js"]
+                },
+                {
+                    "Icon": "/images/projectsImages/expense.png",
+                    "name": "Expense Tracker App",
+                    "topic": "Full-Stack Development",
+                    "description": "A MERN stack expense tracker web app with real-time transaction updates and seamless backend integration for efficient personal finance management.",
+                    "tech": ["React", "Node.js", "Express.js", "MongoDB"]
+                },
+                {
+                    "Icon": "",
+                    "name": "Furniture Store App",
+                    "topic": "AR Development",
+                    "description": "An iOS AR app for virtual room decor that lets users place, scale, and move life-size furniture models in real-world spaces with saved layouts and guided setup.",
+                    "tech": ["ARKit", "RealityKit", "Swift"]
+                },
+                {
+                    "Icon": "",
+                    "name": "Measurement App",
+                    "topic": "AR Development",
+                    "description": "An iOS AR measurement app that lets users mark two points in the real world to calculate distances, with logging, undo, and guided setup features.",
+                    "tech": ["ARKit", "RealityKit", "Swift"]
+                }
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "company": "Amphenol",
+            "location": "Nashua, NH",
+            "role": "Software Engineer Intern",
+            "period": "June 2024 - August 2024",
+            "work": "• Developed a CLI to interface I2C devices, PWM and TC amplifier chips, leveraging their functionality for high speed cable thermal testing\n• Engineered robust and scalable wrapper functions in C++ for the chips, facilitating seamless access to all chip features as per datasheet specs\n• Devised test setup to simulate real testing environment with PWM logic for empirical data analysis before integration into the thermostream system\n• Programmed a customized TC feedback-based PID control algorithm, achieving dynamic temp correction from over ±7°C to ±0.5°C by leveraging PWM chip features to meet strict customer temp thresholds\n• Wrote clear documentation, streamlining the transition for other engineers"
+        },
+        {
+            "company": "Academic Excellence Center (AEC) at Penn State",
+            "location": "Univesity Park",
+            "role": "Lead Computer Science Tutor",
+            "period": "October 2023 - Present",
+            "work": "• Provided academic support at the AEC, helping engineering students master challenging coursework through tutoring and exam reviews\n• Led one-on-one and group sessions in CS, Math, and Physics, boosting student understanding and confidence, resulting in improved performance"
+        }
+    ]
+}

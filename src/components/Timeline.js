@@ -9,14 +9,14 @@ import 'react-vertical-timeline-component/style.min.css';
 import { MdOutlineWork as WorkIcon } from 'react-icons/md';
 import { IoSchool as SchoolIcon } from 'react-icons/io5';
 import { FaStar as StarIcon } from 'react-icons/fa';
-import portfolioData from '@/data/portfolioData.json';
+import data from '@/data/staticPagesData.json';
 import styles from '@/styles/timeline.module.css';
 
 export default function Timeline() {
   // 1) Build a unified list, in chronological order:
   const items = [
     // Experiences first:
-    ...portfolioData.experience.map((exp) => ({
+    ...data.experience.map((exp) => ({
       dateRange: exp.period,
       type: 'work',
       title: exp.role,
@@ -25,7 +25,7 @@ export default function Timeline() {
       tech: exp.tech?.join(', ')
     })),
     // Then education
-    ...portfolioData.education.map((ed) => ({
+    ...data.education.map((ed) => ({
       dateRange: ed.period,
       type: 'education',
       title: ed.degree,

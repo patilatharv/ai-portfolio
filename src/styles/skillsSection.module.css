@@ -1,17 +1,89 @@
-/* container grid: auto-fit cards at min 120px width */
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
 }
 
-/* each skill as a card */
-.card {
-  background: var(--gpt-side);
-  color: var(--gpt-text);
-  padding: 1rem;
-  border-radius: 8px;
+.category {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 1.75rem;
+  margin-bottom: 3rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  font-size: 0.95rem;
+  position: relative;
+  display: inline-block;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0; 
+  width: 100%; 
+  height: 0.25rem;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* color pallete
+#ffbfbf
+#bf6060
+#ffe6e6
+#ff8080
+#bfffbf
+#60bf60
+#e6ffe6
+#80ff80
+*/
+
+.card {
+  background: linear-gradient(180deg, #2E2E2E 0%, #262626 100%);
+  color: var(--gpt-text);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.cardImage {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;    /* preserve aspect ratio */
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #999999;
+  line-height: 1.4;
 }

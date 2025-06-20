@@ -1,8 +1,7 @@
 import React from 'react'
 import Timeline from '@/components/Timeline';
-import EducationSection from '@/components/EducationSection'
-import ProjectsSection  from '@/components/ProjectsSection'
-import SkillsSection    from '@/components/SkillsSection'
+import ProjectsSection from '@/components/ProjectsSection'
+import SkillsSection from '@/components/SkillsSection'
 import AboutMeSection from '@/components/AboutMeSection'
 
 const page = () => {
@@ -18,12 +17,6 @@ const page = () => {
       <section id="professional-experiences">
         <h2>Professional Experiences</h2>
         <Timeline />
-      </section>
-
-      {/* Education */}
-      <section id="education">
-        <h2>Education</h2>
-        <EducationSection />
       </section>
 
       {/* Projects */}

@@ -1,34 +1,114 @@
-.grid {
+/* overall wrapper to center all categories */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+  }
+  
+  /* each category block (Academic vs Personal) */
+  .category {
+    width: 100%;
+    max-width: 960px;
+  }
+  
+  /* section heading */
+  .heading {
+    font-size: 1.75rem;
+    color: var(--gpt-text);
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* optional full-width underline under heading */
+  .heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: currentColor;
+    border-radius: 2px;
+  }
+  
+  /* grid of project cards */
+  .grid {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
   }
   
+  /* individual project card */
   .card {
     background: var(--gpt-side);
-    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    overflow: hidden;              /* clip the img to the border */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   }
   
+  /* image that bleeds full-width to the card edge */
+  .image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  /* card inner padding for text */
+  .content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* project name */
   .title {
-    margin: 0 0 0.5rem;
-    font-size: 1.1rem;
+    margin: 0;
+    font-size: 1.2rem;
     color: var(--gpt-text);
   }
   
-  .description {
-    margin: 0 0 0.5rem;
+  /* project topic / subtitle */
+  .topic {
+    margin: 0;
+    font-style: italic;
     color: var(--gpt-text-subtle);
   }
   
-  .details {
-    margin: 0 0 0.5rem;
-    font-size: 0.95rem;
+  /* description */
+  .description {
+    margin: 0;
     color: var(--gpt-text);
+    flex: 1;   /* push pills to bottom if you like */
   }
   
+  /* pill‐style tech tags container */
   .tech {
-    margin: 0;
-    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  /* each individual pill */
+  .pill {
+    background: var(--gpt-link-hover);
+    color: var(--gpt-text);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
   }
