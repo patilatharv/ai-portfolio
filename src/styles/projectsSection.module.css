@@ -4,34 +4,37 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
   }
   
   /* each category block (Academic vs Personal) */
   .category {
     width: 100%;
     max-width: 960px;
+    text-align: center;
   }
   
   /* section heading */
   .heading {
-    font-size: 1.75rem;
-    color: var(--gpt-text);
-    margin-bottom: 1rem;
-    text-align: center;
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: #A9B4C2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     position: relative;
-    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 2.5rem;
   }
   
-  /* optional full-width underline under heading */
+  /* full-width underline under heading */
   .heading::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -0.5rem;
     left: 0;
     width: 100%;
     height: 3px;
-    background: currentColor;
+    background-color: rgba(169, 180, 194, 0.3);
     border-radius: 2px;
   }
   
@@ -45,19 +48,21 @@
   
   /* individual project card */
   .card {
-    background: var(--gpt-side);
-    border-radius: 8px;
+    background: rgba(32,34,37, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     overflow: hidden;              /* clip the img to the border */
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 400px;
+    box-shadow: 0 4px 20px rgba(63, 169, 245, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(63, 169, 245, 0.6);
   }
   
   /* image that bleeds full-width to the card edge */
@@ -66,6 +71,20 @@
     height: auto;
     display: block;
     object-fit: cover;
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover .image {
+    transform: scale(1.05);
+  }
+
+  .separator {
+    width: 90%;
+    height: 4px;
+    margin: 0 auto;
+    background-color: rgba(63, 169, 245, 0.2); 
+    border: none;
+    border-radius: 20px;
   }
   
   /* card inner padding for text */
@@ -80,21 +99,21 @@
   .title {
     margin: 0;
     font-size: 1.2rem;
-    color: var(--gpt-text);
+    color: #3FA9F5;
   }
   
   /* project topic / subtitle */
   .topic {
     margin: 0;
     font-style: italic;
-    color: var(--gpt-text-subtle);
+    color: #A0B7CC;
   }
   
   /* description */
   .description {
     margin: 0;
-    color: var(--gpt-text);
-    flex: 1;   /* push pills to bottom if you like */
+    color: 	#C9D1D9;
+    flex: 1;   /* push pills to bottom */
   }
   
   /* pill‐style tech tags container */
@@ -106,9 +125,16 @@
   
   /* each individual pill */
   .pill {
-    background: var(--gpt-link-hover);
-    color: var(--gpt-text);
+    background:#2E8BC0;
+    color: #F5F5F5;
     padding: 0.25rem 0.75rem;
     border-radius: 999px;
     font-size: 0.85rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .pill:hover {
+    transform: scale(1.1);
+    background-color: #3FA9F5;
+    color: var(--gpt-bg);
   }

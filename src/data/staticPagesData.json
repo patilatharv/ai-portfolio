@@ -1,4 +1,5 @@
 {
+    "headshot": "/images/headshot/headshot.jpeg",
     "about": "I recently graduated from Penn State University with a degree in Computer Science and a minor in Mathematics. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
     "education": [
         {
@@ -189,14 +190,14 @@
                     "tech": ["React", "Node.js", "Express.js", "MongoDB"]
                 },
                 {
-                    "Icon": "",
+                    "Icon": "/images/projectsImages/NittanyBusiness.png",
                     "name": "Furniture Store App",
                     "topic": "AR Development",
                     "description": "An iOS AR app for virtual room decor that lets users place, scale, and move life-size furniture models in real-world spaces with saved layouts and guided setup.",
                     "tech": ["ARKit", "RealityKit", "Swift"]
                 },
                 {
-                    "Icon": "",
+                    "Icon": "/images/projectsImages/NittanyBusiness.png",
                     "name": "Measurement App",
                     "topic": "AR Development",
                     "description": "An iOS AR measurement app that lets users mark two points in the real world to calculate distances, with logging, undo, and guided setup features.",

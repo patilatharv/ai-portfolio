@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
-import data from '@/data/staticPagesData.json';      // ← your JSON from “projects” key
+import data from '@/data/staticPagesData.json';
 import styles from '@/styles/projectsSection.module.css';
+import { motion } from 'framer-motion';
 
 export default function ProjectsSection() {
-  // your JSON has projects as an array with a single object that
-  // has keys "Academic Projects" and "Personal Projects"
   const categories = data.projects[0];
 
   return (
@@ -17,7 +16,15 @@ export default function ProjectsSection() {
 
           <div className={styles.grid}>
             {projects.map((proj) => (
-              <div key={proj.name} className={styles.card}>
+                <motion.div
+                    key={proj.name}
+                    className={styles.card}
+                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    whileHover={{ transition: { duration: 0 } , scale: 1.03 }}
+                    transition={{ duration: 0.25, ease: 'easeOut' }}
+                    viewport={{ once: false, amount: 0.2 }}
+                >
                 {/* IMAGE */}
                 {proj.Icon && (
                   <img
@@ -26,6 +33,8 @@ export default function ProjectsSection() {
                     className={styles.image}
                   />
                 )}
+
+                <hr className={styles.separator} />
 
                 {/* TEXT CONTENT */}
                 <div className={styles.content}>
@@ -42,7 +51,7 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>

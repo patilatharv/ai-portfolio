@@ -3,9 +3,9 @@
 import React from 'react';
 import data from '@/data/staticPagesData.json';
 import styles from '@/styles/skillsSection.module.css';
+import { motion } from 'framer-motion';
 
 export default function SkillsSection() {
-  // Your JSON has "skills" as an array with a single object:
   const skillsData = data.skills[0];
 
   return (
@@ -15,7 +15,14 @@ export default function SkillsSection() {
           <h2 className={styles.heading}>{categoryName}</h2>
           <div className={styles.cardsGrid}>
             {items.map(item => (
-              <div key={item.Tech} className={styles.card}>
+              <motion.div
+                key={item.Tech}
+                className={styles.card}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+                viewport={{ once: false, amount: 0.2 }}
+                >
                 <img
                   src={item.Icon}
                   alt={item.Tech}
@@ -23,7 +30,7 @@ export default function SkillsSection() {
                 />
                 <h3 className={styles.cardTitle}>{item.Tech}</h3>
                 <p className={styles.cardDesc}>{item.Description}</p>
-              </div>
+                </motion.div>
             ))}
           </div>
         </div>
