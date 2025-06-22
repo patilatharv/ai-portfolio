@@ -23,7 +23,7 @@ const page = () => {
       ) : (
         <p>
           Your browser does not support viewing PDFs directly.{' '}
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/Atharv Resume.pdf" target="_blank" rel="noopener noreferrer">
             Click here to download the resume.
           </a>
         </p>
