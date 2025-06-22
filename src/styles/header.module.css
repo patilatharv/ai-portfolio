@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 110px; 
+    height: 103px; 
     background: var(--gpt-bg); 
     border-bottom: 1px solid #2d2d2d;
     z-index: 99;

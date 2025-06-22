@@ -4,6 +4,7 @@ import React from 'react'
 import { useState, useContext } from 'react';
 import styles from '@/styles/textbox.module.css'
 import { ChatContext } from '@/context/chatContext';
+import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 
 const Textbox = () => {
   const { messages, setMessages, loading, setLoading } = useContext(ChatContext);
