@@ -1,35 +1,27 @@
 'use client';
-import React, { useEffect, useState } from 'react';
 
-const page = () => {
-  const [isClient, setIsClient] = useState(false);
+import React from 'react';
+import styles from '@/styles/resume.module.css';
 
-  useEffect(() => {
-    // Only run on client
-    setIsClient(true);
-  }, []);
-
+const ResumePage = () => {
   return (
-    <div>
-        <h1>My Resume</h1>
-        {isClient ? (
-        <iframe
-          src="/resume.pdf"
-          width="100%"
-          height="800px"
-          style={{ border: 'none' }}
-          title="My Resume"
-        />
-      ) : (
-        <p>
-          Your browser does not support viewing PDFs directly.{' '}
-          <a href="/Atharv Resume.pdf" target="_blank" rel="noopener noreferrer">
-            Click here to download the resume.
-          </a>
-        </p>
-      )}
-    </div>
-  )
-}
+    <div className={styles.wrapper}>
+      <h1 className={styles.heading}>My Resume</h1>
 
-export default page
+      <iframe
+        src="/Atharv Resume.pdf"
+        className={styles.iframe}
+        title="Atharv Patil Resume"
+      />
+
+      <p className={styles.fallback}>
+        Having trouble viewing?{' '}
+        <a href="/Atharv Resume.pdf" target="_blank" rel="noopener noreferrer">
+          Open in a new tab
+        </a>
+      </p>
+    </div>
+  );
+};
+
+export default ResumePage;
