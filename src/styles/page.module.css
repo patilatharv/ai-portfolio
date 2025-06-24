@@ -3,6 +3,12 @@
     padding-bottom: 24px;
   }
 
+.answer_field :global(hr) {
+  border: none;
+  border-bottom: 1px solid #2d2d2d;
+  margin: 2.8rem 0;
+}
+
   .chat_main {
     display: flex;
     flex-direction: column;

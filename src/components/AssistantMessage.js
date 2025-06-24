@@ -35,12 +35,12 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
 
   return (
     <div
-    className={styles.answer_field}
-    style={{
-      minHeight: !typed ? '100vh' : 'auto',
-      transition: 'min-height 0.3s ease-out',
-    }}
-  >
+        className={styles.answer_field}
+        style={{
+        minHeight: !typed ? '100vh' : 'auto',
+        transition: 'min-height 0.3s ease-out',
+        }}
+    >
     <ReactMarkdown remarkPlugins={[remarkGfm]}>
       {toRender}
     </ReactMarkdown>

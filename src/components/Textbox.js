@@ -78,7 +78,9 @@ const Textbox = () => {
             onClick={handleAsk}
             disabled={loading || !question.trim()}
             className={styles.submit_button}
-          />
+          >
+            <ArrowUpwardRoundedIcon />
+          </button>
         </div>
       </div>
     </>
