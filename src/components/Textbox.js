@@ -40,14 +40,14 @@ const Textbox = () => {
 
       setMessages([
         ...newMessages,
-        { role: 'assistant', content: assistantContent },
+        { role: 'assistant', content: assistantContent, typed: false },
       ]);
 
     } catch (err) {
       console.error(err);
       setMessages([
         ...newMessages,
-        { role: 'assistant', content: 'Error: Failed to get response.' },
+        { role: 'assistant', content: 'Error: Failed to get response.', typed: false },
       ]);
     } finally {
       setLoading(false);

@@ -1,6 +1,6 @@
 .answer_field {
     font-size: large;
-    /* text-align: left; */
+    padding-bottom: 24px;
   }
 
   .chat_main {
@@ -8,7 +8,6 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 24px;
-    padding-bottom: 24px; /* Maybe remove later */
     position: relative;
   }
 
@@ -45,3 +44,31 @@
     border-radius: 22px;
     word-wrap: break-word;
   }
+
+  .thinking {
+    display: inline-block;    
+    white-space: nowrap;        
+    overflow: hidden;           
+    vertical-align: bottom;     
+    animation: shine 1.2s ease-in-out infinite;
+}
+
+/* add 3 dots */
+.thinking::after {
+  content: '...';
+  display: inline-block;
+  width: 0ch;
+  animation: ellipsis 1.2s steps(3,end) infinite;
+}
+
+@keyframes ellipsis {
+  0%   { width: 0ch; }
+  33%  { width: 1ch; }
+  66%  { width: 2ch; }
+  100% { width: 3ch; }
+}
+
+@keyframes shine {
+  0%, 100% { color: var(--gpt-text-subtle); }
+  50% { color: #707070; }
+}

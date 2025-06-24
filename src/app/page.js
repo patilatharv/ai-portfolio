@@ -1,70 +1,71 @@
-// app/chat/page.js (or wherever your ChatPage lives)
-'use client';
+'use client'
 
-import { useContext, useEffect, useRef } from 'react';
-import Textbox from '@/components/Textbox';
-import styles from '@/styles/page.module.css';
-import formatAnswer from '@/utils/formatAnswer';
-import { ChatContext } from '@/context/chatContext';
+import React, { useContext, useEffect, useRef, Fragment } from 'react'
+import Textbox from '@/components/Textbox'
+import AssistantMessage from '@/components/AssistantMessage'
+import { ChatContext } from '@/context/chatContext'
+import styles from '@/styles/page.module.css'
 
 export default function ChatPage() {
-  const { messages, loading } = useContext(ChatContext);
+  const { messages, loading } = useContext(ChatContext)
+  const lastUserRef = useRef(null)
 
-  // ref to the scrolling container
-  const wrapperRef = useRef(null);
-  // ref to the very last message element
-  const lastMessageRef = useRef(null);
+  // Determine if the last message is from the user
+  const lastMessage = messages[messages.length - 1]
+  const showThinking = lastMessage?.role === 'user'
 
   useEffect(() => {
-    // Only scroll when the last message is from the user
-    if (
-      messages.length > 0 &&
-      lastMessageRef.current
-    ) {
-      lastMessageRef.current.scrollIntoView({
+    if (lastUserRef.current) {
+      lastUserRef.current.scrollIntoView({
         behavior: 'smooth',
-        block: 'center',
-      });
+        block: 'start',
+      })
     }
-  }, [messages]);
+  }, [messages])
 
   return (
     <>
       <main className={styles.chat_main}>
-        <div ref={wrapperRef} className={styles.chat_wrapper}>
+        <div className={styles.chat_wrapper}>
           {messages.map((m, i) => {
-            const isLast = i === messages.length - 1;
-            if (m.role === 'user') {
-              return (
-                <div
-                  key={i}
-                  ref={isLast ? lastMessageRef : null}
-                  className={styles.bubble_row}
-                >
-                  <div className={styles.bubble}>{m.content}</div>
-                </div>
-              );
-            } else {
-              return (
-                <div
-                  key={i}
-                  ref={isLast ? lastMessageRef : null}
-                  className={styles.answer_field}
-                >
-                  {formatAnswer(m.content)}
-                </div>
-              );
-            }
+            const isLast = i === messages.length - 1
+            const isLastUser = isLast && m.role === 'user'
+
+            return (
+              <Fragment key={i}>
+                {m.role === 'user' ? (
+                  <div
+                    ref={isLastUser ? lastUserRef : null}
+                    className={styles.bubble_row}
+                  >
+                    <div className={styles.bubble}>{m.content}</div>
+                  </div>
+                ) : (
+                  <div className={styles.answer_field}>
+                    <AssistantMessage
+                      content={m.content}
+                      isLast={isLast}
+                      index={i}
+                      typed={m.typed}
+                    />
+                  </div>
+                )}
+              </Fragment>
+            )
           })}
-          {loading && (
-            <div ref={lastMessageRef} className={styles.answer_field}>
-              Thinking…
-            </div>
+
+          {/* Show thinking state & spacer if waiting for assistant */}
+          {showThinking && (
+            <>
+              <div className={styles.answer_field}>
+                <span className={styles.thinking}>Thinking</span>
+              </div>
+              <div style={{ height: '100vh' }} />
+            </>
           )}
         </div>
       </main>
       <Textbox />
     </>
-  );
+  )
 }
-
