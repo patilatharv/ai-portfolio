@@ -43,8 +43,7 @@
     opacity: 0.85;
     transition: margin-left 0.3s ease;
   }
-  
-  /* Optionally, scale with sidebar open/closed */
+
   .open .powered_by {
     margin-left: 255px;
   }

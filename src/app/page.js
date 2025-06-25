@@ -5,10 +5,12 @@ import Textbox from '@/components/Textbox'
 import AssistantMessage from '@/components/AssistantMessage'
 import { ChatContext } from '@/context/chatContext'
 import styles from '@/styles/page.module.css'
+import ScrollDownButton from '@/components/ScrollDownButton'
 
 export default function ChatPage() {
   const { messages, loading } = useContext(ChatContext)
   const lastUserRef = useRef(null)
+  const bottomRef = useRef(null)
 
   // Determine if the last message is from the user
   const lastMessage = messages[messages.length - 1]
@@ -63,6 +65,20 @@ export default function ChatPage() {
               <div style={{ height: '100vh' }} />
             </>
           )}
+
+          {/* ← invisible bottom anchor */}
+          <div
+            ref={bottomRef}
+            style={{
+              height: 0,
+              visibility: 'hidden',
+              /* if you have a sticky header or textbox overlap: */
+              scrollMarginBottom: '115px',
+            }}
+          />     
+          <div className={styles.scroll_button_row}>
+            <ScrollDownButton bottomRef={bottomRef} />
+          </div>
         </div>
       </main>
       <Textbox />

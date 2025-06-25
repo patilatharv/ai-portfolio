@@ -78,3 +78,8 @@
   0%, 100% { color: var(--gpt-text-subtle); }
   50% { color: #707070; }
 }
+
+.scroll_button_row {
+  display: flex;
+  justify-content: center;
+}
