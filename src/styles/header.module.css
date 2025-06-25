@@ -56,17 +56,31 @@
     position: absolute;
     display: flex;
     align-items: center;
+    justify-content: center;
     bottom: 8px;
     right: 16px;
-    background: #fff;
-    border: none;
+    background: #303030;
+    color: #ffffff;
+    border: 1px solid #383838;
     cursor: pointer;
-    border-radius: 10px;
-    padding: 8px;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
   }
 
-  .clear_button:disabled {
-    background: #e0e0e0;
-    color: #aaa;
-    cursor: not-allowed;
+  .clear_button:hover {
+    background-color: #3a3a3a;
+    transform: scale(1.05);
   }
+
+
+.clear_button:disabled {
+  background-color: #444;
+  color: #999;
+  border-color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
