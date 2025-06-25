@@ -1,27 +1,27 @@
 import { createContext, useState } from 'react';
+import { defaultAssistantMessage } from '@/helpers/defaultMessage';
 
 export const ChatContext = createContext({
   messages: [],
   setMessages: () => {},
   loading: false,
   setLoading: () => {},
+  clearMessages: () => {},
 });
 
 export function ChatProvider({ children }) {
-  const [messages, setMessages] = useState([
-    // welcome message is already "typed"
-    {
-      role: 'assistant',
-      typed: false,
-      content:
-        "Hello! I’m Atharv's AI assistant. You can ask me about Atharv's portfolio.",
-    },
-  ]);
+  const initialMessages = [defaultAssistantMessage];
+
+  const [messages, setMessages] = useState(initialMessages);
   const [loading, setLoading] = useState(false);
+
+  const clearMessages = () => {
+    setMessages(initialMessages);
+  };
 
   return (
     <ChatContext.Provider
-      value={{ messages, setMessages, loading, setLoading }}
+      value={{ messages, setMessages, loading, setLoading, clearMessages }}
     >
       {children}
     </ChatContext.Provider>
