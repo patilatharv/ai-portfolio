@@ -35,7 +35,7 @@
     padding: 22px 48px 14px 22px; /* top right bottom left */
     border-radius: 30px;
     background: #303030;
-    font-size: large;
+    font-size: 16px;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     box-shadow: 0 1px 4px rgba(60,60,60,0.04);
@@ -61,9 +61,4 @@
 
   .submit_button:hover {
     background-color: #c1c1c1;
-  }
-  
-  .submit_button:disabled {
-    background: #c1c1c1;
-    cursor: not-allowed;
   }

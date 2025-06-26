@@ -1,12 +1,20 @@
 .answer_field {
-    font-size: large;
+    font-size: 16px;
     padding-bottom: 24px;
   }
 
 .answer_field :global(hr) {
   border: none;
   border-bottom: 1px solid #2d2d2d;
-  margin: 2.8rem 0;
+  margin: 2.5rem 0;
+}
+
+.answer_field :global(p),
+.answer_field :global(ul),
+.answer_field :global(ol),
+.answer_field :global(pre),
+.answer_field :global(blockquote) {
+  line-height: 1.8; 
 }
 
   .chat_main {
@@ -82,4 +90,38 @@
 .scroll_button_row {
   display: flex;
   justify-content: center;
+}
+
+.suggestions_wrapper {
+  margin-top: 24px;
+}
+
+.suggestions_label {
+  font-weight: bold;
+  color: var(--gpt-text);
+  margin-bottom: 30px;
+}
+
+.suggestionBubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.suggestionBubble {
+  background: var(--gpt-link-hover);
+  color: var(--gpt-text);
+  padding: 12px 20px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  max-width: 60%;
+  word-wrap: break-word;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.suggestionBubble:hover {
+  background-color: #3a3a3a;
+  transform: scale(1.03);
 }

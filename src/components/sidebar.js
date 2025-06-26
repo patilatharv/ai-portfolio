@@ -36,12 +36,12 @@ export default function Sidebar({ isOpen, toggle }) {
 
       <div className={styles.topRow}>
         {isOpen && (
-          <div className={styles.logo}>AP.</div>
+          <img src="/images/logos/AP-logo.png" alt="AP Logo" className={styles.logo} width={27} height={27} />
         )}
         <button className={`${styles.toggleBtn} ${isOpen ? styles.open : styles.closed}`}
           onClick={toggle} aria-label="Toggle sidebar"
         >
-          <MenuRoundedIcon />
+          <MenuRoundedIcon fontSize='medium'/>
         </button>
       </div>
     

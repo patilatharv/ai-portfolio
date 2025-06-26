@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { Roboto } from 'next/font/google';
 import ClientLayout from './clientLayout';
 
-const noto_sans = Roboto({ subsets: ['latin'] });
+const roboto = Roboto({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Atharv | Portfolio',
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${noto_sans.className} app-shell`}>
+      <body className={`${roboto.className} app-shell`}>
         <ClientLayout>
           {children}
         </ClientLayout>

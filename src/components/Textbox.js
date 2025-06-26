@@ -7,8 +7,7 @@ import { ChatContext } from '@/context/chatContext';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 
 const Textbox = () => {
-  const { messages, setMessages, loading, setLoading } = useContext(ChatContext);
-  const [question, setQuestion] = useState("");
+  const { messages, setMessages, loading, setLoading, question, setQuestion } = useContext(ChatContext);
   
   const handleAsk = async () => {
     if (!question.trim()) return;
@@ -76,7 +75,7 @@ const Textbox = () => {
           />
           <button
             onClick={handleAsk}
-            disabled={loading || !question.trim()}
+            // disabled={loading || !question.trim()}
             className={styles.submit_button}
           >
             <ArrowUpwardRoundedIcon />

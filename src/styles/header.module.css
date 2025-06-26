@@ -21,7 +21,7 @@
   
   /* when sidebar is open */
   .open {
-    margin-left: 227px;
+    margin-left: 249px;
     padding: 16px;
   }
   
@@ -75,7 +75,6 @@
     background-color: #3a3a3a;
     transform: scale(1.03);
   }
-
 
 .clear_button:disabled {
   background-color: #444;

@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useTypewriter } from '@/hooks/useTypeWriter';
+import { useTypewriter } from '@/hooks/useTypewriter';
 import { ChatContext } from '@/context/chatContext';
 import styles from '@/styles/page.module.css';
 
@@ -37,13 +37,49 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
     <div
         className={styles.answer_field}
         style={{
-        minHeight: !typed ? '100vh' : 'auto',
-        transition: 'min-height 0.3s ease-out',
+          minHeight: !typed ? '100vh' : 'auto',
+          transition: 'min-height 0.3s ease-out',
         }}
     >
     <ReactMarkdown remarkPlugins={[remarkGfm]}>
       {toRender}
     </ReactMarkdown>
+    
+    {typed && index === 0 && <SuggestedQuestions />}
   </div>
+  );
+}
+
+const suggestedQuestions = [
+  "What are Atharv's most recent projects?",
+  "Can I see his resume?",
+  "Tell me about his software engineering experience.",
+  "What technologies has he worked with?",
+];
+
+function SuggestedQuestions() {
+  const { setQuestion } = useContext(ChatContext);
+
+  const handleClick = (text) => {
+    setQuestion(text); // updates the textbox
+    const textarea = document.querySelector('textarea');
+    if (textarea) textarea.focus();
+  };
+
+  return (
+    <div className={styles.suggestions_wrapper}>
+      <div className={styles.suggestions_label}>You can try asking:</div>
+      <div className={styles.suggestionBubbles}>
+        {suggestedQuestions.map((q) => (
+          <button
+            key={q}
+            className={styles.suggestionBubble}
+            onClick={() => handleClick(q)}
+          >
+            {q}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

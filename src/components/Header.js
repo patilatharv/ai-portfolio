@@ -39,6 +39,7 @@ const Header = ({ isOpen }) => {
               onRequestClose={() => setShowConfirm(false)}
               className={styles.modal_content}
               overlayClassName={styles.modal_overlay}
+              ariaHideApp={false} // disables screen reader app-hiding behavior
             >
               <h2>Clear Chat?</h2>
               <p>This will remove all messages and reset the conversation.</p>
