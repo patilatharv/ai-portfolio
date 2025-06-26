@@ -58,9 +58,12 @@
     align-items: center;
     justify-content: center;
   }
+
+  .submit_button:hover {
+    background-color: #c1c1c1;
+  }
   
   .submit_button:disabled {
-    background: #e0e0e0;
-    color: #aaa;
+    background: #c1c1c1;
     cursor: not-allowed;
   }

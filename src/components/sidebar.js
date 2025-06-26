@@ -34,10 +34,16 @@ export default function Sidebar({ isOpen, toggle }) {
         }}
       >
 
-      <button className={`${styles.toggleBtn} ${isOpen ? styles.open : styles.closed}`}
-       onClick={toggle} aria-label="Toggle sidebar">
-        <MenuRoundedIcon />
-      </button>
+      <div className={styles.topRow}>
+        {isOpen && (
+          <div className={styles.logo}>AP.</div>
+        )}
+        <button className={`${styles.toggleBtn} ${isOpen ? styles.open : styles.closed}`}
+          onClick={toggle} aria-label="Toggle sidebar"
+        >
+          <MenuRoundedIcon />
+        </button>
+      </div>
     
       {isOpen && (
         <nav className={styles.navLinks}>
