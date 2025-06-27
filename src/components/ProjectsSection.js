@@ -1,12 +1,23 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import data from '@/data/staticPagesData.json';
 import styles from '@/styles/projectsSection.module.css';
 import { motion } from 'framer-motion';
+import Modal from 'react-modal';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 export default function ProjectsSection() {
   const categories = data.projects[0];
+  const [modalVideo, setModalVideo] = useState(null);
+
+  const openModal = (videoSrc) => {
+    setModalVideo(videoSrc);
+  };
+
+  const closeModal = () => {
+    setModalVideo(null);
+  };
 
   return (
     <div className={styles.container}>
@@ -26,13 +37,21 @@ export default function ProjectsSection() {
                     viewport={{ once: false, amount: 0.2 }}
                 >
                 {/* IMAGE */}
-                {proj.Icon && (
+                <div className={styles.imageWrapper}>
                   <img
-                    src={proj.Icon}
+                    src={proj.image}
                     alt={`${proj.name} screenshot`}
                     className={styles.image}
                   />
-                )}
+                  {proj.demo && proj.demo.trim() !== '' && (
+                    <div
+                      className={styles.overlay}
+                      onClick={() => openModal(proj.demo)}
+                    >
+                      <PlayCircleOutlineIcon className={styles.playIcon} />
+                    </div>
+                  )}
+                </div>
 
                 <hr className={styles.separator} />
 
@@ -50,12 +69,45 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
+
+                  {/* GITHUB LINK PILL */}
+                  {proj.github && proj.github.trim() !== '' && (
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.githubPill}
+                    >
+                      <img
+                        src="/images/logos/github-mark-white.png"
+                        alt="GitHub Logo"
+                        className={styles.githubIcon}
+                      />
+                      View on GitHub
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </section>
       ))}
+
+      {/* MODAL FOR DEMO VIDEO */}
+      <Modal
+        isOpen={!!modalVideo}
+        onRequestClose={closeModal}
+        className={styles.modalContent}
+        overlayClassName={styles.modalOverlay}
+        shouldCloseOnOverlayClick={true}
+        shouldCloseOnEsc={true}
+        // ariaHideApp={false}
+      >
+        <div className={styles.modalInner}>
+          <button onClick={closeModal} className={styles.closeButton}>×</button>
+          <video src={modalVideo} controls autoPlay className={styles.videoPlayer} />
+        </div>
+      </Modal>
     </div>
   );
 }

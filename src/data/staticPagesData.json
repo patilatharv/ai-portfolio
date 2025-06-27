@@ -132,42 +132,48 @@
         {
             "Academic Projects": [ 
                 {
-                    "Icon": "/images/projectsImages/NittanyBusiness.png",
+                    "demo": "/demo-videos/test1.MOV",
+                    "image": "/images/projectsImages/NittanyBusiness.png",
                     "name": "NittanyBusiness E-Commerce Website",
                     "topic": "Full-Stack Development",
                     "description": "A full-stack B2B e-commerce platform built to streamline procurement for SMEs by connecting them with suppliers through an intuitive interface and optimized backend infrastructure.",
                     "tech": ["Next.js", "React", "Node.js", "MySQL"]
                 },
                 {
-                    "Icon": "/images/projectsImages/peertopeer.png",
+                    "demo": "/demo-videos/test2.MOV",
+                    "image": "/images/projectsImages/peertopeer.png",
                     "name": "Peer-to-Peer File Sharing System",
                     "topic": "Distributed Systems",
                     "description": "A Python-based P2P file-sharing network with chunked transfers, multi-threaded downloads, and built-in integrity checks for fast and reliable file distribution.",
                     "tech": ["Python"]
                 },
                 {
-                    "Icon": "/images/projectsImages/malloc.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/malloc.png",
                     "name": "Dynamic Storage Allocator",
                     "topic": "Memory Management",
                     "description": "A custom C dynamic memory allocator featuring optimized malloc/realloc/free, segregated free lists, and a heap consistency checker for robust memory management.",
                     "tech": ["C"]
                 },
                 {
-                    "Icon": "/images/projectsImages/lineardevice.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/lineardevice.png",
                     "name": "Linear Device Library",
                     "topic": "Systems Programming",
                     "description": "A C-based Linux utility that combines 16 JBODs into a 1 MB linear device with read/write support, LRU caching, and TCP networking for efficient storage access.",
                     "tech": ["C", "Linux"]
                 },
                 {
-                    "Icon": "/images/projectsImages/minicpu.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/minicpu.png",
                     "name": "Mini CPU",
                     "topic": "Computer Organization and Design",
                     "description": "A Verilog-based 5-stage MIPS pipeline with ALU-to-ALU data forwarding and hazard resolution for optimized execution of R-type instructions.",
                     "tech": ["Verilog"]
                 },
                 {
-                    "Icon": "/images/projectsImages/CourseScheduler.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/CourseScheduler.png",
                     "name": "Course Scheduler App",
                     "topic": "Core Java",
                     "description": "A database-driven course scheduler with role-based access, built using OOP principles, SQL, and a tabbed GUI for organized course and student management.",
@@ -176,32 +182,40 @@
             ],
             "Personal Projects": [
                 {
-                    "Icon": "/images/projectsImages/portfolio.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/portfolio.png",
                     "name": "AI Portfolio Website",
                     "topic": "Full-Stack Development",
                     "description": "A personal website with an integrated AI chatbot that answers questions about my work and experience.",
-                    "tech": ["Next.js", "React", "OpenAI API", "Node.js"]
+                    "tech": ["Next.js", "React", "OpenAI API", "Node.js"],
+                    "github": "https://github.com/patilatharv/ai-portfolio"
                 },
                 {
-                    "Icon": "/images/projectsImages/expense.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/expense.png",
                     "name": "Expense Tracker App",
                     "topic": "Full-Stack Development",
                     "description": "A MERN stack expense tracker web app with real-time transaction updates and seamless backend integration for efficient personal finance management.",
-                    "tech": ["React", "Node.js", "Express.js", "MongoDB"]
+                    "tech": ["React", "Node.js", "Express.js", "MongoDB"],
+                    "github": "https://github.com/patilatharv/Expense_Tracker_APP"
                 },
                 {
-                    "Icon": "/images/projectsImages/NittanyBusiness.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/NittanyBusiness.png",
                     "name": "Furniture Store App",
                     "topic": "AR Development",
                     "description": "An iOS AR app for virtual room decor that lets users place, scale, and move life-size furniture models in real-world spaces with saved layouts and guided setup.",
-                    "tech": ["ARKit", "RealityKit", "Swift"]
+                    "tech": ["ARKit", "RealityKit", "Swift"],
+                    "github": "https://github.com/patilatharv/Furniture_Store_App"
                 },
                 {
-                    "Icon": "/images/projectsImages/NittanyBusiness.png",
+                    "demo": "",
+                    "image": "/images/projectsImages/NittanyBusiness.png",
                     "name": "Measurement App",
                     "topic": "AR Development",
                     "description": "An iOS AR measurement app that lets users mark two points in the real world to calculate distances, with logging, undo, and guided setup features.",
-                    "tech": ["ARKit", "RealityKit", "Swift"]
+                    "tech": ["ARKit", "RealityKit", "Swift"],
+                    "github": ""
                 }
             ]
         }

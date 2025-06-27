@@ -5,7 +5,6 @@ import Timeline from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection'
 import SkillsSection from '@/components/SkillsSection'
 import AboutMeSection from '@/components/AboutMeSection'
-import { motion } from 'framer-motion';
 import styles from '@/styles/about.module.css';
 
 const page = () => {

@@ -36,7 +36,9 @@ export default function Sidebar({ isOpen, toggle }) {
 
       <div className={styles.topRow}>
         {isOpen && (
-          <img src="/images/logos/AP-logo.png" alt="AP Logo" className={styles.logo} width={27} height={27} />
+          <Link href="/" passHref>
+            <img src="/images/logos/AP-logo.png" alt="AP Logo" className={styles.logo} />
+          </Link>
         )}
         <button className={`${styles.toggleBtn} ${isOpen ? styles.open : styles.closed}`}
           onClick={toggle} aria-label="Toggle sidebar"

@@ -64,6 +64,11 @@
   .card:hover {
     box-shadow: 0 4px 20px rgba(63, 169, 245, 0.6);
   }
+
+  .imageWrapper {
+    position: relative;
+    cursor: pointer;
+  }
   
   /* image that bleeds full-width to the card edge */
   .image {
@@ -72,6 +77,35 @@
     display: block;
     object-fit: cover;
     transition: transform 0.2s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 0;
+  }
+  
+  .imageWrapper:hover .overlay {
+    opacity: 1;
+  }
+  
+  .playIcon {
+    font-size: 3rem;
+    color: white;
+    transition: transform 0.2s ease;
+  }
+  
+  .overlay:hover .playIcon {
+    transform: scale(1.2);
   }
 
   .card:hover .image {
@@ -137,4 +171,83 @@
     transform: scale(1.1);
     background-color: #3FA9F5;
     color: var(--gpt-bg);
+  }
+
+  .githubPill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    background: #2b3137;
+    color: #f5f5f5;
+    border-radius: 999px;
+    width: 44%;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .githubPill:hover {
+    background-color: #3FA9F5;
+    color: var(--gpt-bg);
+    transform: scale(1.05);
+  }
+  
+  .githubIcon {
+    width: 16px;
+    height: 16px;
+  }
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 9999; /* higher than header/sidebar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modalContent {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modalInner {
+    position: relative;
+    background: #000;
+    padding: 0;
+    border-radius: 10px;
+  }
+  
+  .videoPlayer {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    color: rgb(193, 193, 193);
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
   }

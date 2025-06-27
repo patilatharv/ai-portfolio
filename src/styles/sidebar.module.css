@@ -23,6 +23,9 @@
 
 .logo {
   margin-left: 10px;
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
 }
 
 .navLinks {
