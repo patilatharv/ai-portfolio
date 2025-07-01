@@ -52,8 +52,8 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
 
 const suggestedQuestions = [
   "What are Atharv's most recent projects?",
-  "Can I see his resume?",
   "Tell me about his software engineering experience.",
+  "What did he do during his internship?",
   "What technologies has he worked with?",
 ];
 

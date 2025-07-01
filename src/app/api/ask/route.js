@@ -102,7 +102,7 @@ export async function POST(request) {
       Context:\n
       ${bestMatchContent}
         `.trim();                                             
-        const systemMessage = { role: 'system', content: systemPrompt };
+        const systemMessage = { role: 'developer', content: systemPrompt };
 
     // Assemble full payload: system + entire user/assistant history
     const openAiMessages = [
@@ -111,10 +111,12 @@ export async function POST(request) {
         m.role === 'user' || m.role === 'assistant'
       ),                                                    
     ];
+
+    console.log(openAiMessages)
     
     // Call OpenAI with the conversation context
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o',
+      model: 'gpt-4.1',
       messages: openAiMessages
     });
 

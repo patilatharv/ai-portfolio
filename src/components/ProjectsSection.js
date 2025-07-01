@@ -101,7 +101,7 @@ export default function ProjectsSection() {
         overlayClassName={styles.modalOverlay}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
-        // ariaHideApp={false}
+        ariaHideApp={false}
       >
         <div className={styles.modalInner}>
           <button onClick={closeModal} className={styles.closeButton}>×</button>
