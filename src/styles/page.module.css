@@ -115,9 +115,10 @@
   padding: 12px 20px;
   border-radius: 22px;
   font-size: 15px;
+  text-align: left;
   border: none;
   cursor: pointer;
-  max-width: 60%;
+  max-width: 49%;
   word-wrap: break-word;
   transition: background-color 0.2s ease, transform 0.15s ease;
 }

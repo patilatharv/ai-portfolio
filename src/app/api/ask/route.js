@@ -1,133 +1,144 @@
 import { NextResponse } from 'next/server';
 import openai from '@/utils/openaiClient';
-import portfolioData from '@/data/portfolioData';
-import embeddings from '@/data/embeddings';
+import chunks from '@/data/embeddings_chunks.json';
 
-// A helper to compute cosine similarity between two vectors:
-function cosineSimilarity(vecA, vecB) {
-  const dot = vecA.reduce((sum, a, idx) => sum + a * vecB[idx], 0);
-  const normA = Math.sqrt(vecA.reduce((sum, a) => sum + a * a, 0));
-  const normB = Math.sqrt(vecB.reduce((sum, b) => sum + b * b, 0));
-  return dot / (normA * normB);
-}
 
+// helpers
+const cosineSimilarity = (a, b) => {
+  const dot = a.reduce((s, ai, i) => s + ai * b[i], 0);
+  const nA  = Math.sqrt(a.reduce((s, ai) => s + ai * ai, 0));
+  const nB  = Math.sqrt(b.reduce((s, bi) => s + bi * bi, 0));
+  return dot / (nA * nB);
+};
+const findDetailChunk = id =>
+  chunks.find(c => c.id === id.replace(':summary', ':details'));
+
+// pull numeric YYYYMM, if present (added in generator)
+const getYearMonth = ch => ch.yearMonth ?? 0;
+
+// ───────── constants
+const DEFAULT_K      = 5;
+const SIM_THRESHOLD  = 0.65;
+const LOW_FALLBACK   = 0.30;
+const DETAIL_THRESH  = 0.80;
+
+// route
 export async function POST(request) {
   try {
-    // Read in the full chat history
+    /* parse request */
     const { messages } = await request.json();
-    if (!Array.isArray(messages) || messages.length === 0) {
-      return NextResponse.json(
-        { error: 'No messages provided' },
-        { status: 400 }
-      );
-    }
+    if (!messages?.length)
+      return NextResponse.json({ error: 'No messages' }, { status: 400 });
 
-    // Extract the last user question
-    const lastUserEntry = [...messages]
-      .reverse()
-      .find((m) => m.role === 'user');                       
-    const lastQuestion = lastUserEntry?.content?.trim() || '';  
-    if (!lastQuestion) {                                      
-      return NextResponse.json(
-        { error: 'No user question found' },
-        { status: 400 }
-      );
-    }
+    const lastUser = [...messages].reverse().find(m => m.role === 'user');
+    const question = lastUser?.content?.trim() || '';
+    if (!question)
+      return NextResponse.json({ error: 'No user question' }, { status: 400 });
 
-    // Generate embedding for the user's question
-    const embedResponse = await openai.embeddings.create({
+    /* embed question */
+    const { data } = await openai.embeddings.create({
       model: 'text-embedding-ada-002',
-      input: lastQuestion
+      input: question
     });
-    const questionEmbedding = embedResponse.data[0].embedding;
+    const qVec = data[0].embedding;
 
-    // Perform RAG retrieval
-    let bestMatchSection = null;
-    let bestMatchContent = "";
-    let highestSim = -Infinity;
+    /* intent flags */
+    const wantsRecent    = /recent|latest|newest/i.test(question);
+    const wantsAll       = /\b(all|list|every)\b/i.test(question);
+    const identityQuery  = /\bwho\b|about atharv|essay/i.test(question);
+    const academicQuery  = /\b(academic|college|class)\b/i.test(question);
 
-    // Check bio
-    const simBio = cosineSimilarity(questionEmbedding, embeddings.bio);
-    if (simBio > highestSim) {
-      highestSim = simBio;
-      bestMatchSection = 'bio';
-      bestMatchContent = `Bio:\n${portfolioData.bio}`;
+    /* score all chunks (filter by project type if academic query) */
+    let candidateChunks = chunks;
+    if (academicQuery) {
+      candidateChunks = chunks.filter(
+        c => c.type?.startsWith('proj_') &&
+             /academic/i.test(c.title || '') || /academic project/i.test(c.text)
+      );
+      // if filter removed everything, fall back to all chunks
+      if (candidateChunks.length === 0) candidateChunks = chunks;
     }
 
-    // Check skills
-    const simSkills = cosineSimilarity(questionEmbedding, embeddings.skills);
-    if (simSkills > highestSim) {
-      highestSim = simSkills;
-      bestMatchSection = 'skills';
-      bestMatchContent = `Skills:\n${portfolioData.skills}`;
+    const scored = candidateChunks.map(ch => ({
+      chunk: ch,
+      sim: cosineSimilarity(qVec, ch.embedding)
+    }));
+
+    /* sort */
+    if (wantsRecent) {
+      scored.sort((a, b) => getYearMonth(b.chunk) - getYearMonth(a.chunk));
+    } else {
+      scored.sort((a, b) => b.sim - a.sim);
     }
 
-    // Check education
-    for (const edu of portfolioData.education) {
-      const key = `${edu.college}-${edu.major}`;
-      const sim = cosineSimilarity(questionEmbedding, embeddings.education[key]);
-      if (sim > highestSim) {
-        highestSim = sim;
-        bestMatchSection = 'education';
-        bestMatchContent = `Education:\n${edu.degree} in ${edu.major} from ${edu.college}`;
+    const K = wantsAll || /\bprojects?\b/i.test(question) ? 50 : DEFAULT_K;
+
+    /* collect top-k (+details) */
+    const top = [];
+    for (const { sim, chunk } of scored) {
+      if (sim < SIM_THRESHOLD) break;
+      top.push(chunk);
+      if (sim > DETAIL_THRESH && chunk.id.endsWith(':summary')) {
+        const det = findDetailChunk(chunk.id);
+        if (det) top.push(det);
       }
+      if (top.length >= K) break;
     }
 
-    // Check projects
-    for (const proj of portfolioData.projects) {
-      const key = proj.name;
-      const sim = cosineSimilarity(questionEmbedding, embeddings.projects[key]);
-      if (sim > highestSim) {
-        highestSim = sim;
-        bestMatchSection = 'project';
-        bestMatchContent = `Project: ${proj.name}\nType: ${proj["project type"]}\nPeriod: ${proj.period}\nTopic: ${proj.topic}\nTech: ${proj.tech.join(", ")}\nDescription: ${proj.description}\nDetails: ${proj.details}`;
-      }
+    /* force-include bio on identity query */
+    if (identityQuery) {
+      const bioChunk = chunks.find(c => c.id === 'bio');
+      if (bioChunk && !top.includes(bioChunk)) top.unshift(bioChunk);
     }
 
-    // Check experience
-    for (const exp of portfolioData.experience) {
-      const key = `${exp.company}-${exp.role}`;
-      const sim = cosineSimilarity(questionEmbedding, embeddings.experience[key]);
-      if (sim > highestSim) {
-        highestSim = sim;
-        bestMatchSection = 'experience';
-        bestMatchContent = `Experience:\n${exp.role} at ${exp.company}\nLocation: ${exp.location}\nPeriod: ${exp.period}\nWork: ${exp.work}`;
-      }
+    /* low-similarity backup */
+    if (top.length === 0) {
+      top.push(...scored.filter(s => s.sim >= LOW_FALLBACK).slice(0, 3).map(s => s.chunk));
     }
+    if (top.length === 0)
+      return NextResponse.json({
+        answer:
+          "I don’t have enough info to answer that yet — feel free to ask about Atharv’s skills, projects, or experience!"
+      });
 
-    // Build a single system prompt with retrieved context 
-    const systemPrompt = `You are a helpful assistant for a personal portfolio site created by Atharv. All the knowledge you have about 
-      about project and the data is based on Atharv. Use only the following information to answer the question about Atharv from below:\n
+    /* build prompt */
+    const context = top.map(c => c.text.trim()).join('\n\n---\n\n');
 
-      Context:\n
-      ${bestMatchContent}
-        `.trim();                                             
-        const systemMessage = { role: 'developer', content: systemPrompt };
+    const systemPrompt = `
+      # Identity
+        You are a helpful portfolio assistant for this portfolio site created by Atharv. Your job is to answer user's questions about 
+        Atharv to the best of your ability using a friendly tone
 
-    // Assemble full payload: system + entire user/assistant history
-    const openAiMessages = [
-      systemMessage,                                        
-      ...messages.filter((m) =>
-        m.role === 'user' || m.role === 'assistant'
-      ),                                                    
-    ];
+      # Instructions 
+        * Speak in a warm, conversational tone. Start with a brief acknowledgement (“Sure,” “Absolutely,” etc.) if applicable and end with a 
+          light offer of further help about the current response.
+        * Use markdown for readability (headings, lists, bold, horizontal rules, etc.).
+        * DO NOT use emojis
+        * Answer ONLY using information inside <context>. If context is missing, say you don’t have that info (no guessing).
+        * You have to be honest in your responses about Atharv. For example - If a user asks a question about Atharv's fit for a job 
+          that he is so clearly underqualified for then you should express your honest opinion saying he is not qualified. 
 
-    console.log(openAiMessages)
-    
-    // Call OpenAI with the conversation context
+      <context>
+      ${context}
+      </context>
+      `.trim();
+
+    const devMsg = { role: 'developer', content: systemPrompt };
+
+    /* trim history for cost */
+    const history = messages.slice(-10);
+
+    /* call OpenAI */
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4.1',
-      messages: openAiMessages
+      model: 'gpt-4o',
+      messages: [devMsg, ...history],
+      temperature: 0.4
     });
 
     const answer = completion.choices[0]?.message?.content ?? '(No response)';
-
     return NextResponse.json({ answer });
   } catch (err) {
-    console.error('OpenAI error:', err);
-    return NextResponse.json(
-      { error: 'Failed to get answer from AI' },
-      { status: 500 }
-    );
+    console.error(err);
+    return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

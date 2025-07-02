@@ -51,10 +51,27 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
 }
 
 const suggestedQuestions = [
-  "What are Atharv's most recent projects?",
-  "Tell me about his software engineering experience.",
-  "What did he do during his internship?",
-  "What technologies has he worked with?",
+  // high-level “about”
+  "Give me a quick overview of Atharv’s background.",
+  
+  // project discovery
+  "List all of Atharv’s projects and the tech behind each.",
+  "Which projects use React or Next.js?",
+  
+  // deep-dive examples
+  "Tell me about the Dynamic Storage Allocator—why did he add footer optimisation?",
+  "What optimizations did Atharv make in his P2P file sharing project and why?",
+  
+  // experience & impact
+  "What were Atharv’s key achievements during his Amphenol internship?",
+  "How did his PID controller improve temperature accuracy?",
+  
+  // skills
+  "Summarise Atharv’s top backend and embedded skills.",
+  "Which projects best demonstrate his AR/Swift expertise?",
+
+  // Job fit
+  "Would Atharv be a strong fit for this position: <Role Title>, <Role Description>?",
 ];
 
 function SuggestedQuestions() {

@@ -66,7 +66,7 @@ export default function ChatPage() {
             </>
           )}
 
-          {/* ← invisible bottom anchor */}
+          {/* invisible bottom anchor */}
           <div
             ref={bottomRef}
             style={{
