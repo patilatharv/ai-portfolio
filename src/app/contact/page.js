@@ -1,9 +1,40 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '@/styles/contact.module.css';
 
 const ContactPage = () => {
+  const [toastVisible, setToastVisible] = useState(false);
+
+  const showToast = () => {
+    setToastVisible(true);
+    setTimeout(() => setToastVisible(false), 4000); // hide after 4s
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch('https://formspree.io/f/mdkzvodp', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(e.target),
+      });
+
+      if (res.ok) {
+        showToast();
+        e.target.reset(); // clear form fields
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Submission failed. Check your internet connection.');
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
@@ -13,7 +44,9 @@ const ContactPage = () => {
         </p>
 
         {/* Contact Form */}
-        <form className={styles.form}>
+        <form onSubmit={handleSubmit} 
+          className={styles.form}
+        >
           <input
             type="text"
             name="name"
@@ -30,7 +63,7 @@ const ContactPage = () => {
           />
           <input
             type="text"
-            name="subjetc"
+            name="subjet"
             placeholder="Subject"
             className={styles.input}
           />
@@ -43,6 +76,14 @@ const ContactPage = () => {
           />
           <button type="submit" className={styles.button}>Send Message</button>
         </form>
+
+        {/* Toast Notification */}
+        {toastVisible && (
+          <div className={styles.toast}>
+            Message received! I’ll be in touch soon.
+          </div>
+        )}
+
 
         {/* Contact Info */}
         <div className={styles.contactInfo}>

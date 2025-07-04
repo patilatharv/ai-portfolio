@@ -1,6 +1,6 @@
 {
     "headshot": "/images/headshot/headshot.jpeg",
-    "about": "I recently graduated from Penn State University with a degree in Computer Science and a minor in Mathematics. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+    "about": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
     "education": [
         {
             "period": "2021-2024",
@@ -132,7 +132,7 @@
         {
             "Academic Projects": [ 
                 {
-                    "demo": "/demo-videos/test1.MOV",
+                    "demo": "",
                     "image": "/images/projectsImages/NittanyBusiness.png",
                     "name": "NittanyBusiness E-Commerce Website",
                     "topic": "Full-Stack Development",
@@ -140,12 +140,20 @@
                     "tech": ["Next.js", "React", "Node.js", "MySQL"]
                 },
                 {
-                    "demo": "/demo-videos/test2.MOV",
+                    "demo": "",
                     "image": "/images/projectsImages/peertopeer.png",
                     "name": "Peer-to-Peer File Sharing System",
                     "topic": "Distributed Systems",
                     "description": "A Python-based P2P file-sharing network with chunked transfers, multi-threaded downloads, and built-in integrity checks for fast and reliable file distribution.",
-                    "tech": ["Python"]
+                    "tech": ["Python", "Sockets", "Multithreading"]
+                },
+                {
+                    "demo": "",
+                    "image": "/images/projectsImages/casual_consistency.png",
+                    "name": "Causal Consistency Simulation",
+                    "topic": "Distributed Systems",
+                    "description": "A Python-based distributed system that simulates causal consistency across three data centers using Lamport clocks and dependency tracking to enforce the correct order of operations despite network delays.",
+                    "tech": ["Python", "Sockets", "Multithreading"]
                 },
                 {
                     "demo": "",
@@ -161,7 +169,7 @@
                     "name": "Linear Device Library",
                     "topic": "Systems Programming",
                     "description": "A C-based Linux utility that combines 16 JBODs into a 1 MB linear device with read/write support, LRU caching, and TCP networking for efficient storage access.",
-                    "tech": ["C", "Linux"]
+                    "tech": ["C", "Linux", "Sockets"]
                 },
                 {
                     "demo": "",

@@ -8,27 +8,31 @@ import { ChatContext } from '@/context/chatContext';
 import styles from '@/styles/page.module.css';
 
 export default function AssistantMessage({ content, isLast, index, typed }) {
-  const { messages, setMessages } = useContext(ChatContext);
+  const { messages, setMessages, setIsTyping } = useContext(ChatContext);
   const lastRef = useRef(null);
 
   // Get the progressively‐typed substring:
   const typedText = useTypewriter(content, 0.25);
+  
+  useEffect(() => {
+    if (isLast) {
+      setIsTyping(true);
+    }
+  }, [isLast, setIsTyping]);
 
   // Once typing finishes, flip the `typed` flag in context:
   useEffect(() => {
     if (!typed && typedText === content) {
       setMessages((prev) =>
         prev.map((m, i) =>
-          i === index
-            ? {
-                ...m,
-                typed: true,
-              }
-            : m
+          i === index ? { ...m, typed: true } : m
         )
       );
+
+      // ✅ stop blocking new input once typing is done
+      if (isLast) setIsTyping(false);
     }
-  }, [typedText, typed, content, index, setMessages]);
+  }, [typedText, typed, content, index, setMessages, isLast, setIsTyping]);
 
   // Render either the full content (if already typed), or the partial:
   const toRender = typed ? content : typedText;

@@ -5,8 +5,33 @@ import ClientLayout from './clientLayout';
 const roboto = Roboto({ subsets: ['latin'] });
 
 export const metadata = {
+  metadataBase: new URL('https://yourdomain.com'),
   title: 'Atharv | Portfolio',
-  description: 'Interactive résumé and project showcase',
+  description: 'Interactive resume and project showcase',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'Atharv | Portfolio',
+    description: 'Explore Atharv Patil’s AI powered interactive resume and project showcase.',
+    url: 'https://yourdomain.com',
+    siteName: 'Atharv Patil Portfolio',
+    images: [
+      {
+        url: '/images/projectsImages/metadata_website_image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Atharv Portfolio Preview',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Atharv | Portfolio',
+    description: 'Explore Atharv Patil’s AI powered interactive resume and project showcase.',
+    images: ['/images/projectsImages/metadata_website_image.png'],
+  },
 };
 
 export default function RootLayout({ children }) {

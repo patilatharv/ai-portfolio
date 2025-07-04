@@ -24,6 +24,11 @@ export default function ProjectsSection() {
       {Object.entries(categories).map(([categoryName, projects]) => (
         <section key={categoryName} className={styles.category}>
           <h2 className={styles.heading}>{categoryName}</h2>
+            {categoryName === 'Academic Projects' && (
+              <p className={styles.note}>
+                GitHub links for academic projects are available on request due to academic integrity policies
+              </p>
+            )}
 
           <div className={styles.grid}>
             {projects.map((proj) => (

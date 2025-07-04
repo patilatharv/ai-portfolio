@@ -1,13 +1,30 @@
 'use client';
 
 import React from 'react'
-import { useState, useContext } from 'react';
+import { useRef, useState, useContext } from 'react';
 import styles from '@/styles/textbox.module.css'
 import { ChatContext } from '@/context/chatContext';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 
 const Textbox = () => {
-  const { messages, setMessages, loading, setLoading, question, setQuestion } = useContext(ChatContext);
+  const { messages, setMessages, loading, setLoading, question, setQuestion, isTyping, setIsTyping } = useContext(ChatContext);
+
+  const textareaRef = useRef(null);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setQuestion(value);
+  
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+  
+    textarea.style.height = '65px'; // reset height
+  
+    // only expand if scrollHeight > clientHeight (actual overflow)
+    if (textarea.scrollHeight > textarea.clientHeight) {
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  };
   
   const handleAsk = async () => {
     if (!question.trim()) return;
@@ -21,6 +38,11 @@ const Textbox = () => {
 
     // Clear input & set loading
     setQuestion('');
+    setLoading(true);
+
+    if (textareaRef.current) {
+      textareaRef.current.style.height = '65px';
+    }
     setLoading(true);
     
     try {
@@ -60,6 +82,7 @@ const Textbox = () => {
       <div className={styles.textbox_container}>
         <div className={styles.textbox_inner}>
           <textarea 
+            ref={textareaRef}
             className={styles.textarea}
             onKeyDown={(e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -68,14 +91,14 @@ const Textbox = () => {
                 }
               }}
               value={question} 
-              onChange={(e) => setQuestion(e.target.value)} 
-              placeholder="Ask Anything" 
+              onChange={handleChange}
+              placeholder="Ask Anything About Atharv" 
               rows={1}
-              disabled={loading}
+              disabled={loading || isTyping}
           />
           <button
             onClick={handleAsk}
-            // disabled={loading || !question.trim()}
+            disabled={loading || isTyping || !question.trim()}
             className={styles.submit_button}
           >
             <ArrowUpwardRoundedIcon />

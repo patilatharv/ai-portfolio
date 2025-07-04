@@ -9,6 +9,8 @@ export const ChatContext = createContext({
   clearMessages: () => {},
   question: '',
   setQuestion: () => {},
+  isTyping: false,
+  setIsTyping: () => {},
 });
 
 export function ChatProvider({ children }) {
@@ -27,6 +29,7 @@ export function ChatProvider({ children }) {
 
   const [loading, setLoading] = useState(false);
   const [question, setQuestion] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
   // Save to sessionStorage whenever messages change
   useEffect(() => {
@@ -44,7 +47,7 @@ export function ChatProvider({ children }) {
 
   return (
     <ChatContext.Provider
-      value={{ messages, setMessages, loading, setLoading, clearMessages, question, setQuestion }}
+      value={{ messages, setMessages, loading, setLoading, clearMessages, question, setQuestion, isTyping, setIsTyping }}
     >
       {children}
     </ChatContext.Provider>

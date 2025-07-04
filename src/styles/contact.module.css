@@ -95,3 +95,26 @@
   .resumeLink {
     font-weight: 500;
   }
+
+  .toast {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2a2a2a;
+    color: #cbe4ff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(63, 169, 245, 0.6);
+    z-index: 9999;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+    animation: fadeInOut 6s ease forwards;
+  }
+  
+  @keyframes fadeInOutTop {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  }

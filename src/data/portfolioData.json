@@ -1,5 +1,5 @@
 {
-  "bio": "I recently graduated from Penn State University with a degree in Computer Science and a minor in Mathematics. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+  "bio": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
   "education": [
     {
         "period": "2021-2024",
@@ -36,6 +36,15 @@
       "description": "A Python-based P2P file-sharing network with chunked transfers, multi-threaded downloads, and built-in integrity checks for fast and reliable file distribution.",
       "tech": ["Python"],
       "details": "I designed a peer-to-peer (P2P) file-sharing network in Python, featuring a central server and multiple peers to enable efficient and decentralized file distribution. The system uses a chunk-based approach to split large files, allowing simultaneous downloads from multiple peers, which significantly improves overall download speed. I implemented multi-threading to handle parallel connections smoothly and ensure scalability. To maintain data integrity, I integrated hashing-based checks that verify the accuracy of downloaded chunks and discard any corrupted data."
+    },
+    {
+      "name": "Causal Consistency Simulation",
+      "project type": "Academic Project",
+      "period": "Fall 2024",
+      "topic": "Distributed Systems",
+      "description": "A Python-based distributed system that simulates causal consistency across multiple data centers using Lamport clocks and dependency tracking.",
+      "tech": ["Python"],
+      "details": "I developed a distributed system simulation to demonstrate causal consistency using three interlinked data centers. Each datacenter tracks dependencies between write operations using Lamport clocks to maintain causality and ensure that messages are delivered in a consistent order. I implemented FIFO message delivery and Lamport timestamping to enforce correct inter-datacenter communication. The system models realistic delay patterns and highlights how causally-related writes are respected across the network even when operating asynchronously. This helped me deepen my understanding of consistency models and their tradeoffs in distributed architectures."
     },
     {
       "name": "Dynamic Storage Allocator",

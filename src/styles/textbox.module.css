@@ -28,6 +28,7 @@
   }
   
   .textarea {
+    font-family: 'Roboto', sans-serif;
     flex: 1;
     min-height: 65px;
     max-height: 120px;
