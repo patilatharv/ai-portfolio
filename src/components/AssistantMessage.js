@@ -15,10 +15,10 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
   const typedText = useTypewriter(content, 0.25);
   
   useEffect(() => {
-    if (isLast) {
+    if (isLast && !typed) {
       setIsTyping(true);
     }
-  }, [isLast, setIsTyping]);
+  }, [isLast, typed, setIsTyping]);
 
   // Once typing finishes, flip the `typed` flag in context:
   useEffect(() => {
