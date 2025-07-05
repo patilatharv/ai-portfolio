@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import Modal from 'react-modal';
 import { ChatContext } from '@/context/chatContext';
 import { defaultAssistantMessage } from '@/helpers/defaultMessage';
+import Image from 'next/image';
 
 const Header = ({ isOpen }) => {
   const pathname = usePathname();
@@ -26,7 +27,7 @@ const Header = ({ isOpen }) => {
         {isHome && (
           <>
             <div className={styles.powered_by}>
-              <img src="/images/logos/chatgpt-logo.png" alt="ChatGPT Logo" width={20} height={20} />
+              <Image src="/images/logos/chatgpt-logo.png" alt="ChatGPT Logo" width={20} height={20} />
               <span>Powered by GPT-4o</span>
             </div>
 

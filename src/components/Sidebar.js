@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import styles from '../styles/sidebar.module.css';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import useActiveSection from '@/hooks/useActiveSection';
+import Image from 'next/image';
 
 const navItems = [
   { href: '/',                              label: 'Home' },
@@ -37,7 +38,13 @@ export default function Sidebar({ isOpen, toggle }) {
       <div className={styles.topRow}>
         {isOpen && (
           <Link href="/" passHref>
-            <img src="/images/logos/AP-logo.png" alt="AP Logo" className={styles.logo} />
+            <Image
+              src="/images/logos/AP-logo.png"
+              alt="AP Logo"
+              width={27}
+              height={27}
+              className={styles.logo}
+            />
           </Link>
         )}
         <button className={`${styles.toggleBtn} ${isOpen ? styles.open : styles.closed}`}
