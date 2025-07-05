@@ -29,7 +29,7 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
         )
       );
 
-      // ✅ stop blocking new input once typing is done
+      // stop blocking new input once typing is done
       if (isLast) setIsTyping(false);
     }
   }, [typedText, typed, content, index, setMessages, isLast, setIsTyping]);

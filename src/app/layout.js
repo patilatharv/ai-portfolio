@@ -5,7 +5,7 @@ import ClientLayout from './clientLayout';
 const roboto = Roboto({ subsets: ['latin'] });
 
 export const metadata = {
-  metadataBase: new URL('https://yourdomain.com'),
+  metadataBase: new URL('https://yourdomain.com'), // Update with real domain name
   title: 'Atharv | Portfolio',
   description: 'Interactive resume and project showcase',
   icons: {
@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: 'Atharv | Portfolio',
     description: 'Explore Atharv Patil’s AI powered interactive resume and project showcase.',
-    url: 'https://yourdomain.com',
+    url: 'https://yourdomain.com', // Update with real domain name
     siteName: 'Atharv Patil Portfolio',
     images: [
       {

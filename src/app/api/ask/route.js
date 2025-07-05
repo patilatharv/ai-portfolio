@@ -16,7 +16,7 @@ const findDetailChunk = id =>
 // pull numeric YYYYMM, if present (added in generator)
 const getYearMonth = ch => ch.yearMonth ?? 0;
 
-// ───────── constants
+// constants
 const DEFAULT_K      = 5;
 const SIM_THRESHOLD  = 0.65;
 const LOW_FALLBACK   = 0.30;
@@ -137,8 +137,21 @@ export async function POST(request) {
 
     const answer = completion.choices[0]?.message?.content ?? '(No response)';
     return NextResponse.json({ answer });
+
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+
+    const status = err?.response?.status;
+
+    const msg =
+      status === 400 ? 'Bad request — please try again.' :
+      status === 401 ? 'Server misconfiguration: missing or invalid API key.' :
+      status === 403 ? 'Access denied. Please contact the site owner.' :
+      status === 429 ? 'Too many requests — please try again later.' :
+      status === 500 ? 'Server error — please try again shortly.' :
+      status === 503 ? 'Service temporarily unavailable — try again later.' :
+      'An unexpected error occurred.';
+
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

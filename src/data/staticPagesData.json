@@ -1,6 +1,6 @@
 {
     "headshot": "/images/headshot/headshot.jpeg",
-    "about": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+    "about": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform, peer-to-peer file-sharing system, custom malloc implementation for c programs, and AR iOS apps to name a few. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
     "education": [
         {
             "period": "2021-2024",
@@ -194,7 +194,7 @@
                     "image": "/images/projectsImages/portfolio.png",
                     "name": "AI Portfolio Website",
                     "topic": "Full-Stack Development",
-                    "description": "A personal website with an integrated AI chatbot that answers questions about my work and experience.",
+                    "description": "A full-stack AI-powered portfolio website featuring a ChatGPT-style assistant that uses OpenAI’s GPT-4o and a custom RAG pipeline to answer dynamic questions about my experience, projects, and skills.",
                     "tech": ["Next.js", "React", "OpenAI API", "Node.js"],
                     "github": "https://github.com/patilatharv/ai-portfolio"
                 },

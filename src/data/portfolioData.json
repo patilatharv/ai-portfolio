@@ -1,5 +1,5 @@
 {
-  "bio": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform and a peer-to-peer file-sharing system. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+  "bio": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform, peer-to-peer file-sharing system, custom malloc implementation for c programs, and AR iOS apps to name a few. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
   "education": [
     {
         "period": "2021-2024",
@@ -15,9 +15,9 @@
       "project type": "Personal Project",
       "period": "Summer 2023",
       "topic": "Full-Stack Development",
-      "description": "A personal website with an integrated AI chatbot that answers questions about my work and experience.",
+      "description": "An AI-powered personal portfolio website featuring an interactive ChatGPT stlye chatbot that answers recruiter questions using a custom RAG pipeline and OpenAI's GPT-4o.",
       "tech": ["Next.js", "React", "OpenAI API", "Node.js"],
-      "details": "I built this project to showcase my skills in full-stack development and AI integration. It features real-time Q&A and is deployed on the web."
+      "details": "I engineered a full-stack AI portfolio website that integrates a ChatGPT-style assistant capable of answering dynamic questions about my background, experience, and projects. Built with a custom Retrieval-Augmented Generation (RAG) system, the chatbot uses OpenAI’s `text-embedding-ada-002` model for semantic search over embedded content chunks and GPT-4o for natural language generation. I implemented cosine similarity logic, fine-tuned scoring heuristics, and a dual-layer chunking system for context resolution. On the frontend, I recreated the ChatGPT UI using React and CSS Modules, with features like dynamic message typing, mobile responsiveness, animated modals, and form-to-email integration via Formspree. I handled rate limiting, edge case fallbacks, and OpenAI error scenarios with user-friendly responses. The site includes full SEO metadata, Open Graph image support, and deployment to Vercel using environment variables and statically served assets for optimal performance."
     },
     {
       "name": "NittanyBusiness E-Commerce Website",
