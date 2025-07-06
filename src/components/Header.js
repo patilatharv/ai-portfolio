@@ -22,7 +22,7 @@ const Header = ({ isOpen }) => {
   return (
     <header className={styles.header}>
       <div className={`${styles.header_content} ${isOpen ? styles.open : styles.closed}`}>
-        <h1>Atharv's AI Portfolio</h1>
+        <h1>{"Atharv's AI Portfolio"}</h1>
 
         {isHome && (
           <>
