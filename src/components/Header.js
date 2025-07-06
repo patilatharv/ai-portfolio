@@ -22,18 +22,31 @@ const Header = ({ isOpen }) => {
   return (
     <header className={styles.header}>
       <div className={`${styles.header_content} ${isOpen ? styles.open : styles.closed}`}>
-        <h1>{"<Atharv's Portfolio />"}</h1>
+        <h1>Atharv's AI Portfolio</h1>
 
         {isHome && (
           <>
             <div className={styles.powered_by}>
-              <Image src="/images/logos/chatgpt-logo.png" alt="ChatGPT Logo" width={20} height={20} />
-              <span>Powered by GPT-4o</span>
+              <Image
+                src="/images/logos/chatgpt-logo.png"
+                alt="ChatGPT Logo"
+                className={styles.openai_logo}
+                width={20}
+                height={20}
+              />
+              <span className={styles.desktop_text}>Powered by GPT-4o</span>
+              <span className={styles.mobile_text}>
+                Powered by GPT-4o and Developed by Atharv Patil
+              </span>
             </div>
 
-            <button className={styles.clear_button} onClick={() => setShowConfirm(true)}>
+            <div className={styles.developed_by}>
+              Developed by Atharv Patil
+            </div>
+
+            {/* <button className={styles.clear_button} onClick={() => setShowConfirm(true)}>
               Clear Chat
-            </button>
+            </button> */}
 
             <Modal
               isOpen={showConfirm}

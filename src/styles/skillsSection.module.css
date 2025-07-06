@@ -92,3 +92,33 @@
   color: #A0B7CC;
   line-height: 1.5;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  .cardImage {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDesc {
+    font-size: 0.85rem;
+  }
+
+  .cardsGrid {
+    gap: 1rem;
+  }
+}

@@ -118,3 +118,43 @@
     90% { opacity: 1; transform: translateX(-50%) translateY(0); }
     100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
   }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .subtext {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .input,
+  .textarea {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .contactInfo {
+    font-size: 0.85rem;
+  }
+
+  .contactInfo h2 {
+    font-size: 1rem;
+  }
+
+  .toast {
+    font-size: 0.85rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

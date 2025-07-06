@@ -21,3 +21,11 @@
     background-color: rgba(63, 169, 245, 0.6);
     border-radius: 2px;
   }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+    padding-top: 20px;
+  }
+}

@@ -13,3 +13,12 @@
     justify-content: center;
     cursor: pointer;
   }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .scroll_button {
+      bottom: 106px;
+      width: 28px;
+      height: 28px;
+    }
+  }

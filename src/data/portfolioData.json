@@ -13,7 +13,7 @@
     {
       "name": "AI Portfolio Website",
       "project type": "Personal Project",
-      "period": "Summer 2023",
+      "period": "Summer 2025",
       "topic": "Full-Stack Development",
       "description": "An AI-powered personal portfolio website featuring an interactive ChatGPT stlye chatbot that answers recruiter questions using a custom RAG pipeline and OpenAI's GPT-4o.",
       "tech": ["Next.js", "React", "OpenAI API", "Node.js"],

@@ -51,3 +51,26 @@
   opacity: 0.9;
   white-space: pre-line;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.2rem 0.5rem;
+  }
+
+  .container :global(.vertical-timeline-element-title) {
+    font-size: 1.05rem;
+  }
+
+  .container :global(.vertical-timeline-element-subtitle) {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .tech {
+    font-size: 0.9rem;
+  }
+}

@@ -51,3 +51,19 @@
   .fallback a:hover {
     text-decoration: underline;
   }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 1.6rem;
+    }
+  
+    .iframe {
+      height: 600px;
+    }
+  
+    .fallback {
+      font-size: 0.85rem;
+      padding: 0 0.5rem;
+    }
+  }
