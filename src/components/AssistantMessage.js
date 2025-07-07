@@ -41,7 +41,7 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
     <div
         className={styles.answer_field}
         style={{
-          minHeight: !typed ? '100vh' : 'auto',
+          minHeight: !typed ? '100dvh' : 'auto',
           transition: 'min-height 0.3s ease-out',
         }}
     >

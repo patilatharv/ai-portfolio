@@ -62,7 +62,7 @@ export default function ChatPage() {
               <div className={styles.answer_field}>
                 <span className={styles.thinking}>Thinking</span>
               </div>
-              <div style={{ height: '100vh' }} />
+              <div style={{ height: '100dvh' }} />
             </>
           )}
 
