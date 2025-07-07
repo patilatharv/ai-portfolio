@@ -147,6 +147,7 @@
   }
 
   .bubble {
+    font-size: 14px;
     max-width: 85%;
   }
 
@@ -156,12 +157,21 @@
   }
 
   .answer_field {
+    font-size: 14px;
     padding-bottom: 16px;
   }
 
   .suggestionBubble {
-    font-size: 14px;
+    font-size: 13px;
     padding: 10px 16px;
     max-width: 100%;
+  }
+
+  .answer_field :global(p),
+  .answer_field :global(ul),
+  .answer_field :global(ol),
+  .answer_field :global(pre),
+  .answer_field :global(blockquote) {
+    line-height: 1.6;
   }
 }

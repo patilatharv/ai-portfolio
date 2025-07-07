@@ -17,7 +17,7 @@
 .heading {
   font-size: 1.85rem;
   font-weight: 600;
-  color: #A9B4C2;
+  color: #8ca6c7;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -32,7 +32,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: rgba(169, 180, 194, 0.3);
+  background-color: rgba(143, 173, 212, 0.6);
   border-radius: 2px;
 }
 
@@ -89,7 +89,7 @@
 
 .cardDesc {
   font-size: 0.9rem;
-  color: #A0B7CC;
+  color: #a3bdd4;
   line-height: 1.5;
 }
 

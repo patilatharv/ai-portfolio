@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen, toggle }) {
     <>
       {isMobile && !isOpen && (
         <button
-          className={styles.mobileToggleBtn}
+        className={`${styles.mobileToggleBtn} ${isOpen ? styles.hidden : ''}`}
           onClick={toggle}
           aria-label="Open sidebar"
         >

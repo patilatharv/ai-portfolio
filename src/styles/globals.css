@@ -19,7 +19,6 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden; /* stop outer scroll */
-  /* overscroll-behavior: none; */
   background: var(--gpt-bg);
   color: var(--gpt-text);
   scroll-behavior: smooth;

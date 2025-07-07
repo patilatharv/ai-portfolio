@@ -8,18 +8,18 @@
 /* Glassy card container */
 .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background: rgba(40, 44, 52, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   max-width: 900px;
   width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .card:hover {
@@ -39,7 +39,7 @@
 /* Text content */
 .textContainer {
   flex: 1;
-  text-align: center;
+  text-align: left;
 }
 
 /* Heading style */
@@ -58,17 +58,18 @@
 }
 
 /* Tablet and up: row layout with spacing */
-@media (min-width: 768px) {
+@media (max-width: 1024px) {
   .card {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 2.5rem;
+    gap: 0rem;
+    padding: 1rem;
   }
 
   .image {
-    height: 250px;
-    width: 250px;
+    margin-top: 10px;
+    height: 200px;
+    width: 200px;
   }
 
   .textContainer {
@@ -76,10 +77,12 @@
   }
 
   .heading {
+    text-align: center;
     font-size: 1.8rem;
   }
 
   .text {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
