@@ -42,11 +42,13 @@
   margin-right: 0;
   border: none;
   color: white;
+  margin-bottom: 0px;
 }
 
 .bottom_bar {
   font-family: 'Roboto', sans-serif;
   flex: 1;
+  margin-top: 0px;
   min-height: 46px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -204,6 +206,8 @@
 
   .textarea {
     font-size: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .submit_button {
