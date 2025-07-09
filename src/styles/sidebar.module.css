@@ -53,6 +53,26 @@
   cursor: e-resize;
 }
 
+.toggleBtn::after {
+  content: attr(aria-label);
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+  margin-left: 10px;
+}
+
+.toggleBtn:hover::after {
+  opacity: 1;
+}
+
 .link {
   display: flex;
   align-items: center;

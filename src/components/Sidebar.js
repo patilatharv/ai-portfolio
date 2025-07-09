@@ -46,7 +46,7 @@ export default function Sidebar({ isOpen, toggle }) {
         <button
         className={`${styles.mobileToggleBtn} ${isOpen ? styles.hidden : ''}`}
           onClick={toggle}
-          aria-label="Open sidebar"
+          aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
         >
           <MenuRoundedIcon fontSize="medium" />
         </button>
@@ -70,7 +70,8 @@ export default function Sidebar({ isOpen, toggle }) {
             </Link>
           )}
           <button className={`${styles.toggleBtn} ${isOpen ? styles.open : styles.closed}`}
-            onClick={toggle} aria-label="Toggle sidebar"
+            onClick={toggle} 
+            aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
           >
             <MenuRoundedIcon fontSize='medium'/>
           </button>

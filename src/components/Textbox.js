@@ -5,9 +5,19 @@ import { useRef, useState, useContext } from 'react';
 import styles from '@/styles/textbox.module.css'
 import { ChatContext } from '@/context/chatContext';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
+import Modal from 'react-modal';
+import { defaultAssistantMessage } from '@/helpers/defaultMessage';
 
 const Textbox = () => {
   const { messages, setMessages, loading, setLoading, question, setQuestion, isTyping, setIsTyping } = useContext(ChatContext);
+
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const confirmClear = () => {
+    setMessages([defaultAssistantMessage]);
+    setShowConfirm(false);
+  };
 
   const textareaRef = useRef(null);
 
@@ -18,7 +28,7 @@ const Textbox = () => {
     const textarea = textareaRef.current;
     if (!textarea) return;
   
-    textarea.style.height = '65px'; // reset height
+    textarea.style.height = 'auto'; // reset height
   
     // only expand if scrollHeight > clientHeight (actual overflow)
     if (textarea.scrollHeight > textarea.clientHeight) {
@@ -96,15 +106,42 @@ const Textbox = () => {
               rows={1}
               disabled={loading || isTyping}
           />
-          <button
-            onClick={handleAsk}
-            disabled={loading || isTyping || !question.trim()}
-            className={styles.submit_button}
-          >
-            <ArrowUpwardRoundedIcon />
-          </button>
+          <div className={styles.bottom_bar}>
+            <button
+              onClick={handleAsk}
+              disabled={loading || isTyping || !question.trim()}
+              className={styles.submit_button}
+            >
+              <ArrowUpwardRoundedIcon />
+            </button>
+
+            <button 
+              className={styles.clear_button} 
+              onClick={() => setShowConfirm(true)}
+            >
+              <ClearRoundedIcon />
+            </button>
+          </div>
         </div>
       </div>
+      <Modal
+        isOpen={showConfirm}
+        onRequestClose={() => setShowConfirm(false)}
+        className={styles.modal_content}
+        overlayClassName={styles.modal_overlay}
+        ariaHideApp={false} // disables screen reader app-hiding behavior
+      >
+        <h2>Clear Chat?</h2>
+        <p>This will remove all messages and reset the conversation.</p>
+        <div className={styles.modal_buttons}>
+          <button onClick={() => setShowConfirm(false)} className={styles.cancel_button}>
+            Cancel
+          </button>
+          <button onClick={confirmClear} className={styles.confirm_button}>
+            Yes, Clear
+          </button>
+        </div>
+      </Modal>
     </>
   )
 }

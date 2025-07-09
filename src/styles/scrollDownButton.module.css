@@ -1,6 +1,6 @@
 .scroll_button {
     position: fixed;
-    bottom: 130px;
+    bottom: 132px;
     z-index: 100;
     background-color: #212121;
     color: white;
@@ -17,7 +17,7 @@
   /* Mobile */
   @media (max-width: 768px) {
     .scroll_button {
-      bottom: 106px;
+      bottom: 122px;
       width: 28px;
       height: 28px;
     }

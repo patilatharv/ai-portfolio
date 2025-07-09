@@ -75,98 +75,10 @@
   align-items: center;
 }
 
-/* .clear_button {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 8px;
-  right: 16px;
-  background: #303030;
-  color: #ffffff;
-  border: 1px solid #383838;
-  cursor: pointer;
-  border-radius: 999px;
-  padding: 6px 16px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.25px;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-} */
-
-/* .clear_button:hover {
-  background-color: #3a3a3a;
-  transform: scale(1.03);
-}
-
-.clear_button:disabled {
-  background-color: #444;
-  color: #999;
-  border-color: #555;
-  cursor: not-allowed;
-  transform: none;
-} */
-
-/* Modal */
-/* .modal_overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-}
-
-.modal_content {
-  background-color: #1e1e1e;
-  color: #fff;
-  padding: 24px;
-  border-radius: 12px;
-  max-width: 400px;
-  margin: 10% auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.modal_buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 20px;
-} */
-
-/* .cancel_button,
-.confirm_button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.cancel_button {
-  background-color: #3a3a3a;
-  color: #ccc;
-}
-
-.cancel_button:hover {
-  background-color: #4a4a4a;
-}
-
-.confirm_button {
-  background-color: #d32f2f;
-  color: #fff;
-}
-
-.confirm_button:hover {
-  background-color: #b71c1c;
-} */
-
 /* Mobile */
 @media (max-width: 768px) {
   .header {
     height: auto;
-    /* padding: 12px 0; */
   }
 
   .header_content {

@@ -2,72 +2,31 @@
 
 import React, { useState, useContext } from 'react';
 import styles from '@/styles/header.module.css';
-import { usePathname } from 'next/navigation';
-import Modal from 'react-modal';
-import { ChatContext } from '@/context/chatContext';
-import { defaultAssistantMessage } from '@/helpers/defaultMessage';
 import Image from 'next/image';
 
 const Header = ({ isOpen }) => {
-  const pathname = usePathname();
-  const isHome = pathname === '/';
-  const { setMessages } = useContext(ChatContext);
-  const [showConfirm, setShowConfirm] = useState(false);
-
-  const confirmClear = () => {
-    setMessages([defaultAssistantMessage]);
-    setShowConfirm(false);
-  };
 
   return (
     <header className={styles.header}>
       <div className={`${styles.header_content} ${isOpen ? styles.open : styles.closed}`}>
         <h1>{"Atharv's AI Portfolio"}</h1>
+        <div className={styles.powered_by}>
+          <Image
+            src="/images/logos/chatgpt-logo.png"
+            alt="ChatGPT Logo"
+            className={styles.openai_logo}
+            width={20}
+            height={20}
+          />
+          <span className={styles.desktop_text}>Powered by GPT-4o</span>
+          <span className={styles.mobile_text}>
+            Powered by GPT-4o and Developed by Atharv Patil
+          </span>
+        </div>
 
-        {isHome && (
-          <>
-            <div className={styles.powered_by}>
-              <Image
-                src="/images/logos/chatgpt-logo.png"
-                alt="ChatGPT Logo"
-                className={styles.openai_logo}
-                width={20}
-                height={20}
-              />
-              <span className={styles.desktop_text}>Powered by GPT-4o</span>
-              <span className={styles.mobile_text}>
-                Powered by GPT-4o and Developed by Atharv Patil
-              </span>
-            </div>
-
-            <div className={styles.developed_by}>
-              Developed by Atharv Patil
-            </div>
-
-            {/* <button className={styles.clear_button} onClick={() => setShowConfirm(true)}>
-              Clear Chat
-            </button> */}
-
-            <Modal
-              isOpen={showConfirm}
-              onRequestClose={() => setShowConfirm(false)}
-              className={styles.modal_content}
-              overlayClassName={styles.modal_overlay}
-              ariaHideApp={false} // disables screen reader app-hiding behavior
-            >
-              <h2>Clear Chat?</h2>
-              <p>This will remove all messages and reset the conversation.</p>
-              <div className={styles.modal_buttons}>
-                <button onClick={() => setShowConfirm(false)} className={styles.cancel_button}>
-                  Cancel
-                </button>
-                <button onClick={confirmClear} className={styles.confirm_button}>
-                  Yes, Clear
-                </button>
-              </div>
-            </Modal>
-          </>
-        )}
+        <div className={styles.developed_by}>
+          Developed by Atharv Patil
+        </div>
       </div>
     </header>
   );
