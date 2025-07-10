@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 /**
  * A hook that gradually “types out” `text` at the given `speed` (ms per char).
@@ -6,19 +6,23 @@ import { useState, useEffect } from 'react';
  */
 export function useTypewriter(text, speed) {
   const [displayed, setDisplayed] = useState('');
+  const intervalRef = useRef(null);
 
   useEffect(() => {
-    // reset when text changes
     setDisplayed('');
     let idx = 0;
-    const iv = setInterval(() => {
-      setDisplayed(text.slice(0, idx + 1));
-      idx += 1;
-      if (idx >= text.length) {
-        clearInterval(iv);
+
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      if (idx < text.length) {
+        setDisplayed(text.slice(0, idx + 1));
+        idx += 1;
+      } else {
+        clearInterval(intervalRef.current);
       }
     }, speed);
-    return () => clearInterval(iv);
+
+    return () => clearInterval(intervalRef.current);
   }, [text, speed]);
 
   return displayed;

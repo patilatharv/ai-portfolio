@@ -11,6 +11,10 @@ export const ChatContext = createContext({
   setQuestion: () => {},
   isTyping: false,
   setIsTyping: () => {},
+  abortController: null,
+  setAbortController: () => {},
+  shouldStop: false,
+  setShouldStop: () => {},
 });
 
 export function ChatProvider({ children }) {
@@ -30,6 +34,9 @@ export function ChatProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [question, setQuestion] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [abortController, setAbortController] = useState(null);
+  const [shouldStop, setShouldStop] = useState(false);
+
 
   // Save to sessionStorage whenever messages change
   useEffect(() => {
@@ -47,7 +54,15 @@ export function ChatProvider({ children }) {
 
   return (
     <ChatContext.Provider
-      value={{ messages, setMessages, loading, setLoading, clearMessages, question, setQuestion, isTyping, setIsTyping }}
+      value={{ 
+        messages, setMessages, 
+        loading, setLoading, 
+        clearMessages, 
+        question, setQuestion, 
+        isTyping, setIsTyping, 
+        abortController, setAbortController,
+        shouldStop, setShouldStop 
+      }}
     >
       {children}
     </ChatContext.Provider>

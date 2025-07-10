@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import openai from '@/utils/openaiClient';
 import chunks from '@/data/embeddings_chunks.json';
 
-
 // helpers
 const cosineSimilarity = (a, b) => {
   const dot = a.reduce((s, ai, i) => s + ai * b[i], 0);

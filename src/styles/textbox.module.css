@@ -83,7 +83,7 @@
 }
 
 .submit_button::after {
-  content: 'Send';
+  content: attr(aria-label);
   position: absolute;
   bottom: -28px;
   left: 50%;

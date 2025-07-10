@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useTypewriter } from '@/hooks/useTypewriter';
@@ -8,17 +8,22 @@ import { ChatContext } from '@/context/chatContext';
 import styles from '@/styles/page.module.css';
 
 export default function AssistantMessage({ content, isLast, index, typed }) {
-  const { messages, setMessages, setIsTyping } = useContext(ChatContext);
-  const lastRef = useRef(null);
-
-  // Get the progressively‐typed substring:
-  const typedText = useTypewriter(content, 0.25);
+  const { messages, setMessages, setIsTyping, shouldStop } = useContext(ChatContext);
+  const typedText = useTypewriter(content, 0.25); // Get the progressively‐typed substring:
   
+  const isTypingDone = typedText === content || typedText.endsWith('Answer generation was stopped.');
+
   useEffect(() => {
-    if (isLast && !typed) {
-      setIsTyping(true);
+    if (!typed && isTypingDone) {
+      setMessages((prev) =>
+        prev.map((m, i) =>
+          i === index ? { ...m, typed: true } : m
+        )
+      );
+
+      if (isLast) setIsTyping(false);
     }
-  }, [isLast, typed, setIsTyping]);
+  }, [typedText, typed, content, index, isLast, setMessages, setIsTyping]);
 
   // Once typing finishes, flip the `typed` flag in context:
   useEffect(() => {

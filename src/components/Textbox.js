@@ -8,9 +8,16 @@ import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import Modal from 'react-modal';
 import { defaultAssistantMessage } from '@/helpers/defaultMessage';
+import StopRoundedIcon from '@mui/icons-material/StopRounded';
 
 const Textbox = () => {
-  const { messages, setMessages, loading, setLoading, question, setQuestion, isTyping, setIsTyping } = useContext(ChatContext);
+  const { messages, setMessages, 
+    loading, setLoading, 
+    question, setQuestion, 
+    isTyping, setIsTyping, 
+    abortController, setAbortController,
+    shouldStop, setShouldStop,
+  } = useContext(ChatContext);
 
   const [showConfirm, setShowConfirm] = useState(false);
 
@@ -45,27 +52,28 @@ const Textbox = () => {
       { role: 'user', content: question },
     ];
     setMessages(newMessages);
-
-    // Clear input & set loading
     setQuestion('');
     setLoading(true);
+    setShouldStop(false);
 
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
     }
-    setLoading(true);
+
+    const controller = new AbortController();
+    setAbortController(controller);
     
     try {
       // Send entire history to the API
       const res = await fetch('/api/ask', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messages: newMessages })
+          body: JSON.stringify({ messages: newMessages }),
+          signal: controller.signal,
       });
-      const data = await res.json();
 
-      // Append assistant’s reply
-      const assistantContent = res.ok
+      const data = await res.json();
+      const assistantContent = res.ok // Append assistant’s reply
         ? data.answer
         : `Error: ${data.error || 'Something went wrong'}`;
 
@@ -73,16 +81,42 @@ const Textbox = () => {
         ...newMessages,
         { role: 'assistant', content: assistantContent, typed: false },
       ]);
+      setIsTyping(true);
 
     } catch (err) {
-      console.error(err);
-      setMessages([
-        ...newMessages,
-        { role: 'assistant', content: 'Error: Failed to get response.', typed: false },
-      ]);
+      if (err.name === 'AbortError') {
+        setMessages([
+          ...newMessages,
+          {
+            role: 'assistant',
+            content: 'Answer generation was stopped.',
+            typed: false, // allow typewriter to animate it
+          },
+        ]);
+        setIsTyping(true);
+    
+        return; // prevent finally block from running too early
+      } else {
+        console.error(err);
+        setMessages([
+          ...newMessages,
+          {
+            role: 'assistant',
+            content: 'Error: Failed to get response.',
+            typed: false,
+          },
+        ]);
+      }
     } finally {
       setLoading(false);
+      setAbortController(null);
     }
+  };
+
+  const handleStop = () => {
+    if (abortController) abortController.abort();
+    setShouldStop(true);
+    setAbortController(null);
   };
 
   return (
@@ -107,13 +141,24 @@ const Textbox = () => {
               disabled={loading || isTyping}
           />
           <div className={styles.bottom_bar}>
-            <button
-              onClick={handleAsk}
-              disabled={loading || isTyping || !question.trim()}
-              className={styles.submit_button}
-            >
-              <ArrowUpwardRoundedIcon />
-            </button>
+            {loading ? (
+              <button 
+                onClick={handleStop} 
+                className={styles.submit_button}
+                aria-label="Stop generating"
+              >
+                <StopRoundedIcon />
+              </button>
+            ) : (
+              <button
+                onClick={handleAsk}
+                disabled={!question.trim()}
+                className={styles.submit_button}
+                aria-label="Send"
+              >
+                <ArrowUpwardRoundedIcon />
+              </button>
+            )}
 
             <button 
               className={styles.clear_button} 
