@@ -45,6 +45,12 @@
   margin-bottom: 0px;
 }
 
+.textarea:disabled {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  background: #303030 !important;
+}
+
 .bottom_bar {
   font-family: 'Roboto', sans-serif;
   flex: 1;
