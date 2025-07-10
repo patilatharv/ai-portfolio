@@ -51,7 +51,7 @@ const Textbox = () => {
     setLoading(true);
 
     if (textareaRef.current) {
-      textareaRef.current.style.height = '65px';
+      textareaRef.current.style.height = 'auto';
     }
     setLoading(true);
     
