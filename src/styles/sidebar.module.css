@@ -151,4 +151,8 @@
     visibility: hidden;
     transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
   }
+
+  .toggleBtn::after {
+    display: none;
+  }
 }

@@ -230,6 +230,11 @@
     height: 32px;
   }
 
+  .submit_button::after,
+  .clear_button::after {
+    display: none;
+  }
+
   .modal_content {
     margin: 60% auto;
     padding: 20px;
