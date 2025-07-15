@@ -8,7 +8,7 @@
     background: rgba(40, 44, 52, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 2.5rem 4.5rem;
     max-width: 800px;
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -48,6 +48,7 @@
     font-size: 1rem;
     outline: none;
     transition: border 0.2s ease;
+    resize: none;
   }
   
   .input:focus,
@@ -98,18 +99,19 @@
 
   .toast {
     position: fixed;
-    top: 10px;
+    top: 300px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #2a2a2a;
     color: #cbe4ff;
-    padding: 1rem 2rem;
+    padding: 3rem 3rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(63, 169, 245, 0.6);
     z-index: 9999;
     font-size: 0.95rem;
     transition: opacity 0.3s ease;
-    animation: fadeInOut 6s ease forwards;
+    animation: fadeInOut 4s ease forwards;
+    text-align: center;
   }
   
   @keyframes fadeInOutTop {

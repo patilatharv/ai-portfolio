@@ -70,7 +70,7 @@ const ContactPage = () => {
           <textarea
             name="message"
             placeholder="Your Message*"
-            rows="5"
+            rows="8"
             required
             className={styles.textarea}
           />
@@ -80,10 +80,10 @@ const ContactPage = () => {
         {/* Toast Notification */}
         {toastVisible && (
           <div className={styles.toast}>
-            Message received! I’ll be in touch soon.
+            <h2>Message received!</h2>
+            <p>I’ll be in touch soon.</p>
           </div>
         )}
-
 
         {/* Contact Info */}
         <div className={styles.contactInfo}>

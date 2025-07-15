@@ -65,6 +65,7 @@
     overflow: hidden;              /* clip the img to the border */
     display: flex;
     flex-direction: column;
+    height: 100%;  
     width: 100%;
     max-width: 400px;
     box-shadow: 0 4px 20px rgba(63, 169, 245, 0.2);
@@ -135,6 +136,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    flex: 1;    
     gap: 0.5rem;
   }
   
@@ -157,6 +159,7 @@
     margin: 0;
     color: 	#e5e9ed;
     flex: 1;   /* push pills to bottom */
+    margin-bottom: 1rem;
   }
   
   /* pill‐style tech tags container */
