@@ -8,7 +8,8 @@
   .heading {
     font-size: 2.2rem;
     font-weight: 600;
-    color: #8ca6c7;
+    /* color: #8ca6c7; */
+    color: var(--about-sectionTitle);
     text-transform: uppercase;
     margin-bottom: 2rem;
     text-align: center;
@@ -23,7 +24,8 @@
     transform: translateX(-50%);
     width: 100%;
     height: 4px;
-    background-color: rgba(63, 169, 245, 0.6);
+    /* background-color: rgba(63, 169, 245, 0.6); */
+    background-color: var(--resume-heading-after);
     border-radius: 2px;
   }
   
@@ -33,18 +35,21 @@
     height: 1000px;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); */
+    box-shadow: 0 8px 32px var(--skills-card-shadow);
   }
   
   .fallback {
     margin-top: 1.5rem;
-    color: #8ca6c7;
+    /* color: #8ca6c7; */
+    color: var(--about-sectionTitle);
     text-align: center;
     font-size: 0.95rem;
   }
   
   .fallback a {
-    color: #3FA9F5;
+    /* color: #3FA9F5; */
+    color: var(--project-title);
     text-decoration: none;
   }
   

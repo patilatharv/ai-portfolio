@@ -5,7 +5,8 @@
 
 .answer_field :global(hr) {
   border: none;
-  border-bottom: 1px solid #2d2d2d;
+  /* border-bottom: 1px solid #2d2d2d; */
+  border-bottom: 1px solid var(--border-subtle);
   margin: 2.5rem 0;
 }
 
@@ -33,11 +34,11 @@
 
 .answer_heading {
   margin-top: 1.5rem;
-  color: #fff;
+  color: var(--gpt-text);
 }
 
 .answer_paragraph {
-  color: #fff;
+  color: var(--gpt-text);
   margin-top: 0.75rem;
   line-height: 1.6;
 }
@@ -92,10 +93,11 @@
 @keyframes shine {
   0%,
   100% {
-    color: var(--gpt-text-subtle);
+    color: var(--gpt-text);
   }
   50% {
-    color: #707070;
+    /* color: #707070; */
+    color: var(--thinking-grey)
   }
 }
 
@@ -136,7 +138,9 @@
 }
 
 .suggestionBubble:hover {
-  background-color: #3a3a3a;
+  /* background-color: #3a3a3a; */
+  background-color: var(--suggestionBubble-hover);
+
   transform: scale(1.03);
 }
 

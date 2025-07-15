@@ -2,9 +2,12 @@
     position: fixed;
     bottom: 132px;
     z-index: 100;
-    background-color: #212121;
-    color: white;
-    border: 1px solid #414241;
+    /* background-color: #212121; */
+    background-color: var(--gpt-side-closed);
+    /* color: white; */
+    color: var(--gpt-text);
+    /* border: 1px solid #414241; */
+    border: 1px solid var(--scrollButton-border);
     border-radius: 50%;
     width: 32px;
     height: 32px;
