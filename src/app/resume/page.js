@@ -14,12 +14,6 @@ const ResumePage = () => {
         className={styles.embed}
       />
 
-      <p className={styles.download}>
-        <a href="/Atharv Resume.pdf" download>
-          📄 Download PDF
-        </a>
-      </p>
-
       <p className={styles.fallback}>
         Having trouble viewing?{' '}
         <a href="/Atharv Resume.pdf" target="_blank" rel="noopener noreferrer">

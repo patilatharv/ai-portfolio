@@ -34,30 +34,9 @@
     max-width: 850px;
     height: 1000px;
     border: none;
-    border-radius: 12px;
     box-shadow: 0 8px 32px var(--skills-card-shadow);
     transform: scale(1);
     transform-origin: top;
-  }
-
-  .download {
-    margin-top: 2rem;
-    font-size: 0.95rem;
-    text-align: center;
-  }
-  
-  .download a {
-    background-color: var(--project-title);
-    color: var(--gpt-text);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.1s ease-in-out;
-  }
-  
-  .download a:hover {
-    background-color: var(--resume-downloadButton-hover);
   }
   
   .fallback {
@@ -86,7 +65,6 @@
 
     .embed {
       height: 400px;
-      transform: scale(0.8);
     }
   
     .fallback {
