@@ -28,15 +28,16 @@
     background-color: var(--resume-heading-after);
     border-radius: 2px;
   }
-  
-  .iframe {
+
+  .embed {
     width: 100%;
     max-width: 850px;
     height: 1000px;
     border: none;
     border-radius: 12px;
-    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); */
     box-shadow: 0 8px 32px var(--skills-card-shadow);
+    transform: scale(1);
+    transform-origin: top;
   }
   
   .fallback {
@@ -62,11 +63,10 @@
     .heading {
       font-size: 1.6rem;
     }
-  
-    .iframe {
-      height: 800px;
-    transform: scale(0.8);
-    transform-origin: top;
+
+    .embed {
+      height: 400px;
+      /* transform: scale(0.8); */
     }
   
     .fallback {

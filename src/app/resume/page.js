@@ -8,10 +8,10 @@ const ResumePage = () => {
     <div className={styles.wrapper}>
       <h1 className={styles.heading}>My Resume</h1>
 
-      <iframe
+      <embed
         src="/Atharv Resume.pdf"
-        className={styles.iframe}
-        title="Atharv Patil Resume"
+        type="application/pdf"
+        className={styles.embed}
       />
 
       <p className={styles.fallback}>
