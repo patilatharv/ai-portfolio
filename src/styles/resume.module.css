@@ -64,7 +64,9 @@
     }
   
     .iframe {
-      height: 600px;
+      height: 800px;
+    transform: scale(0.8);
+    transform-origin: top;
     }
   
     .fallback {
