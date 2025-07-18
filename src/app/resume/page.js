@@ -15,7 +15,7 @@ const ResumePage = () => {
       />
 
       <p className={styles.fallback}>
-        Having trouble viewing?{' '}
+        Having trouble viewing or downloading resume?{' '}
         <a href="/Atharv Resume.pdf" target="_blank" rel="noopener noreferrer">
           Open in a new tab
         </a>
