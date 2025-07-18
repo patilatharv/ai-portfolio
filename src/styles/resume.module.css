@@ -48,16 +48,16 @@
   
   .download a {
     background-color: var(--project-title);
-    color: #fff;
+    color: var(--gpt-text);
     padding: 0.5rem 1rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
   }
   
   .download a:hover {
-    background-color: #318acc;
+    background-color: var(--resume-downloadButton-hover);
   }
   
   .fallback {

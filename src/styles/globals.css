@@ -81,6 +81,7 @@
   --contact-toast-background: #2a2a2a;
   --contact-toast-color: #cbe4ff;
   --submitButton-icon-color: #000000;
+  --resume-downloadButton-hover: #318acc;
 
   --line-width: 4px;
   --timeline-gutter: 3rem;
@@ -171,6 +172,7 @@
     --contact-toast-background: #f1f1f1;
     --contact-toast-color: #1d1d1d;
     --submitButton-icon-color: #ffffff;
+    --resume-downloadButton-hover: #318acc;
 
     --line-width: 4px;
     --timeline-gutter: 3rem;
