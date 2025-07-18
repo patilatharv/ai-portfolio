@@ -39,9 +39,29 @@
     transform: scale(1);
     transform-origin: top;
   }
+
+  .download {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  
+  .download a {
+    background-color: var(--project-title);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .download a:hover {
+    background-color: #318acc;
+  }
   
   .fallback {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     /* color: #8ca6c7; */
     color: var(--about-sectionTitle);
     text-align: center;
@@ -66,7 +86,7 @@
 
     .embed {
       height: 400px;
-      /* transform: scale(0.8); */
+      transform: scale(0.8);
     }
   
     .fallback {
