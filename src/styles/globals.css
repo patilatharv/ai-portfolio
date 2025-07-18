@@ -33,6 +33,26 @@
   --experienceSection-content-box-shadow: rgba(0, 0, 0, 0.4);
   --experienceSection-icon-shadow: rgba(63, 169, 245, 0.6);
   --experienceSection-icon-shadow-inset: rgba(255, 255, 255, 0.1);
+  --experience-linecolor: rgba(255, 255, 255, 0.12);
+  --experience-bg-contentStyle1: rgba(40, 100, 180, 0.25);
+  --experience-bg-contentStyle2: rgba(63, 169, 245, 0.1);
+  --experience-bg-contentStyle3 : rgba(255, 160, 200, 0.1);
+  --experience-color-contentStyle1: #e6e6e6;
+  --experience-color-contentStyle2: #dceeff;
+  --experience-color-contentStyle3: #ffeaf2;
+  --experience-border-contentStyle1: 1px solid rgba(255, 255, 255, 0.1);
+  --experience-border-contentStyle2: 1px solid rgba(255,255,255,0.1);
+  --experience-boxShadow-contentStyle1: 0 4px 20px rgba(0,0,0,0.4);
+  --experience-boxShadow-contentStyle2: 0 2px 10px rgba(0,0,0,0.2);
+  --experience-borderRight-contentArrowStyle1: 7px solid rgba(40, 100, 180, 0.25);
+  --experience-borderRight-contentArrowStyle2: 7px solid rgba(63, 169, 245, 0.4);
+  --experience-borderRight-contentArrowStyle3: 7px solid rgba(255, 160, 200, 0.4);
+  --experience-bg-iconStyle1: rgba(63, 169, 245, 0.3);
+  --experience-bg-iconStyle2: rgba(63, 169, 245, 0.25);
+  --experience-bg-iconStyle3: rgba(255, 160, 200, 0.25);
+  --experience-boxShadow-iconStyle1: 0 0 8px rgba(0,0,0,0.3);
+  --experience-bg-VerticalTimelineElement: rgba(16, 204, 82, 0.25);
+  --experience-boxShadow-VerticalTimelineElement: 0 0 8px rgba(0,0,0,0.3);
   --projects-note: #A9B4C2;
   --project-title: #3FA9F5;
   --project-subtitle: #a3bdd4;
@@ -60,13 +80,14 @@
   --contact-submitButton-color-hover: rgba(63, 169, 245, 1);
   --contact-toast-background: #2a2a2a;
   --contact-toast-color: #cbe4ff;
+  --submitButton-icon-color: #000000;
 
   --line-width: 4px;
   --timeline-gutter: 3rem;
   --marker-size: 2rem;
 }
 
-/* @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   :root {
     --gpt-bg: #ffffff;
     --gpt-side: #f2f2f2;
@@ -98,10 +119,30 @@
     --aboutMe-box-shadow: rgba(0, 0, 0, 0.05);
     --aboutMe-box-shadow-hover: rgba(0, 0, 0, 0.2);
     --aboutMe-img-border: rgba(0, 0, 0, 0.1);
-    --experienceSection-vertical-timeline: rgba(0, 0, 0, 0.05);
-    --experienceSection-content-box-shadow: rgba(0, 0, 0, 0.1);
-    --experienceSection-icon-shadow: rgba(63, 169, 245, 0.3);
-    --experienceSection-icon-shadow-inset: rgba(0, 0, 0, 0.05);
+    --experienceSection-vertical-timeline: rgba(0, 0, 0, 0.08);
+    --experienceSection-content-box-shadow: rgba(0, 0, 0, 0.15);
+    --experienceSection-icon-shadow: rgba(63, 169, 245, 0.4);
+    --experienceSection-icon-shadow-inset: rgba(0, 0, 0, 0.08);
+    --experience-linecolor: rgba(0, 0, 0, 0.08);
+    --experience-bg-contentStyle1: rgba(40, 100, 180, 0.08);
+    --experience-bg-contentStyle2: rgba(63, 169, 245, 0.07);
+    --experience-bg-contentStyle3: rgba(255, 160, 200, 0.08);
+    --experience-color-contentStyle1: #111111;
+    --experience-color-contentStyle2: #003344;
+    --experience-color-contentStyle3: #662233;
+    --experience-border-contentStyle1: 1px solid rgba(0, 0, 0, 0.08);
+    --experience-border-contentStyle2: 1px solid rgba(0, 0, 0, 0.08);
+    --experience-boxShadow-contentStyle1: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --experience-boxShadow-contentStyle2: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --experience-borderRight-contentArrowStyle1: 7px solid rgba(40, 100, 180, 0.12);
+    --experience-borderRight-contentArrowStyle2: 7px solid rgba(63, 169, 245, 0.2);
+    --experience-borderRight-contentArrowStyle3: 7px solid rgba(255, 160, 200, 0.2);
+    --experience-bg-iconStyle1: rgba(63, 169, 245, 0.12);
+    --experience-bg-iconStyle2: rgba(63, 169, 245, 0.1);
+    --experience-bg-iconStyle3: rgba(255, 160, 200, 0.12);
+    --experience-boxShadow-iconStyle1: 0 0 8px rgba(0, 0, 0, 0.1);
+    --experience-bg-VerticalTimelineElement: rgba(16, 204, 82, 0.1);
+    --experience-boxShadow-VerticalTimelineElement: 0 0 8px rgba(0, 0, 0, 0.08);
     --projects-note: #4a4a4a;
     --project-title: #1d7dbb;
     --project-subtitle: #3f5870;
@@ -129,12 +170,13 @@
     --contact-submitButton-color-hover: rgba(63, 169, 245, 1);
     --contact-toast-background: #f1f1f1;
     --contact-toast-color: #1d1d1d;
+    --submitButton-icon-color: #ffffff;
 
     --line-width: 4px;
     --timeline-gutter: 3rem;
     --marker-size: 2rem;
   }
-} */
+}
 
 html,
 body {

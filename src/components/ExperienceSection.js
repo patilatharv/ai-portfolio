@@ -34,7 +34,7 @@ export default function Timeline() {
   return (
     <div className={styles.container}>
       <VerticalTimeline 
-        lineColor="rgba(255, 255, 255, 0.12)"
+        lineColor="var(--experience-linecolor)"
         className={styles.timeline}
       >
         {items.map((it, idx) => {
@@ -42,43 +42,43 @@ export default function Timeline() {
 
           const contentStyle = isFirst
             ? {
-                background: 'rgba(40, 100, 180, 0.25)',
-                color: '#e6e6e6',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: 'var(--experience-bg-contentStyle1)',
+                color: 'var(--experience-color-contentStyle1)',
+                border: 'var(--experience-border-contentStyle1)',
                 borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                boxShadow: 'var(--experience-boxShadow-contentStyle1)',
                 backdropFilter: 'blur(6px)'
               }
             : {
                 background:
                   it.type === 'work'
-                    ? 'rgba(63, 169, 245, 0.1)'
-                    : 'rgba(255, 160, 200, 0.1)',
-                color: it.type === 'work' ? '#dceeff' : '#ffeaf2',
-                border: '1px solid rgba(255,255,255,0.1)',
+                    ? 'var(--experience-bg-contentStyle2)'
+                    : 'var(--experience-bg-contentStyle3)',
+                color: it.type === 'work' ? 'var(--experience-color-contentStyle2)' : 'var(--experience-color-contentStyle3)',
+                border: 'var(--experience-border-contentStyle2)',
                 borderRadius: '12px',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+                boxShadow: 'var(--experience-boxShadow-contentStyle2)',
                 backdropFilter: 'blur(6px)'
               };
 
           const contentArrowStyle = {
             borderRight: isFirst
-              ? '7px solid rgba(40, 100, 180, 0.25)'
+              ? 'var(--experience-borderRight-contentArrowStyle1)'
               : it.type === 'work'
-              ? '7px solid rgba(63, 169, 245, 0.4)'
-              : '7px solid rgba(255, 160, 200, 0.4)'
+              ? 'var(--experience-borderRight-contentArrowStyle2)'
+              : 'var(--experience-borderRight-contentArrowStyle3)'
           };
 
           const iconStyle = {
             background: isFirst
-              ? 'rgba(63, 169, 245, 0.3)'
+              ? 'var(--experience-bg-iconStyle1)'
               : it.type === 'work'
-              ? 'rgba(63, 169, 245, 0.25)'
-              : 'rgba(255, 160, 200, 0.25)',
-            color: '#fff',
+              ? 'var(--experience-bg-iconStyle2)'
+              : 'var(--experience-bg-iconStyle3)',
+            color: 'var(--gpt-text)',
             border: '3px solid var(--gpt-text)',
             backdropFilter: 'blur(4px)',
-            boxShadow: '0 0 8px rgba(0,0,0,0.3)'
+            boxShadow: 'var(--experience-boxShadow-iconStyle1)'
           };
 
           return (
@@ -105,11 +105,11 @@ export default function Timeline() {
         <VerticalTimelineElement
           className={`${styles.element} vertical-timeline-element--first`}
           iconStyle={{
-            background: 'rgba(16, 204, 82, 0.25)',
-            color: '#fff',
+            background: 'var(--experience-bg-VerticalTimelineElement)',
+            color: ' var(--gpt-text)',
             border: '3px solid var(--gpt-text)',
             backdropFilter: 'blur(4px)',
-            boxShadow: '0 0 8px rgba(0,0,0,0.3)',
+            boxShadow: 'var(--experience-boxShadow-VerticalTimelineElement)',
             
           }}
           icon={<StarIcon />}

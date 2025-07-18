@@ -74,6 +74,7 @@
   position: absolute;
   border-radius: 50%;
   background: var(--gpt-text);
+  color: var(--submitButton-icon-color);
   border: none;
   cursor: pointer;
   display: flex;
