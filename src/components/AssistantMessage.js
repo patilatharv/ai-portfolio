@@ -67,14 +67,10 @@ const suggestedQuestions = [
   // project discovery
   "List all of Atharv’s projects and the tech behind each.",
   "How did Atharv implement retrieval-augmented generation (RAG) in this portfolio site?",
-  "How does Atharv combine software engineering and AI in his portfolio?",
   "How has Atharv demonstrated leadership or initiative in his work experience or projects?",
   
   // experience & impact
   "What were Atharv’s key achievements during his Amphenol internship?",
-
-  // Job fit
-  "Would Atharv be a strong fit for this position: <Role Title>, <Role Description>?",
 ];
 
 function SuggestedQuestions() {
@@ -84,6 +80,14 @@ function SuggestedQuestions() {
     setQuestion(text); // updates the textbox
     const textarea = document.querySelector('textarea');
     if (textarea) textarea.focus();
+
+    // Wait for React to update the textbox value in the DOM
+    setTimeout(() => {
+      const sendButton = document.querySelector('[aria-label="Send"]');
+      if (sendButton && !sendButton.disabled) {
+        sendButton.click();
+      }
+    }, 100);
   };
 
   return (
