@@ -87,7 +87,7 @@ function SuggestedQuestions() {
       if (sendButton && !sendButton.disabled) {
         sendButton.click();
       }
-    }, 100);
+    }, 10);
   };
 
   return (
