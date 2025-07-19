@@ -81,13 +81,13 @@ function SuggestedQuestions() {
     const textarea = document.querySelector('textarea');
     if (textarea) textarea.focus();
 
-    // Wait for React to update the textbox value in the DOM
-    setTimeout(() => {
+    // Wait for textbox value to update, then click send in the next animation frame
+    requestAnimationFrame(() => {
       const sendButton = document.querySelector('[aria-label="Send"]');
       if (sendButton && !sendButton.disabled) {
         sendButton.click();
       }
-    }, 10);
+    });
   };
 
   return (
