@@ -9,14 +9,14 @@ const ResumePage = () => {
       <h1 className={styles.heading}>My Resume</h1>
 
       <embed
-        src="/Atharv Resume.pdf"
+        src="/Atharv Patil Resume.pdf"
         type="application/pdf"
         className={styles.embed}
       />
 
       <p className={styles.fallback}>
         Having trouble viewing or downloading resume?{' '}
-        <a href="/Atharv Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/Atharv Patil Resume.pdf" target="_blank" rel="noopener noreferrer">
           Open in a new tab
         </a>
       </p>
