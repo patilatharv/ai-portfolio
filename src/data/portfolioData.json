@@ -1,5 +1,5 @@
 {
-  "bio": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform, peer-to-peer file-sharing system, custom malloc implementation for c programs, and AR iOS apps to name a few. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+  "bio": "I’m a Computer Science graduate from Penn State with a strong foundation in backend systems, embedded software, and full-stack development. My work spans across low-level systems programming, AI/LLM integration, and modern web technologies. At Amphenol, I developed C++ firmware utilities and a custom PID control algorithm for high-speed cable testing, working hands-on with I2C devices like the PCA9685 and MPC9600. As a full-stack developer, I’ve built data-driven web platforms using the MERN stack and MySQL, including a B2B eCommerce system and dynamic support ticketing workflows. My AI projects include integrating the OpenAI API into real-world applications with semantic search and typewriter-style response rendering. On campus, I led tutoring sessions in systems programming, data structures, and object-oriented design at the Academic Excellence Center. I’ve also engineered a peer-to-peer file sharing network, an AR iOS furniture layout app with RealityKit, and a custom memory allocator in C. I’m passionate about building scalable, user-centric systems—from embedded tools to end-to-end platforms—and excited to contribute to engineering teams solving real-world problems.",
   "education": [
     {
         "period": "2021-2024",
@@ -8,7 +8,7 @@
         "major": "Computer Science"
     }
   ],
-  "skills": "Java, React.js, Next.js, Node.js, Express.js, JavaScript, Python, C++, C, SQL, MongoDB, Verilog, I2C, Git, HTML, CSS, ARKit, RealityKit, Swift, SwiftUI",
+  "skills": "Java, React.js, Next.js, Node.js, Express.js, JavaScript, Python, C++, C, SQL, OpenAI API, Cursor, Prompt Engineering, MongoDB, Verilog, I2C, Git, HTML, CSS, ARKit, RealityKit, Swift, SwiftUI",
   "projects": [
     {
       "name": "AI Portfolio Website",
@@ -123,7 +123,7 @@
       "location": "Univesity Park",
       "role": "Lead Computer Science Tutor",
       "period": "October 2023 - Present",
-      "work": "I provided academic support at the Academic Excellence Center (AEC) by leading exam review sessions, as well as offering one-on-one and group tutoring in data structures and algorithms (DSA), object-oriented programming (OOP), and systems programming."
+      "work": "I provided academic support for over 120 computer science students at the Academic Excellence Center (AEC) by leading exam review sessions, as well as offering one-on-one and group tutoring in data structures and algorithms (DSA), object-oriented programming (OOP), and systems programming."
     }
   ]
 }

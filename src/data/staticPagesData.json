@@ -1,6 +1,6 @@
 {
     "headshot": "/images/headshot/headshot.jpeg",
-    "about": "I recently graduated from Penn State University with a degree in Computer Science. My interests lie in backend systems, embedded software, and full-stack development. During my internship at Amphenol, I developed firmware utilities and a PID control system for high-speed cable testing, working hands-on with I2C devices and low-level C++ code. At Penn State, I led tutoring sessions at the Academic Excellence Center, supporting students in systems programming, data structures, and object-oriented design. I’ve also built projects like a B2B eCommerce platform, peer-to-peer file-sharing system, custom malloc implementation for c programs, and AR iOS apps to name a few. I'm passionate about creating efficient, scalable software and excited to bring my skills to impactful engineering roles.",
+    "about": "I'm a Computer Science graduate who builds intelligent, scalable software across the stack. My work spans full-stack web development, applied AI/LLM integration, and systems programming, with an emphasis on pairing clean user experience with solid engineering fundamentals.\n\n I’ve integrated large language models into real applications, designed retrieval workflows (semantic search / RAG), and delivered responsive, data-driven interfaces. I have worked primarily with Python, Java, JavaScript/TypeScript, SQL, and modern web frameworks like React and Next, with experience spanning backend architecture and responsive frontend development. I also have experience in lower-level development (C/C++), iOS/UI frameworks, and tooling that improves developer and user experience.\n\n I’m especially interested in roles at the intersection of applied AI, full-stack engineering, developer platforms, and human-computer interaction. If you’re building products that turn complex systems into useful experiences, I’d love to connect.",
     "education": [
         {
             "period": "2021-2024",
@@ -11,6 +11,23 @@
     ],
     "skills": [
         {
+            "AI/LLM Tools": [
+                {
+                    "Icon": "/images/logos/ChatGPT-Logo-light.png",
+                    "Tech": "OpenAI API", 
+                    "Description": "API access to GPT large language models"
+                },
+                {
+                    "Icon": "/images/logos/cursor-logo.png",
+                    "Tech": "Cursor", 
+                    "Description": "AI-first code editor built on top of VS Code"
+                },
+                {
+                    "Icon": "/images/logos/prompt-engineering.png",
+                    "Tech": "Prompt Engineering", 
+                    "Description": "Crafting effective prompts to steer LLM behavior"
+                }
+            ],
             "Backend": [
                 {
                     "Icon": "/images/logos/Python-logo.svg",
@@ -234,12 +251,12 @@
             "location": "Nashua, NH",
             "role": "Software Engineer Intern",
             "period": "June 2024 - August 2024",
-            "work": "• Developed a CLI to interface I2C devices, PWM and TC amplifier chips, leveraging their functionality for high speed cable thermal testing\n• Engineered robust and scalable wrapper functions in C++ for the chips, facilitating seamless access to all chip features as per datasheet specs\n• Devised test setup to simulate real testing environment with PWM logic for empirical data analysis before integration into the thermostream system\n• Programmed a customized TC feedback-based PID control algorithm, achieving dynamic temp correction from over ±7°C to ±0.5°C by leveraging PWM chip features to meet strict customer temp thresholds\n• Wrote clear documentation, streamlining the transition for other engineers"
+            "work": "• Developed a C++ command-line interface to communicate with PWM and thermocouple amplifier I2C chips, enabling accurate, production-grade thermal testing for high-speed AWS server cables\n• Designed modular wrapper functions based on chip datasheets, allowing full feature access, robust control, and future scalability\n• Built test environment using PWM logic to emulate real testing conditions for empirical analysis prior to thermostream system integration\n• Implemented a custom PID control algorithm, reducing temperature deviation from ±7°C to ±0.5°C and surpassing the customer’s strict ±1°C accuracy requirement"
         },
         {
             "company": "Academic Excellence Center (AEC) at Penn State",
             "location": "Univesity Park",
-            "role": "Lead Computer Science Tutor",
+            "role": "Computer Science Tutor",
             "period": "October 2023 - Present",
             "work": "• Provided academic support at the AEC, helping engineering students master challenging coursework through tutoring and exam reviews\n• Led one-on-one and group sessions in CS, Math, and Physics, boosting student understanding and confidence, resulting in improved performance"
         }
