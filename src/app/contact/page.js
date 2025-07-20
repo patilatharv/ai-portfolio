@@ -92,7 +92,7 @@ const ContactPage = () => {
           <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/atharvpatil30" target="_blank" rel="noopener noreferrer">linkedin.com/in/atharvpatil30</a></p>
           <p>💻 GitHub: <a href="https://github.com/patilatharv" target="_blank" rel="noopener noreferrer">github.com/patilatharv</a></p>
           <p>
-            📄 <a href="/Atharv Resume.pdf" download className={styles.resumeLink}>Download Resume</a>
+            📄 <a href="/Atharv Patil Resume.pdf" download className={styles.resumeLink}>Download Resume</a>
           </p>
         </div>
       </div>
