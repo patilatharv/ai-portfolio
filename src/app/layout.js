@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Roboto } from 'next/font/google';
 import ClientLayout from './clientLayout';
+import Analytics from '@/utils/googleAnalytics'
 
 const roboto = Roboto({ subsets: ['latin'] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${roboto.className} app-shell`}>
+        <Analytics />
         <ClientLayout>
           {children}
         </ClientLayout>
