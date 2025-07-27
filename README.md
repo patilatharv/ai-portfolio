@@ -25,7 +25,7 @@ This is an AI-powered personal portfolio website featuring an interactive ChatGP
 - Error handling for rate limiting and API failures
 - SEO optimization with metadata and Open Graph support
 
-## Project Sections
+## Website Sections
 - **Home**: Chat interface with AI assistant
 - **About**: Personal background and skills
 - **Experience**: Work history and accomplishments
