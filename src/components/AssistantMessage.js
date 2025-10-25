@@ -62,15 +62,15 @@ export default function AssistantMessage({ content, isLast, index, typed }) {
 const suggestedQuestions = [
   // high-level “about”
   "Give me a quick overview of Atharv’s background.",
-  "What kind of roles is Atharv best suited for based on his experience?",
+
+  // experience & impact
+  "What were Atharv’s key achievements during his Amphenol internship?",
+  "How has Atharv achieved success at Greenstand?",
+  "Tell me about Atharv's Open-Source contributions.",
   
   // project discovery
   "How did Atharv implement retrieval-augmented generation (RAG) in this portfolio site?",
   "How has Atharv demonstrated leadership or initiative in his work experience or projects?",
-  
-  // experience & impact
-  "What were Atharv’s key achievements during his Amphenol internship?",
-  "Tell me about Atharv's open source contributions.",
 ];
 
 function SuggestedQuestions() {
