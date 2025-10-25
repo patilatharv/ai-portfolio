@@ -5,6 +5,7 @@ import Timeline from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection'
 import SkillsSection from '@/components/SkillsSection'
 import AboutMeSection from '@/components/AboutMeSection'
+import OpenSourceSection from '@/components/OpenSourceSection'
 import styles from '@/styles/about.module.css';
 
 const page = () => {
@@ -23,6 +24,16 @@ const page = () => {
           </h1>
         </div>
         <Timeline />
+      </section>
+
+      {/* Open Source */}
+      <section id="open-source">
+        <div style={{ textAlign: 'center' }}>
+          <h1 className={styles.sectionTitle}>
+            Open-Source Contributions
+          </h1>
+        </div>
+        <OpenSourceSection />
       </section>
 
       {/* Projects */}

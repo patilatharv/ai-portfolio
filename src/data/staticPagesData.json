@@ -291,6 +291,7 @@
             "name": "Greenstand's TreeTracker Wallet App",
             "description": "Greenstand is a open-source effort building a marketplace that tracks and pays growers for verified trees (TreeTracker ecosystem). I work on the TreeTracker Wallet app (monorepo for web/mobile/backend).\n\nRecently built BDD E2E test infra with TypeScript, WebdriverIO, and Cucumber, producing human-readable HTML reports with embedded test videos via Cucumber’s attach API creating a single source of truth and speeding debugging/triage.",
             "tech": ["TypeScript", "React", "WebdriverIO", "Cucumber"],
+            "Main Repo": "https://github.com/Greenstand/treetracker-wallet-app",
             "My Merged PRs": "https://github.com/Greenstand/treetracker-wallet-app/pulls?q=is%3Apr+is%3Aclosed+author%3Apatilatharv"
         },
         {
@@ -298,7 +299,8 @@
             "name": "Openhands",
             "description": "OpenHands is an open-source platform for building AI software-development agents (able to edit code, run commands, and browse). I contribute to the web client with a focus on frontend stability and UX.\n\nRecently fixed prompt-input auto-resize overflow by refactoring height measurement, adding tolerance checks, and debouncing resize in React/TypeScript, delivering stable multi-line input across browsers.",
             "tech": ["TypeScript", "React"],
-            "My Merged PRs": "https://github.com/Greenstand/treetracker-wallet-app/pulls?q=is%3Apr+is%3Aclosed+author%3Apatilatharv"
+            "Main Repo": "https://github.com/OpenHands/OpenHands",
+            "My Merged PRs": "https://github.com/OpenHands/OpenHands/pulls?q=is%3Apr+is%3Aclosed+author%3Apatilatharv"
         }
     ]
 }
