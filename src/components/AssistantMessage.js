@@ -65,12 +65,12 @@ const suggestedQuestions = [
   "What kind of roles is Atharv best suited for based on his experience?",
   
   // project discovery
-  "List all of Atharv’s projects and the tech behind each.",
   "How did Atharv implement retrieval-augmented generation (RAG) in this portfolio site?",
   "How has Atharv demonstrated leadership or initiative in his work experience or projects?",
   
   // experience & impact
   "What were Atharv’s key achievements during his Amphenol internship?",
+  "Tell me about Atharv's open source contributions.",
 ];
 
 function SuggestedQuestions() {

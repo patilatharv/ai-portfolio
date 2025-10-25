@@ -1,5 +1,5 @@
 {
-  "bio": "I’m a Computer Science graduate from Penn State with a strong foundation in backend systems, embedded software, and full-stack development. My work spans across low-level systems programming, AI/LLM integration, and modern web technologies. At Amphenol, I developed C++ firmware utilities and a custom PID control algorithm for high-speed cable testing, working hands-on with I2C devices like the PCA9685 and MPC9600. As a full-stack developer, I’ve built data-driven web platforms using the MERN stack and MySQL, including a B2B eCommerce system and dynamic support ticketing workflows. My AI projects include integrating the OpenAI API into real-world applications with semantic search and typewriter-style response rendering. On campus, I led tutoring sessions in systems programming, data structures, and object-oriented design at the Academic Excellence Center. I’ve also engineered a peer-to-peer file sharing network, an AR iOS furniture layout app with RealityKit, and a custom memory allocator in C. I’m passionate about building scalable, user-centric systems—from embedded tools to end-to-end platforms—and excited to contribute to engineering teams solving real-world problems.",
+  "bio": "I’m a Computer Science graduate from Penn State with a strong foundation in backend systems, embedded software, and full-stack development. My work spans low-level systems programming, AI/LLM integration, and modern web technologies. At Amphenol, I developed C++ firmware utilities and a custom PID control algorithm for high-speed cable testing, working hands-on with I²C devices like the PCA9685 and MPC9600. In open source, I volunteer with Greenstand for their TreeTracker Wallet App, where I led the BDD test infrastructure (WebdriverIO + Cucumber in TypeScript), wrote step definitions against the real UI and APIs, and shipped parallel E2E runs with embedded videos/screenshots for fast triage. I also contribute to OpenHands, where I fixed a prompt-input autosize bug by refactoring height measurement and debouncing to deliver consistent multi-line typing across browsers. As a full-stack developer, I’ve built data-driven web platforms using the MERN stack and MySQL, including a B2B eCommerce system and dynamic support ticketing workflows. My AI projects include integrating the OpenAI API into real-world applications with semantic search and typewriter-style response rendering. On campus, I led tutoring sessions in systems programming, data structures, and object-oriented design at the Academic Excellence Center. I’ve also engineered a peer-to-peer file sharing network, an AR iOS furniture layout app with RealityKit, and a custom memory allocator in C. I’m passionate about building scalable, user-centric systems—from embedded tools to end-to-end platforms—and excited to contribute to engineering teams solving real-world problems.",
   "education": [
     {
         "period": "2021-2024",
@@ -112,6 +112,13 @@
   ],
   "experience": [
     {
+      "company": "Greenstand",
+      "location": "Remote",
+      "role": "Software Engineer Volunteer",
+      "period": "August 2025 - Present",
+      "work": "I led the BDD testing infrastructure for the TreeTracker Wallet App by planning milestones with the VP of Engineering, creating and managing GitHub issues, and driving incremental delivery. I integrated WebdriverIO and Cucumber in TypeScript to run parallel end-to-end tests with automatic video and screenshot capture and readable HTML reports. I wrote step definitions that exercise the real UI, call backend APIs, and assert user-visible outcomes to validate full feature flows end to end. I also consolidated test artifacts by embedding per-scenario videos and failing-step screenshots directly into the Cucumber HTML report, speeding triage and creating a single source of truth for test results."
+    },
+    {
       "company": "Amphenol",
       "location": "Nashua, NH",
       "role": "Software Engineer Intern",
@@ -124,6 +131,24 @@
       "role": "Computer Science Tutor",
       "period": "October 2023 - Present",
       "work": "I provided academic support for over 120 computer science students at the Academic Excellence Center (AEC) by leading exam review sessions, as well as offering one-on-one and group tutoring in data structures and algorithms (DSA), object-oriented programming (OOP), and systems programming."
+    }
+  ],
+  "Open-Source Contributions": [
+    {
+      "project": "Greenstand's TreeTracker Wallet App",
+      "period": "August 2025 - Present",
+      "link": "https://gist.github.com/patilatharv/8d0ec3ef459e6bf91e314c3f7a68583e",
+      "description": "Greenstand builds an open-source marketplace that pays growers for verified trees. The TreeTracker Wallet powers token transfers across the ecosystem. I am a Software Engineer Volunteer and led the BDD testing initiative and end-to-end test infrastructure.",
+      "details": "Planned milestones with the VP of Engineering, created and managed GitHub issues, and drove iterative delivery of a BDD testing stack. Integrated WebdriverIO and Cucumber in TypeScript to run parallel end-to-end tests with automatic video and screenshot capture and readable HTML reports. Wrote step definitions that exercise the real UI, call backend APIs, and assert user-visible outcomes to validate full feature flows end to end. Consolidated artifacts by embedding per-scenario videos and failing-step screenshots directly into the Cucumber HTML report, speeding triage and establishing a single source of truth for test results.",
+      "tech": ["TypeScript", "React", "WebdriverIO", "Cucumber"]
+    },
+    {
+      "project": "Openhands",
+      "period": "August 2025 - Present",
+      "link": "https://gist.github.com/patilatharv/fc2d747b4f6136adfaae986b05b81da9",
+      "description": "OpenHands is an open-source platform for AI software-development agents. I am a contributor and focused on frontend reliability and UX quality.",
+      "details": "Resolved a prompt-box resize bug that caused overflow on long messages by refactoring height measurement logic, adding tolerance handling, and debouncing resize events in React/TypeScript to ensure consistent multi-line behavior across browsers. The fix stabilized typing and paste experiences and eliminated layout jumps in the prompt area.",
+      "tech": ["TypeScript", "React", "Tailwind CSS"]
     }
   ]
 }

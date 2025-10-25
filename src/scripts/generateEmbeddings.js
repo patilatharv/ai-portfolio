@@ -85,12 +85,11 @@ async function generate() {
     });
 
     /** details chunk */
-    const detailText = `
-${proj.details}
-Tech stack: ${tags.join(', ')}
-Period: ${proj.period}
-Type: ${proj['project type']}
-    `;
+    const detailText =
+      `${proj.details}
+      Tech stack: ${tags.join(', ')}
+      Period: ${proj.period}
+      Type: ${proj['project type']}`;
     chunks.push({
       id: `proj:${proj.name}:details`,
       type: 'proj_details',
@@ -123,6 +122,45 @@ Type: ${proj['project type']}
       id: `exp:${exp.company}-${exp.role}:details`,
       type: 'exp_details',
       title: exp.company,
+      yearMonth,
+      text: clean(detailText),
+      embedding: await getEmbedding(detailText)
+    });
+  }
+
+  // Open-Source Contributions
+  const openSource = portfolioData["Open-Source Contributions"] || [];
+  for (const oss of openSource) {
+    const tags = oss.tech || [];
+    const yearMonth = parseYearMonth(oss.period);
+
+    /** summary */
+    const summaryText = `${oss.project} – ${oss.description}`;
+    chunks.push({
+      id: `oss:${oss.project}:summary`,
+      type: 'oss_summary',
+      title: oss.project,
+      tags,
+      yearMonth,
+      text: clean(summaryText),
+      embedding: await getEmbedding(summaryText)
+    });
+
+    /** details */
+    const detailsLines = [
+      oss.details || '',
+      oss.link ? `Link: ${oss.link}` : '',
+      `Tech: ${tags.join(', ')}`,
+      `Period: ${oss.period}`
+    ].filter(Boolean);
+
+    /** text */
+    const detailText = detailsLines.join('\n');
+    chunks.push({
+      id: `oss:${oss.project}:details`,
+      type: 'oss_details',
+      title: oss.project,
+      tags,
       yearMonth,
       text: clean(detailText),
       embedding: await getEmbedding(detailText)
