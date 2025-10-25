@@ -12,6 +12,7 @@ const navItems = [
   { href: '/',                              label: 'Home' },
   { href: '/about#about-me',                label: 'About Me' },
   { href: '/about#professional-experiences',label: 'Experience' },
+  { href: '/about#open-source',             label: 'Open-Source' },
   { href: '/about#projects',                label: 'Projects' },
   { href: '/about#skills',                  label: 'Skills' },
   { href: '/resume',                        label: 'Resume' },
@@ -23,6 +24,7 @@ export default function Sidebar({ isOpen, toggle }) {
   const sectionIds = [
     'about-me',
     'professional-experiences',
+    'open-source',
     'education',
     'projects',
     'skills',

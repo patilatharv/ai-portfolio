@@ -1,0 +1,188 @@
+/* overall wrapper to center all cards */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 2rem 2rem 2rem;
+  }
+  
+  /* single category section */
+  .category {
+    width: 100%;
+    max-width: 960px;
+    text-align: center;
+  }
+  
+  /* grid of cards */
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    margin-top: 1.5rem; /* space between the heading and the cards */
+  }
+  
+  /* individual card */
+  .card {
+    background: var(--project-card-background);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--project-card-border);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px var(--project-card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 20px var(--project-card-shadow-hover);
+  }
+  
+  /* image block */
+  .imageWrapper {
+    position: relative;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover .image {
+    transform: scale(1.05);
+  }
+  
+  /* divider */
+  .separator {
+    width: 90%;
+    height: 4px;
+    margin: 0 auto;
+    background-color: var(--project-separator);
+    border: none;
+    border-radius: 20px;
+  }
+  
+  /* content area */
+  .content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5rem;
+  }
+  
+  /* title */
+  .title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--project-title);
+  }
+  
+  /* description with preserved line breaks from \n\n */
+  .description {
+    margin: 0;
+    color: var(--project-description);
+    flex: 1;
+    margin-bottom: 0.75rem;
+    white-space: pre-line; /* <-- preserves \n and \n\n */
+  }
+  
+  /* tech pills (unchanged) */
+  .tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .pill {
+    background: var(--project-pill);
+    color: var(--gpt-text);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .pill:hover {
+    transform: scale(1.1);
+    background-color: var(--project-title);
+    color: var(--gpt-bg);
+  }
+  
+  /* NEW: link row behaves like pills row, with spacing from tech */
+  .linkRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem; /* visible space from tech pills */
+  }
+  
+  /* GitHub pill tweaks: hug text (auto width) + same visual style */
+  .githubPill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: var(--project-github);
+    color: var(--gpt-text);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: 1px solid var(--experienceSection-vertical-timeline);
+    width: auto;           /* <-- HUG TEXT */
+    max-width: 100%;       /* avoid overflow on tiny screens */
+  }
+  
+  .githubPill:hover {
+    background-color: var(--project-title);
+    color: var(--gpt-bg);
+    transform: scale(1.05);
+  }
+  
+  .githubIcon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Mobile tweaks */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem 1.5rem;
+    }
+  
+    .card {
+      max-width: 100%;
+    }
+    
+    .grid { 
+      margin-top: 0.5rem; 
+    }
+    
+    .title {
+      font-size: 1.05rem;
+    }
+  
+    .description {
+      font-size: 0.9rem;
+    }
+  
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+    }
+  
+    .githubPill {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+  

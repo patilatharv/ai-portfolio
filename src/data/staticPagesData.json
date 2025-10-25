@@ -288,7 +288,7 @@
     "Open-Source Contributions": [
         {
             "image": "/images/Open-Source/greenstand.jpeg",
-            "name": "Greenstand's TreeTracker Wallet App",
+            "name": "Greenstand",
             "description": "Greenstand is a open-source effort building a marketplace that tracks and pays growers for verified trees (TreeTracker ecosystem). I work on the TreeTracker Wallet app (monorepo for web/mobile/backend).\n\nRecently built BDD E2E test infra with TypeScript, WebdriverIO, and Cucumber, producing human-readable HTML reports with embedded test videos via Cucumber’s attach API creating a single source of truth and speeding debugging/triage.",
             "tech": ["TypeScript", "React", "WebdriverIO", "Cucumber"],
             "Main Repo": "https://github.com/Greenstand/treetracker-wallet-app",

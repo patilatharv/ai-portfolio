@@ -2,7 +2,7 @@
 
 import React from 'react';
 import data from '@/data/staticPagesData.json';
-import styles from '@/styles/projectsSection.module.css';
+import styles from '@/styles/openSourceSection.module.css'; // <-- NEW
 import { motion } from 'framer-motion';
 
 export default function OpenSourceSection() {
@@ -11,8 +11,6 @@ export default function OpenSourceSection() {
   return (
     <div className={styles.container}>
       <section className={styles.category}>
-        <h2 className={styles.heading}>Open-Source Contributions</h2>
-
         <div className={styles.grid}>
           {ossItems.map((item) => (
             <motion.div
@@ -51,38 +49,40 @@ export default function OpenSourceSection() {
                   </div>
                 )}
 
-                {/* LINK PILLS (reuse GitHub pill styling) */}
-                {item['Main Repo'] && item['Main Repo'].trim() !== '' && (
-                <a
-                    href={item['Main Repo']}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.githubPill}
-                >
-                    <img
-                    src="/images/logos/github-mark-white.png"
-                    alt="GitHub Logo"
-                    className={styles.githubIcon}
-                    />
-                    Main Repo
-                </a>
-                )}
+                {/* LINK PILLS */}
+                <div className={styles.linkRow}>
+                  {item['Main Repo'] && item['Main Repo'].trim() !== '' && (
+                    <a
+                      href={item['Main Repo']}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.githubPill}
+                    >
+                      <img
+                        src="/images/logos/github-mark-white.png"
+                        alt="GitHub Logo"
+                        className={styles.githubIcon}
+                      />
+                      Main Repo
+                    </a>
+                  )}
 
-                {item['My Merged PRs'] && item['My Merged PRs'].trim() !== '' && (
-                <a
-                    href={item['My Merged PRs']}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.githubPill}
-                >
-                    <img
-                    src="/images/logos/github-mark-white.png"
-                    alt="GitHub Logo"
-                    className={styles.githubIcon}
-                    />
-                    My Merged PRs
-                </a>
-                )}
+                  {item['My Merged PRs'] && item['My Merged PRs'].trim() !== '' && (
+                    <a
+                      href={item['My Merged PRs']}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.githubPill}
+                    >
+                      <img
+                        src="/images/logos/github-mark-white.png"
+                        alt="GitHub Logo"
+                        className={styles.githubIcon}
+                      />
+                      My Merged PRs
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
