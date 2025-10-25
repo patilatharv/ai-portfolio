@@ -1,6 +1,6 @@
 {
     "headshot": "/images/headshot/headshot.jpeg",
-    "about": "I'm a Computer Science graduate who builds intelligent, scalable software across the stack. My work spans full-stack web development, applied AI/LLM integration, and systems programming, with an emphasis on pairing clean user experience with solid engineering fundamentals.\n\n I’ve integrated large language models into real applications, designed retrieval workflows (semantic search / RAG), and delivered responsive, data-driven interfaces. I have worked primarily with Python, Java, JavaScript/TypeScript, SQL, and modern web frameworks like React and Next, with experience spanning backend architecture and responsive frontend development. I also have experience in lower-level development (C/C++), iOS/UI frameworks, and tooling that improves developer and user experience.\n\n I’m especially interested in roles at the intersection of applied AI, full-stack engineering, developer platforms, and human-computer interaction. If you’re building products that turn complex systems into useful experiences, I’d love to connect.",
+    "about": "I'm a Computer Science graduate who builds intelligent, scalable software across the stack. My work spans full-stack web development, applied AI/LLM integration, and systems programming, with an emphasis on pairing clean user experience with solid engineering fundamentals. Recently, in open source, I led BDD test infrastructure for Greenstand’s TreeTracker Wallet (WebdriverIO + Cucumber in TypeScript) and contributed UX stability fixes to OpenHands, an AI software-dev agents platform.\n\n I’ve integrated large language models into real applications, designed retrieval workflows (semantic search / RAG), and delivered responsive, data-driven interfaces. I work primarily with Python, Java, JavaScript/TypeScript, SQL, and modern web frameworks like React and Next, with experience across backend architecture and responsive frontend development. I also have experience in lower-level development (C/C++), iOS/UI frameworks, and tooling that improves developer and user experience.\n\n I’m especially interested in roles at the intersection of applied AI, full-stack engineering, developer platforms, and human-computer interaction. If you’re building products that turn complex systems into useful experiences, I’d love to connect.",
     "education": [
         {
             "period": "2021-2024",
@@ -26,6 +26,43 @@
                     "Icon": "/images/logos/prompt-engineering.png",
                     "Tech": "Prompt Engineering", 
                     "Description": "Crafting effective prompts to steer LLM behavior"
+                },
+                {
+                    "Icon": "/images/logos/gihub-mark-white.png",
+                    "Tech": "GitHub Copilot", 
+                    "Description": "AI pair programmer for code, tests, and docs in-editor"
+                },
+                {
+                    "Icon": "/images/logos/OpenHands-logo.png",
+                    "Tech": "OpenHands", 
+                    "Description": "Platform for software development agents powered by AI"
+                }
+            ],
+            "Full-Stack": [
+                {
+                    "Icon": "/images/logos/javascript-logo.png",
+                    "Tech": "JavaScript", 
+                    "Description": "Runs across frontend, backend, and serverless."
+                },
+                {
+                    "Icon": "/images/logos/typescript-logo.png",
+                    "Tech": "TypeScript",
+                    "Description": "Typed JavaScript for safer full-stack development."
+                },
+                {
+                    "Icon": "/images/logos/nextjs-logo.png",
+                    "Tech": "Next.js", 
+                    "Description": "React framework with SSR & routing"
+                },
+                {
+                    "Icon": "/images/logos/nodejs-logo.png",
+                    "Tech": "Node.js", 
+                    "Description": "JavaScript runtime for server-side code"
+                },
+                {
+                    "Icon": "/images/logos/Express-logo.png",
+                    "Tech": "Express.js", 
+                    "Description": "Web framework for Node.js"
                 }
             ],
             "Backend": [
@@ -48,16 +85,6 @@
                     "Icon": "/images/logos/Java-logo.svg.png",
                     "Tech": "Java", 
                     "Description": "Backend language for enterprise and web systems"
-                },
-                {
-                    "Icon": "/images/logos/nodejs-logo.png",
-                    "Tech": "Node.js", 
-                    "Description": "JavaScript runtime for server-side code"
-                },
-                {
-                    "Icon": "/images/logos/Express-logo.png",
-                    "Tech": "Express.js", 
-                    "Description": "Web framework for Node.js"
                 }
             ],
             "Frontend": [
@@ -65,16 +92,6 @@
                     "Icon": "/images/logos/react-logo.svg",
                     "Tech": "React.js", 
                     "Description": "JavaScript library for building UIs"
-                },
-                {
-                    "Icon": "/images/logos/nextjs-logo.png",
-                    "Tech": "Next.js", 
-                    "Description": "React framework with SSR & routing"
-                },
-                {
-                    "Icon": "/images/logos/javascript-logo.png",
-                    "Tech": "JavaScript", 
-                    "Description": "Core frontend language"
                 },
                 {
                     "Icon": "/images/logos/swift-logo.png",
@@ -247,6 +264,13 @@
     ],
     "experience": [
         {
+            "company": "Greenstand",
+            "location": "Remote, United States",
+            "role": "Software Engineer Volunteer",
+            "period": "August 2025 - Present",
+            "work": "• Led Behavioral Driven Development (BDD) infrastructure implementation for Greenstand’s TreeTracker Wallet App by planning milestones with VP of Engineering, creating/managing GitHub issues, and driving incremental delivery\n• Integrated WebdriverIO + Cucumber in TypeScript for end-to-end tests with parallel runs, video/image capture, and readable HTML reports\n• Built step definitions that drive the real UI, hit backend APIs, and assert user-visible outcomes, validating the full test flow for all current features end-to-end\n• Consolidated test artifacts by embedding per-scenario videos and failing-step screenshots directly in the Cucumber HTML report, speeding triage and creating a single source of truth"
+        },
+        {
             "company": "Amphenol",
             "location": "Nashua, NH",
             "role": "Software Engineer Intern",
@@ -257,8 +281,24 @@
             "company": "Academic Excellence Center (AEC) at Penn State",
             "location": "Univesity Park",
             "role": "Computer Science Tutor",
-            "period": "October 2023 - Present",
+            "period": "October 2023 - May 2025",
             "work": "• Provided academic support at the AEC, helping engineering students master challenging coursework through tutoring and exam reviews\n• Led one-on-one and group sessions in CS, Math, and Physics, boosting student understanding and confidence, resulting in improved performance"
+        }
+    ],
+    "Open-Source Contributions": [
+        {
+            "image": "/images/Open-Source/greenstandorg_cover.png",
+            "name": "Greenstand's TreeTracker Wallet App",
+            "description": "Greenstand is a open-source effort building a marketplace that tracks and pays growers for verified trees (TreeTracker ecosystem). I work on the TreeTracker Wallet app (monorepo for web/mobile/backend).\n\nRecently built BDD E2E test infra with TypeScript, WebdriverIO, and Cucumber, producing human-readable HTML reports with embedded test videos via Cucumber’s attach API creating a single source of truth and speeding debugging/triage.",
+            "tech": ["TypeScript", "React", "WebdriverIO", "Cucumber"],
+            "My Merged PRs": "https://github.com/Greenstand/treetracker-wallet-app/pulls?q=is%3Apr+is%3Aclosed+author%3Apatilatharv"
+        },
+        {
+            "image": "/images/Open-Source/OpenHands Thumbnail.png",
+            "name": "Openhands",
+            "description": "OpenHands is an open-source platform for building AI software-development agents (able to edit code, run commands, and browse). I contribute to the web client with a focus on frontend stability and UX.\n\nRecently fixed prompt-input auto-resize overflow by refactoring height measurement, adding tolerance checks, and debouncing resize in React/TypeScript, delivering stable multi-line input across browsers.",
+            "tech": ["TypeScript", "React"],
+            "My Merged PRs": "https://github.com/Greenstand/treetracker-wallet-app/pulls?q=is%3Apr+is%3Aclosed+author%3Apatilatharv"
         }
     ]
 }

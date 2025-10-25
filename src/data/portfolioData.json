@@ -129,8 +129,8 @@
       "company": "Academic Excellence Center (AEC) at Penn State",
       "location": "Univesity Park",
       "role": "Computer Science Tutor",
-      "period": "October 2023 - Present",
-      "work": "I provided academic support for over 120 computer science students at the Academic Excellence Center (AEC) by leading exam review sessions, as well as offering one-on-one and group tutoring in data structures and algorithms (DSA), object-oriented programming (OOP), and systems programming."
+      "period": "October 2023 - May 2025",
+      "work": "I provided academic support for over 120+ computer science students at the Academic Excellence Center (AEC) by leading exam review sessions, as well as offering one-on-one and group tutoring in data structures and algorithms (DSA), object-oriented programming (OOP), and systems programming."
     }
   ],
   "Open-Source Contributions": [
@@ -148,7 +148,7 @@
       "link": "https://gist.github.com/patilatharv/fc2d747b4f6136adfaae986b05b81da9",
       "description": "OpenHands is an open-source platform for AI software-development agents. I am a contributor and focused on frontend reliability and UX quality.",
       "details": "Resolved a prompt-box resize bug that caused overflow on long messages by refactoring height measurement logic, adding tolerance handling, and debouncing resize events in React/TypeScript to ensure consistent multi-line behavior across browsers. The fix stabilized typing and paste experiences and eliminated layout jumps in the prompt area.",
-      "tech": ["TypeScript", "React", "Tailwind CSS"]
+      "tech": ["TypeScript", "React"]
     }
   ]
 }
