@@ -52,39 +52,37 @@ export default function OpenSourceSection() {
                 )}
 
                 {/* LINK PILLS (reuse GitHub pill styling) */}
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  {item['Main Repo'] && item['Main Repo'].trim() !== '' && (
-                    <a
-                      href={item['Main Repo']}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.githubPill}
-                    >
-                      <img
-                        src="/images/logos/github-mark-white.png"
-                        alt="GitHub Logo"
-                        className={styles.githubIcon}
-                      />
-                      Main Repo
-                    </a>
-                  )}
+                {item['Main Repo'] && item['Main Repo'].trim() !== '' && (
+                <a
+                    href={item['Main Repo']}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.githubPill}
+                >
+                    <img
+                    src="/images/logos/github-mark-white.png"
+                    alt="GitHub Logo"
+                    className={styles.githubIcon}
+                    />
+                    Main Repo
+                </a>
+                )}
 
-                  {item['My Merged PRs'] && item['My Merged PRs'].trim() !== '' && (
-                    <a
-                      href={item['My Merged PRs']}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.githubPill}
-                    >
-                      <img
-                        src="/images/logos/github-mark-white.png"
-                        alt="GitHub Logo"
-                        className={styles.githubIcon}
-                      />
-                      My Merged PRs
-                    </a>
-                  )}
-                </div>
+                {item['My Merged PRs'] && item['My Merged PRs'].trim() !== '' && (
+                <a
+                    href={item['My Merged PRs']}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.githubPill}
+                >
+                    <img
+                    src="/images/logos/github-mark-white.png"
+                    alt="GitHub Logo"
+                    className={styles.githubIcon}
+                    />
+                    My Merged PRs
+                </a>
+                )}
               </div>
             </motion.div>
           ))}
