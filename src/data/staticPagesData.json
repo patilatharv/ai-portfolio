@@ -28,7 +28,7 @@
                     "Description": "Crafting effective prompts to steer LLM behavior"
                 },
                 {
-                    "Icon": "/images/logos/gihub-mark-white.png",
+                    "Icon": "/images/logos/github-mark-white.png",
                     "Tech": "GitHub Copilot", 
                     "Description": "AI pair programmer for code, tests, and docs in-editor"
                 },
@@ -287,7 +287,7 @@
     ],
     "Open-Source Contributions": [
         {
-            "image": "/images/Open-Source/greenstandorg_cover.png",
+            "image": "/images/Open-Source/greenstandorg_cover.jpeg",
             "name": "Greenstand's TreeTracker Wallet App",
             "description": "Greenstand is a open-source effort building a marketplace that tracks and pays growers for verified trees (TreeTracker ecosystem). I work on the TreeTracker Wallet app (monorepo for web/mobile/backend).\n\nRecently built BDD E2E test infra with TypeScript, WebdriverIO, and Cucumber, producing human-readable HTML reports with embedded test videos via Cucumber’s attach API creating a single source of truth and speeding debugging/triage.",
             "tech": ["TypeScript", "React", "WebdriverIO", "Cucumber"],
