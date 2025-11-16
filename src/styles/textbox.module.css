@@ -158,6 +158,133 @@
   opacity: 1;
 }
 
+.mic_button {
+  position: absolute;
+  border-radius: 50%;
+  background: none;
+  color: var(--gpt-text);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  left: 55px;
+  bottom: 10px;
+}
+
+.mic_button:hover {
+  background-color: var(--clearButton-hover);
+}
+
+.mic_active {
+  color: #f44336;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mic_button::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--toggleButton-after);
+  color: var(--gpt-text);
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.mic_button:hover::after {
+  opacity: 1;
+}
+
+.voice_button {
+  position: absolute;
+  border-radius: 50%;
+  background: none;
+  color: var(--gpt-text);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  left: 55px;
+  bottom: 10px;
+  transition: all 0.2s ease;
+}
+
+.voice_button:hover {
+  background-color: var(--clearButton-hover);
+}
+
+.voice_button_active {
+  background-color: #ff4444 !important;
+  color: white !important;
+  animation: pulse 1.5s infinite;
+}
+
+.voice_button_active:hover {
+  background-color: #cc3333 !important;
+}
+
+/* Voice button pulse animation */
+@keyframes voice_pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
+  }
+}
+
+.voice_button::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--toggleButton-after);
+  color: var(--gpt-text);
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.voice_button:hover::after {
+  opacity: 1;
+}
+
+
+
 .modal_overlay {
   /* background-color: rgba(0, 0, 0, 0.6); */
   background-color: var(--aboutMe-box-shadow-hover);
@@ -253,9 +380,24 @@
     height: 32px;
   }
 
+  .voice_button {
+    bottom: 8px;
+    left: 48px;
+    width: 32px;
+    height: 32px;
+  }
+
   .submit_button::after,
-  .clear_button::after {
+  .clear_button::after,
+  .voice_button::after {
     display: none;
+  }
+  
+  .mic_button {
+    bottom: 8px;
+    left: 50px;
+    width: 32px;
+    height: 32px;
   }
 
   .modal_content {

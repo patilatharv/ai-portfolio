@@ -1,14 +1,17 @@
 'use client';
 
 import React from 'react'
-import { useRef, useState, useContext } from 'react';
+import { useRef, useState, useContext, useEffect } from 'react';
 import styles from '@/styles/textbox.module.css'
 import { ChatContext } from '@/context/chatContext';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
+import MicRoundedIcon from '@mui/icons-material/MicRounded';
+import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import Modal from 'react-modal';
 import { defaultAssistantMessage } from '@/helpers/defaultMessage';
 import StopRoundedIcon from '@mui/icons-material/StopRounded';
+import useSpeechRecognition from '@/hooks/useSpeechRecognition';
 
 const Textbox = () => {
   const { messages, setMessages, 
@@ -20,6 +23,46 @@ const Textbox = () => {
   } = useContext(ChatContext);
 
   const [showConfirm, setShowConfirm] = useState(false);
+  const [showSpeechError, setShowSpeechError] = useState(false);
+  
+  const {
+    isListening,
+    transcript,
+    isSupported,
+    error,
+    startListening,
+    stopListening,
+    resetTranscript
+  } = useSpeechRecognition();
+  
+  // Update question when transcript changes
+  useEffect(() => {
+    if (transcript) {
+      setQuestion(transcript);
+      
+      // Auto-resize textarea
+      if (textareaRef.current) {
+        textareaRef.current.style.height = 'auto';
+        if (textareaRef.current.scrollHeight > textareaRef.current.clientHeight) {
+          textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+        }
+      }
+    }
+  }, [transcript, setQuestion]);
+
+  const toggleListening = () => {
+    if (!isSupported) {
+      setShowSpeechError(true);
+      return;
+    }
+    
+    if (isListening) {
+      stopListening();
+    } else {
+      resetTranscript();
+      startListening();
+    }
+  };
 
   const confirmClear = () => {
     setMessages([defaultAssistantMessage]);
@@ -46,7 +89,7 @@ const Textbox = () => {
   const handleAsk = async () => {
     if (!question.trim()) return;
 
-    // Append the user’s turn
+    // Append the user's turn
     const newMessages = [
       ...messages,
       { role: 'user', content: question },
@@ -73,7 +116,7 @@ const Textbox = () => {
       });
 
       const data = await res.json();
-      const assistantContent = res.ok // Append assistant’s reply
+      const assistantContent = res.ok // Append assistant's reply
         ? data.answer
         : `Error: ${data.error || 'Something went wrong'}`;
 
@@ -160,6 +203,17 @@ const Textbox = () => {
               </button>
             )}
 
+            {isSupported && (
+              <button 
+                className={`${styles.mic_button} ${isListening ? styles.mic_active : ''}`}
+                onClick={toggleListening}
+                disabled={loading || isTyping}
+                aria-label={isListening ? "Stop listening" : "Start voice input"}
+              >
+                {isListening ? <MicRoundedIcon /> : <MicOffRoundedIcon />}
+              </button>
+            )}
+
             <button 
               className={styles.clear_button} 
               onClick={() => setShowConfirm(true)}
@@ -169,6 +223,8 @@ const Textbox = () => {
           </div>
         </div>
       </div>
+      
+      {/* Clear chat confirmation modal */}
       <Modal
         isOpen={showConfirm}
         onRequestClose={() => setShowConfirm(false)}
@@ -184,6 +240,23 @@ const Textbox = () => {
           </button>
           <button onClick={confirmClear} className={styles.confirm_button}>
             Yes, Clear
+          </button>
+        </div>
+      </Modal>
+      
+      {/* Speech recognition not supported modal */}
+      <Modal
+        isOpen={showSpeechError}
+        onRequestClose={() => setShowSpeechError(false)}
+        className={styles.modal_content}
+        overlayClassName={styles.modal_overlay}
+        ariaHideApp={false}
+      >
+        <h2>Voice Input Not Available</h2>
+        <p>Speech recognition is not supported in your browser. Please try Chrome, Edge, or Safari for the best experience.</p>
+        <div className={styles.modal_buttons}>
+          <button onClick={() => setShowSpeechError(false)} className={styles.confirm_button}>
+            OK
           </button>
         </div>
       </Modal>
